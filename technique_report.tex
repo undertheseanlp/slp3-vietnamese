@@ -1,0 +1,134 @@
+%
+% File eacl2017.tex
+%
+%% Based on the style files for ACL-2016
+%% Based on the style files for ACL-2015, with some improvements
+%%  taken from the NAACL-2016 style
+%% Based on the style files for ACL-2014, which were, in turn,
+%% Based on the style files for ACL-2013, which were, in turn,
+%% Based on the style files for ACL-2012, which were, in turn,
+%% based on the style files for ACL-2011, which were, in turn, 
+%% based on the style files for ACL-2010, which were, in turn, 
+%% based on the style files for ACL-IJCNLP-2009, which were, in turn,
+%% based on the style files for EACL-2009 and IJCNLP-2008...
+
+%% Based on the style files for EACL 2006 by 
+%%e.agirre@ehu.es or Sergi.Balari@uab.es
+%% and that of ACL 08 by Joakim Nivre and Noah Smith
+
+\documentclass[11pt,a4paper]{article}
+\usepackage{acl2017}
+\usepackage{times}
+\usepackage{multirow}
+\usepackage{url}
+\usepackage{latexsym}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{booktabs}
+\usepackage{amsmath}
+
+% for pycharm
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+% end for pycharm
+
+\usepackage[utf8]{vietnam}
+
+%\usepackage[vietnam,english]{babel}
+%\selectlanguage{vietnam}
+
+\aclfinalcopy % Uncomment this line for the final submission
+%\def\eaclpaperid{***} %  Enter the acl Paper ID here
+
+%\setlength\titlebox{5cm}
+% You can expand the titlebox if you need extra space
+% to show all the authors. Please do not make the titlebox
+% smaller than 5cm (the original size); we will check this
+% in the camera-ready version and ask you to change it back.
+
+\newcommand\BibTeX{B{\sc ib}\TeX}
+
+\title{Technical Notes}
+
+\include{notation}
+
+\author{
+Vu Anh\\
+underthesea\\
+Hanoi, Vietnam\\
+anhv.ict91@gmail.com
+}
+\date{}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+Trong báo cáo này, chúng tôi ghi lại những đặc điểm kỹ thuật và những điều cần chú ý về các thuật toán xử dụng trong xử lý ngôn ngữ tự nhiên.
+
+\end{abstract}
+
+\section{Giới thiệu}
+
+\section{Word Embeddings}
+
+\textbf{Word Embeddings là gì?}
+
+Word Embeddings là một phương pháp biểu diễn từ (hay tổng quát hơn, các đối tượng trong từ điển) thành vector.
+
+\textbf{Có những phương pháp word embeddings nào?}
+
+Cùng với sự phát triển mạnh mẽ của deep learning, nhiều phương pháp word embeddings \footnote{\href{Beyond word2vec: GloVe, fastText, StarSpace. Konstantinos Perifanos. pydata 2018}{https://pydata.org/london2018/schedule/presentation/29/}} ra đời như word2vec \cite{DBLP:conf/nips/MikolovSCCD13}, GloVe \cite{DBLP:conf/emnlp/PenningtonSM14}, RAND-WALK \cite{DBLP:journals/corr/AroraLLMR15}, fastText \cite{DBLP:conf/eacl/GraveMJB17}, StarSpace \cite{DBLP:conf/aaai/WuFCABW18} và các phương pháp khác.
+
+Trong đó, fastText gây ấn tượng bằng việc cung cấp một thư viện huấn luyện cực kì nhanh. Các corpus khoảng 100000 văn bản chỉ cần huấn luyện trong vòng vài giây. word2vec được cho là phương pháp tiên phong, trong các báo cáo về sử dụng deep learning cho văn bản, thường sử dụng các embedded vector cho các từ được huấn luyện bởi word2vec trong các input layer.
+
+\section{word2vec}
+
+word2vec là một phương pháp biểu diễn từ thành vector, được tác giả Tomas Mikolov và cộng sự giới thiệu trong báo cáo tại hội nghị NIPS năm 2013 \cite{DBLP:conf/nips/MikolovSCCD13}.
+
+Hai thuật toán để học mô hình word2vec là continous bag-of-words (CBOW) và continous skip-gram. Tư tưởng chính của skip-gram là từ một từ dự đoán ngữ cảnh của từ đó.
+
+word2vec đưa ra các phương pháp để cải thiện hiệu năng của hệ thống như negative sampling, hierarchical softmax, async SGD.
+
+\section{GloVe}
+
+Glove \cite{DBLP:conf/emnlp/PenningtonSM14} sử dụng kỹ thuật phân tích ma trận. Cho một corpus đầu vào, thuật toán xây dựng ma trận co-occurrence của các từ trong một ngữ cảnh.
+
+\section{fastText}
+
+fastText \cite{DBLP:conf/eacl/GraveMJB17} là một thuật toán mở rộng từ word2vec, được tác giả Armand Joulin  và cộng sự giới thiệu trong báo cáo vào năm 2016.
+
+Sự khác biệt giữa fastText và word2vec? \footnote{\href{https://www.quora.com/What-is-the-main-difference-between-word2vec-and-fastText}{https://www.quora.com/What-is-the-main-difference-between-word2vec-and-fastText}}
+
+\begin{itemize}
+  \item word2vec coi các từ trong corpus như một phần tử độc lập và sinh ra một vector cho mỗi từ.
+\end{itemize}
+
+Trong khi đó,
+
+\begin{itemize}
+  \item fastText coi mỗi từ là một tập hợp các các ký tự ngrams. Nên một vector của một từ là tổng của các ký tự n grams của nó.
+\end{itemize}
+
+Mô hình của fastText là từ -> thông tin subword -> n-grams -> embedding cho các n-grams
+
+Ví dụ, vector cho từ "apple" là trung bình của các vector của các n-gram "<ap", "app", "apple", "apple", "apple>", "ppl", "pple", "pple>", "ple", "ple>", "le>" (giả sử cấu hình cho ngrams min là 3 và nagrams max là 6).
+
+\section{StarSpace}
+
+StarSpace được đề xuất bởi nhóm tác giả Ledell Yu Wu và cộng sự. Star là cách đọc của *, với ý tưởng là có thể sinh ra embedding vector cho mọi đối tượng, dựa vào ngữ cảnh của nó.
+
+\noindent Các đặc điểm kỹ thuật
+
+\begin{itemize}
+  \item Sinh ra tập các cặp dương (a, b), từ tập $E^{+}$
+  \item Sinh ra các đối tượng âm $E^{-}$ (với phương pháp negative sampling giống word2vec)
+  \item sim: độ đo tương đồng (sử dụng độ đo cosine hoặc dot product)
+\end{itemize}
+
+\section{Kết luận}
+
+
+\bibliography{technique_report}
+\bibliographystyle{acl_natbib}
+
+\end{document}
