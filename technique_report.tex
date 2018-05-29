@@ -69,6 +69,31 @@ Trong báo cáo này, chúng tôi ghi lại những đặc điểm kỹ thuật 
 
 \section{Giới thiệu}
 
+\section{Naive Bayes}
+
+Là một phương pháp phân loại có giám sát. Dù rất dễ hiểu và dễ cài đặt, nhưng kết quả thu được lại rất tốt, vì thế đây là 1 phương pháp rất quan trọng trong NLP. Ứng dụng đầu tiên trong NLP của máy phân loại này là phân loại văn bản. Gần đây, máy phân loại này còn được ứng dụng thành công vào phần mềm lọc spam tự động. \footnote{\href{http://viet.jnlp.org/kien-thuc-co-ban-ve-xu-ly-ngon-ngu-tu-nhien/machine-learning-trong-nlp/phan-loai-van-ban-bang-dinh-ly-bayes}{http://viet.jnlp.org/kien-thuc-co-ban-ve-xu-ly-ngon-ngu-tu-nhien/machine-learning-trong-nlp/phan-loai-van-ban-bang-dinh-ly-bayes}}
+
+\textbf{Biểu diễn bài toán}
+
+Vector đặc trưng $x$ biểu diễn số lần xuất hiện các từ trong văn bản, $y$ là các nhãn mà văn bản thuộc về (ví dụ như thể thao, kinh tế, giải trí, ...)
+
+Cho một tập dữ liệu đã được gán nhãn $D = \left{ (x^{(i)}, y^{(i}) \right}$ với $i=1 \sim N$
+
+Ở đây $x^(i)$ là vector đặc trưng thứ $i$ trong tập huấn luyện, $y^(i)$ thuộc ${1, 2, ... , C}$ là các nhãn tương ứng với vector đó.
+$x^{(i)} = \left( x^{(i)}_{1}, x^{(i)}_{2}, ..., x^{(i)}_{D}\right)$ là số lần xuất hiện của từ thứ d trong từ điển (từ giờ sẽ gắn số thứ tự với từ, nên sẽ gọi là từ $d$)
+
+Áp dụng cức Bayes, ta tính giá trị của $p(y|x)$, nếu giá trị này lớn hơn 1 giá trị $t$ cho trước, ta kết luận nhãn của vecotr $x$ là $y$.
+
+Yêu cầu đặt ra là ngăn chặn spam bằng cách phân loại một email gửi đến là spam hay non-spam. Cần đạt được hiệu quả phân loại thật khả quan.
+Tuy nhiên cần tuyệt đối tránh lỗi sai chằng non-spam là spam vì có thể gây hiêu quả nghiệm trọng hơn là khả năng lọc spam thấp.
+
+\section{MaxEnt}
+
+Đối với các bài toán phân lớp dữ liệu, entropy cực đại là một kỹ thđể ước lượng xác suất các phân phối từ dữ liệu.
+\footnote{\href{http://viet.jnlp.org/kien-thuc-co-ban-ve-xu-ly-ngon-ngu-tu-nhien/machine-learning-trong-nlp/thuat-toan-entropy-cuc-dai}{http://viet.jnlp.org/kien-thuc-co-ban-ve-xu-ly-ngon-ngu-tu-nhien/machine-learning-trong-nlp/thuat-toan-entropy-cuc-dai}}
+Tư tưởng chủ đạo của nguyên lý entropy cực đại là "mô hình phân phối đối với mỗi tập dữ liệu và tác ràng buộc đi cùng phải đạt được độ cân bằng đều nhất có thể".
+Những ràng bày được thể hiện bởi các giá trị ước lượng được của các đặc trưng. Từ các ràng buộc sinh ra bởi tập dữ liệu này, mô hình sẽ tiến hành tính toán để có được một phân phối entropy cực đại.
+
 \section{Word Embeddings}
 
 \textbf{Word Embeddings là gì?}
@@ -77,7 +102,7 @@ Word Embeddings là một phương pháp biểu diễn từ (hay tổng quát h�
 
 \textbf{Có những phương pháp word embeddings nào?}
 
-Cùng với sự phát triển mạnh mẽ của deep learning, nhiều phương pháp word embeddings \footnote{\href{Beyond word2vec: GloVe, fastText, StarSpace. Konstantinos Perifanos. pydata 2018}{https://pydata.org/london2018/schedule/presentation/29/}} ra đời như word2vec \cite{DBLP:conf/nips/MikolovSCCD13}, GloVe \cite{DBLP:conf/emnlp/PenningtonSM14}, RAND-WALK \cite{DBLP:journals/corr/AroraLLMR15}, fastText \cite{DBLP:conf/eacl/GraveMJB17}, StarSpace \cite{DBLP:conf/aaai/WuFCABW18} và các phương pháp khác.
+Cùng với sự phát triển mạnh mẽ của deep learning, nhiều phương pháp word embeddings \footnote{\href{https://pydata.org/london2018/schedule/presentation/29/}{Beyond word2vec: GloVe, fastText, StarSpace. Konstantinos Perifanos. pydata 2018}} ra đời như word2vec \cite{DBLP:conf/nips/MikolovSCCD13}, GloVe \cite{DBLP:conf/emnlp/PenningtonSM14}, RAND-WALK \cite{DBLP:journals/corr/AroraLLMR15}, fastText \cite{DBLP:conf/eacl/GraveMJB17}, StarSpace \cite{DBLP:conf/aaai/WuFCABW18} và các phương pháp khác.
 
 Trong đó, fastText gây ấn tượng bằng việc cung cấp một thư viện huấn luyện cực kì nhanh. Các corpus khoảng 100000 văn bản chỉ cần huấn luyện trong vòng vài giây. word2vec được cho là phương pháp tiên phong, trong các báo cáo về sử dụng deep learning cho văn bản, thường sử dụng các embedded vector cho các từ được huấn luyện bởi word2vec trong các input layer.
 
@@ -97,17 +122,13 @@ Glove \cite{DBLP:conf/emnlp/PenningtonSM14} sử dụng kỹ thuật phân tích
 
 fastText \cite{DBLP:conf/eacl/GraveMJB17} là một thuật toán mở rộng từ word2vec, được tác giả Armand Joulin  và cộng sự giới thiệu trong báo cáo vào năm 2016.
 
-Sự khác biệt giữa fastText và word2vec? \footnote{\href{https://www.quora.com/What-is-the-main-difference-between-word2vec-and-fastText}{https://www.quora.com/What-is-the-main-difference-between-word2vec-and-fastText}}
+\noindent Sự khác biệt giữa fastText và word2vec? \footnote{\href{https://www.quora.com/What-is-the-main-difference-between-word2vec-and-fastText}{https://www.quora.com/What-is-the-main-difference-between-word2vec-and-fastText}}
 
-\begin{itemize}
-  \item word2vec coi các từ trong corpus như một phần tử độc lập và sinh ra một vector cho mỗi từ.
-\end{itemize}
+\textit{word2vec coi các từ trong corpus như một phần tử độc lập và sinh ra một vector cho mỗi từ}
 
-Trong khi đó,
+\noindent Trong khi đó,
 
-\begin{itemize}
-  \item fastText coi mỗi từ là một tập hợp các các ký tự ngrams. Nên một vector của một từ là tổng của các ký tự n grams của nó.
-\end{itemize}
+\textit{fastText coi mỗi từ là một tập hợp các các ký tự ngrams. Nên một vector của một từ là tổng của các ký tự n grams của nó}
 
 Mô hình của fastText là từ -> thông tin subword -> n-grams -> embedding cho các n-grams
 
@@ -117,12 +138,17 @@ Ví dụ, vector cho từ "apple" là trung bình của các vector của các n
 
 StarSpace được đề xuất bởi nhóm tác giả Ledell Yu Wu và cộng sự. Star là cách đọc của *, với ý tưởng là có thể sinh ra embedding vector cho mọi đối tượng, dựa vào ngữ cảnh của nó.
 
-\noindent Các đặc điểm kỹ thuật
+Mục tiêu của StarSpace là tối ưu hóa hàm
+
+$$J = \sum L^{batch} \left( sim(a, b), sim(a, b_1^{-}),..., sim(a, b_n^{-}) \right)$$
+
+trong đó,
 
 \begin{itemize}
   \item Sinh ra tập các cặp dương (a, b), từ tập $E^{+}$
   \item Sinh ra các đối tượng âm $E^{-}$ (với phương pháp negative sampling giống word2vec)
   \item sim: độ đo tương đồng (sử dụng độ đo cosine hoặc dot product)
+  item $L_{batch}$ so sánh giữa cặp dương và các cặp âm (hinge, softmax)
 \end{itemize}
 
 \section{Kết luận}
