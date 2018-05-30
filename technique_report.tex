@@ -26,6 +26,9 @@
 \usepackage{color}
 \usepackage{booktabs}
 \usepackage{amsmath}
+\usepackage[title]{appendix}
+
+
 
 % for pycharm
 \usepackage[T1]{fontenc}
@@ -48,7 +51,15 @@
 
 \newcommand\BibTeX{B{\sc ib}\TeX}
 
-\title{Technical Notes}
+\usepackage{varioref}
+\usepackage{hyperref}
+\usepackage{cleveref}
+
+\makeatletter
+\newcommand\footnoteref[1]{\protected@xdef\@thefnmark{\ref{#1}}\@footnotemark}
+\makeatother
+
+\title{Technical Notes\\ \small{Tháng 5 năm 2018}}
 
 \include{notation}
 
@@ -67,7 +78,8 @@ Trong báo cáo này, chúng tôi ghi lại những đặc điểm kỹ thuật 
 
 \end{abstract}
 
-\section{Giới thiệu}
+\input{section1_introduction.tex}
+
 
 \section{Naive Bayes}
 
@@ -89,7 +101,7 @@ Tuy nhiên cần tuyệt đối tránh lỗi sai chằng non-spam là spam vì c
 
 \section{MaxEnt}
 
-Đối với các bài toán phân lớp dữ liệu, entropy cực đại là một kỹ thđể ước lượng xác suất các phân phối từ dữ liệu.
+Đối với các bài toán phân lớp dữ liệu, entropy cực đại là một kỹ thuật để ước lượng xác suất các phân phối từ dữ liệu.
 \footnote{\href{http://viet.jnlp.org/kien-thuc-co-ban-ve-xu-ly-ngon-ngu-tu-nhien/machine-learning-trong-nlp/thuat-toan-entropy-cuc-dai}{http://viet.jnlp.org/kien-thuc-co-ban-ve-xu-ly-ngon-ngu-tu-nhien/machine-learning-trong-nlp/thuat-toan-entropy-cuc-dai}}
 Tư tưởng chủ đạo của nguyên lý entropy cực đại là "mô hình phân phối đối với mỗi tập dữ liệu và tác ràng buộc đi cùng phải đạt được độ cân bằng đều nhất có thể".
 Những ràng bày được thể hiện bởi các giá trị ước lượng được của các đặc trưng. Từ các ràng buộc sinh ra bởi tập dữ liệu này, mô hình sẽ tiến hành tính toán để có được một phân phối entropy cực đại.
@@ -140,7 +152,9 @@ StarSpace được đề xuất bởi nhóm tác giả Ledell Yu Wu và cộng s
 
 Mục tiêu của StarSpace là tối ưu hóa hàm
 
+\begin{equation}
 $$J = \sum L^{batch} \left( sim(a, b), sim(a, b_1^{-}),..., sim(a, b_n^{-}) \right)$$
+\end{equation}
 
 trong đó,
 
@@ -151,10 +165,37 @@ trong đó,
   item $L_{batch}$ so sánh giữa cặp dương và các cặp âm (hinge, softmax)
 \end{itemize}
 
-\section{Kết luận}
-
-
 \bibliography{technique_report}
 \bibliographystyle{acl_natbib}
 
+\clearpage
+
+\begin{appendices}
+\section{Naive Bayes}
+Sử dụng Naive Bayes trong bài toán phân loại tin nhắn rác. Tập dữ liệu SAMPLE SAMPLE 20180529 được trình bày trong bảng bên dưới.
+
+\begin{table}
+  \centering
+  \begin{tabular}{lc}
+    \toprule
+    Tin nhắn & Phân loại \\
+    \midrule
+    nhà trung cư giá chỉ 2.3 tỷ & RÁC \\
+    giảm giá đi du lịch , đăng ký ngay hôm nay & RÁC \\
+    iphone giá rẻ mua trả góp & RÁC \\
+    hôm nay đi làm vui lắm anh ạ & BÌNH THƯỜNG \\
+		anh hôm nay về nhà sớm, đi chơi nhé & BÌNH THƯỜNG \\
+		nhớ mua hộ em quyển sách nhé & BÌNH THƯỜNG
+    \bottomrule
+  \end{tabular}
+
+  \label{data:spam_sample}
+  \caption{\small Dữ liệu tin nhắn rác SPAM SAMPLE 20180529}
+\end{table}
+
+\input{maxent.tex}
+
+\end{appendices}
+
 \end{document}
+

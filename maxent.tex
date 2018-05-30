@@ -1,0 +1,24 @@
+\section{Maximum Entropy}
+
+\noindent \textbf{Bài toán phân lớp} Với $Y$ là tập các lớp, $X$ là tập các thông tin ngữ cảnh, nhiệm vụ của bài toán phân lớp là xây dựng một mô hình thống kê mà dự đoán chính xác lớp của văn bản bất kì.
+
+Có hai cách tiếp cận để giải quyết bài toán này. Phương pháp thứ nhất là ước lượng xác suất đồng thời $p(y,x)$, phương pháp này được sử dụng trong các mô hình sinh (generative models)\footnote{\label{manning_maxent}\href{https://web.stanford.edu/class/cs124/lec/Maximum_Entropy_Classifiers.pdf}{Christopher Manning, Maxent Models and Discriminative Estimation}}. Các giải thuật dùng mô hình này như logistic regression, conditional loglinear, các mô hình maximum entropy và conditional random fields.
+
+\noindent Phương pháp thứ hai là ước lượng xác suất có điều kiện $p(y|x)$, phương pháp này được sử dụng trong các mô hình phân biệt (discriminative models).
+Ưu điểm của mô hình phân biệt là chúng đưa ra độ chính xác tốt hơn, dễ dàng tích hợp với các đặc trưng ngôn ngữ, và giúp xây dựng các mô hình xử lý ngôn ngữ tự nhiên độc lập với ngôn ngữ \footnoteref{manning_maxent}.
+
+Mô hình entropy cực đại cung cấp một phương pháp đơn giản để ước lượng xác suất có điều kiện $p(y|x)$ thông qua việc thống kê các thuộc tính quan trọng quan sát được từ tập dữ liệu huấn luyện \footnote{\href{http://uet.vnu.edu.vn/~thuyhq/Student_Thesis/K47_Nguyen_Thi_Thuy_Linh_Thesis.pdf}{Nguyễn Thị Thùy Linh, Phân lớp tài liệu web độc lập ngôn ngữ}}.
+
+\noindent \textbf{Tập dữ liệu huấn luyện} Để làm bài toán phân lớp, trước tiên phải xây dựng tập dữ liệu $T = \{ (x_1, y_1), ... , (x_N, y_N) \}$, trong đó \{x_1, ... , x_N\}$ là tập các thông tin ngữ cảnh đã được gán nhãn tương ứng là tập các lớp $\{y_1,..., y_N\}$
+
+Với mỗi cặp $(x_i, y_i)$, phân phối xác suất thực nghiệm của nó được tính bởi
+
+$\widetilde{p} (x_i, y_i) = \frac{1}{N} \times $ số lần xuất hiện của $(x_i, y_i)$ trong tập dữ liệu mẫu
+
+Thông thường thì mỗi cặp $(x_i, y_i)$ không thể không xuất hiện trong tập mẫu, mà nó sẽ xuất hiện ít nhất một lần.
+
+\noindent \textit{Còn tiếp...}
+
+
+
+
