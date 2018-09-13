@@ -1,2 +1,24 @@
-\chapter{Biểu thức chính quy, chuẩn hóa text, khoảng cách sửa}
+\setcounter{chapter}{1}
+\chapter{Biểu thức chính quy, chuẩn hóa text, edit distance}
 
+\section{Biểu thức chính quy}
+
+Một trong những thành công lớn trong khoa học máy tính là biểu thức chính quy, một ngôn ngữ để chỉ định các chuỗi tìm kiếm.
+
+\subsection{Các biểu thức chính quy cơ bản}
+
+Dạng đơn giản nhất của biểu thức chính quy là một dãy các kí tự. Để tìm kiếm từ \textit{woodchuck}, ta gõ \verb|/woodchuck|. Biểu thức \verb|/Buttercup/| khớp với tất cả các chuỗi có chứa cụm từ \textit{Buttercup}; \verb|grep|
+
+\\
+
+\begin{tabular}{ l l }
+ \hline
+ RE & Example Patterns Matched \\
+ \hline
+ /woodchucks & interesting links to \underline{woodchucks} and lemurs \\
+ /a/ & M\underline{a}ry Ann stopped by Mona's  \\
+ /!/ & "You've left the burglar behind again\underline{!}" said Nori \\
+ \hline
+ \caption{Ví dụ các biểu thức chính quy đơn giản}
+ \label{table:1}
+\end{tabular}
