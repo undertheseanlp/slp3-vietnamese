@@ -1,10 +1,27 @@
 \setcounter{chapter}{1}
 
 \chapter{Biểu thức chính quy, chuẩn hóa text\\edit distance}
+\setlength\epigraphwidth{\textwidth}
+\epigraphfontsize{\small}
+\epigraph{
+{\fontfamily{qcr}\selectfont
+User : You are like my father in some ways. \\
+ELIZA: WHAT RESEMBLANCE DO YOU SEE \\
+User : You are not very aggressive but I think you don’t \\
+\hspace{38pt} want me to notice that. \\
+ELIZA: WHAT MAKES YOU THINK I AM NOT VERY AGGRESSIVE \\
+User : You don’t argue with me. \\
+ELIZA: WHY DO YOU THINK I DON’T ARGUE WITH YOU \\
+User : You are afraid of me. \\
+ELIZA: DOES IT PLEASE YOU TO BELIEVE I AM AFRAID OF YOU\\
+}
+}{Weizenbaum (1966)}
 
-\epigraphfontsize{\small\itshape}
-\epigraph{``Begin at the beginning," the King said gravely, ``and go on till you
-come to the end: then stop."}{--- \textup{Lewis Carroll}, Alice in Wonderland}
+Đoạn hội thoại trên là từ \textbf{ELIZA}, một hệ thống xử lý ngôn ngữ tự nhiên đầu tiên có thể thực hiện những đoạn hội thoại với người dùng bằng cách bắt chước các câu nói trước đó của một nhà tâm lý học (Weizenbaum, 1966). ELIZA là một chương trình đơn giản sử dụng phương pháp nhanạ dạng các cụm từ như "Bạn là X" và sau đó chuyển thành câu hỏi hợp lý như "Điều gì khiến bạn nghĩ tôi là X?". Kỹ thuật đơn giản này đạt được thành công trong lĩnh vực này vì ELIZA không cần \textit{biết} điều gì để bắt chước lại nhà tâm lý học. Trong ghi chú của Weizebaum, đây là một trong những ít chương trình hội thoại mà người nghe có thể phản ứng mà không cần biết điều gì về thế giới. Cách bắt chước của ELIZA đạt được nhiều thanh công đáng chú ý: rất nhiều người tauwơng tác với ELIZA bắt đầu tin rằng nó \textit{thực sự} hiểu họ và vấn đề của họ, rất nhiều người tiếp tục tin vào khả năng của ELIZA mặc dù đã biết về cách vận hành của nó (Weizenbaum, 1976), và ngay cả trong thời điểm này, những chatbots như vậy cũng rất thú vị.
+
+Tất nhiên, những chương trình hội thoại hiện đại có rất nhiều kỹ thuật; chúng có thể trả lời trả lời các câu hỏi, đặt vé máy bay hoặc tìm nhà hàng, các kỹ thuật chúng sử dụng dựa nhiều vào việc hiểu sâu sắc ý định của người dùng, chúng ta sẽ cùng tìm hiểu trong chương 25. Tuy nhiên, những phương pháp dựa vào luật như ở ELIZA hay các chabot khác đóng vai trò quan trọng trong việc xử lý ngôn ngữ tự nhiên.
+
+Chúng ta sẽ bắt đầu với công cụ quan trọng nhất trong việc biểu diễn các luật văn bản: \textbf{biểu thức chính quy}. Các biểu thức chính quy có thể chỉ định một chuỗi chúng ta muốn tách ra từ một văn bản, từ các cụm từ "Bạn là X" như ở ELIZA, cho đến các chuỗi như $199 hay $24.99 để trích xuất giá từ một bảng trong một văn bản.
 
 \section{Biểu thức chính quy}
 
@@ -14,16 +31,16 @@ Một trong những thành công lớn trong khoa học máy tính là biểu th
 
 Dạng đơn giản nhất của biểu thức chính quy là một dãy các kí tự. Để tìm kiếm từ \textit{woodchuck}, ta gõ \verb|/woodchuck|. Biểu thức \verb|/Buttercup/| khớp với tất cả các chuỗi có chứa cụm từ \textit{Buttercup}; \verb|grep|
 
-\\
-
-\begin{tabular}{ l l }
- \hline
- RE & Example Patterns Matched \\
- \hline
- /woodchucks & interesting links to \underline{woodchucks} and lemurs \\
- /a/ & M\underline{a}ry Ann stopped by Mona's  \\
- /!/ & "You've left the burglar behind again\underline{!}" said Nori \\
- \hline
+\begin{figure}[h]
+	\begin{tabular}{ l l }
+	 \hline
+	 RE & Example Patterns Matched \\
+	 \hline
+	 /woodchucks & interesting links to \underline{woodchucks} and lemurs \\
+	 /a/ & M\underline{a}ry Ann stopped by Mona's  \\
+	 /!/ & "You've left the burglar behind again\underline{!}" said Nori \\
+	 \hline
+	\end{tabular}
  \caption{Ví dụ các biểu thức chính quy đơn giản}
  \label{table:1}
-\end{tabular}
+\end{figure}
