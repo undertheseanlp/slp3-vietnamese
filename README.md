@@ -40,4 +40,6 @@ Sách Xử lý ngôn ngữ và tiếng nói phiên bản tiếng Việt. Phiên 
 
 ## Đóng góp
 
-Đơn đăng ký tham gia [https://goo.gl/forms/MpJTjblliFKi4vLO2](https://goo.gl/forms/MpJTjblliFKi4vLO2)
+Mọi đóng góp được khuyến khích trao đổi trong mục [Issues](https://github.com/undertheseanlp/slp3-vietnamese/issues) của dự án 
+
+Nếu bạn muốn tham gia vào nhóm dịch hay hiệu chỉnh, xin điền vào [Đơn đăng ký tham gia](https://goo.gl/forms/MpJTjblliFKi4vLO2)
