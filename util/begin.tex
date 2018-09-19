@@ -23,20 +23,20 @@
 
 \titleformat{\chapter}[block]
 	{\Huge\bfseries}
-	{\color{gray75}\thechapter}{20pt}
+	{\hspace*{-30pt}\color{gray75}\raisebox{-1.2ex}{\fontsize{50pt}{0pt}\selectfont \thechapter}}{20pt}
 	{\begin{tabular}[t]{@{\color{gray75}\vrule width 2pt}>{\hsp}l}#1\end{tabular}}
 
 \titleformat{\section}[display]
   {\normalfont\scshape\huge}
   {\hspace*{-30pt}\thesection.~#1}
-  {-15pt}
-  {\hspace*{-110pt}\Huge}
+  {-30pt}
+  {\hspace*{-100pt}\Huge}
 
 \titleformat{\subsection}[display]
   {\normalfont\scshape\large}
-  {\hspace*{-30pt}\thesubsection.~#1}
-  {-15pt}
-  {\hspace*{-110pt}\Huge}
+  {\hspace*{-20pt}\thesubsection.~#1}
+  {-40pt}
+  {\hspace*{-80pt}\Huge}
 
 % for pycharm
 % \usepackage[T1]{fontenc}
@@ -61,6 +61,6 @@
 
 \title{Xử lý ngôn ngữ và tiếng nói}
 
-% \include{notation}
+\include{notation}
 
 \begin{document}
