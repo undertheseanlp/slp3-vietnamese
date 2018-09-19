@@ -1,0 +1,1 @@
+cp tmp/*.pdf pdf

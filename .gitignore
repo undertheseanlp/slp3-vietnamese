@@ -1,5 +1,4 @@
-*.pdf
-
+technique_report.pdf
 .idea
 tmp
 !tmp/.gitkeep
