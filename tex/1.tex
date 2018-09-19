@@ -5,7 +5,7 @@
 \setlength\epigraphwidth{0.65\textwidth}
 \epigraphfontsize{\small}
 \epigraph{
-\itshape Dave Bowman: Mở cửa khoang ngủ ra, HAL.\\
+\itshape Dave Bowman: Mở các cửa khoang ngủ ra, HAL.\\
 HAL: Xin lỗi Dave, tôi e rằng tôi không thể làm thế được.\\
 }{Stanley Kubrick và Arthur C. Clarke,\\
 cảnh trong phim 2001: A Space Odyssey}
@@ -16,7 +16,7 @@ Một ví dụ cho lĩnh vực này là các \textbf{máy giao tiếp}. Chiếc 
 
 Hãy chuyển qua một nhiệm vụ hữu ích khác, đã giúp cho rất nhiều người không nói tiếng anh có thể tiếp cận được với những thông tin khoa học khổng lồ trên các trang web tiếng Anh. Hay dịch cho những người nói tiếng Anh hàng trăm triệu trang wweb viết bằng cách ngôn ngữ khác như tiếng Trung Quốc. Mục tiêu của \textbf{dịch máy} là tự động dịch một văn bản từ ngôn ngữ này sang ngôn ngữ khác. Chúng tôi sẽ giới thiệu các thuật toán  và các công cụ toán học cần thiết để hiểu một chương trình dịch máy hiện đại hoạt động như thế nào. Dịch máy là một vấn đề còn gặp nhiều thách thức, chúng tôi sẽ giới thiệu các thuật toán được sử dụng trong lĩnh vực này, cũng như các thành phần chính.
 
-Rất nhiều nhiệm vụ xử lý ngôn ngữ liên quan đến Web. Một trong đó là \textbf{hệ thống hỏi đáp dựa trên nền Web}. Ví dụ như web tìm kiếm, khi người dùng có thể gõ một vài từ khóa để tìm kiếm thông tin, hay có thể hỏi một câu trọn vẹn, từ đon giản đến phức tạp:
+Rất nhiều nhiệm vụ xử lý ngôn ngữ liên quan đến Web. Một trong đó là \textbf{hệ thống hỏi đáp dựa trên nền Web}. Ví dụ như web tìm kiếm, khi người dùng có thể gõ một vài từ khóa để tìm kiếm thông tin, hay có thể hỏi một câu trọn vẹn, từ đơn giản đến phức tạp:
 
 \begin{itemize}
   \item "Bất đồng" có nghĩa là gì?
@@ -29,6 +29,32 @@ Rất nhiều nhiệm vụ xử lý ngôn ngữ liên quan đến Web. Một tro
 Một vài câu hỏi ở trên là câu hỏi \textbf{rõ ràng}, hoặc đơn giản là câu hỏi \textbf{dữ liệu thực tế} như ngày tháng hay địa điểm, có thể trả lời bằng cách sử dụng các máy tìm kiếm. Nhưng trả lời các câu hỏi phức tạp hơn có thể cần phải trích xuất thông tin trong các bản, hay phải thực hiện \textbf{suy diễn} (đưa ra kết luận từ các sự kiện), hoặc cần tóm tắt và tổng hợp thông tin từ nhiều người. Trong quyển sách này, chúng ta nghiên cứu nhiều thành phần tạo nên các hệ thống hiểu ngôn ngữ hiện đại, như \textbf{trích rút thông tin}, \textbf{phân giải nhập nhằng nghĩa từ}.
 
 Mặc dù các lĩnh vực con và các vấn đề chúng tôi vừa nêu còn rất xa mới giải quyết được triệt để, chúng là các lĩnh vực nghiên cứu sôi động và có nhiều kỹ thuật đã có các ứng dụng công nghiệp. Trong phần còn lại của chương này, chúng tôi trình bày tóm tắt những loại kiến thức cần cho các nhiệm vụ này (và những nhiệm vụ khác như \textbf{sửa lỗi chính tả}, \textbf{kiểm tra ngữ pháp}), cũng như các mô hình toán học sẽ được giới thiệu trong sách.
+
+\section{Tri thức trong xử lý tiếng nói và ngôn ngữ}
+
+Sự khác biệt giữa những ứng dụng xử lý ngôn ngữ và những ứng dụng xử lý dữ liệu thông thường là việc sử dụng \textit{tri thức về ngôn ngữ}. Như chương trình Unix \verb|wc|, được sử dụng để đếm số lượng ký tự, từ và dòng trong một file văn bản. Khi dùng để đếm ký từ và dòng, \verb|wc| là một chương trình xử lý dữ liệu bình thường. Tuy nhiên, khi nó được dùng để đếm số từ, nó cần biết được \textit{tri thức về thế nào là một từ}, từ đố trở thành một chương trình xử lý ngôn ngữ.
+
+Tất nhiên, \verb|wc| là một hệ thống rất đơn giản với sự hiểu biết rất hạn chế về tri trức của ngôn ngữ. Những hệ thống giao tiếp phức tạp như HAL, hay hệ thống thống dịch máy, hay các hệ thống hỏi đáp, yêu cầu tri thức về ngôn ngữ rộng và sâu hơn rất nhiều. Để mường tượng được phạm vi và loại tri thức cần thiết, hãy xem xét những gì mà HAL cần biết để tham gia vào cuộc hội thoại như ở ví dụ đầu trường, hoặc trong trường hợp hệ hỏi đáp, hệ thống có thể trả lời được một trong những câu hỏi kể trên.
+
+HAL cần phải nhận ra các từ từ tín hiệu âm thanh, sau đó sinh ra âm thanh từ một chuỗi từ. Các nhiệm vụ như nhận dạng tiếng nói và tổng hợp tiếng nói yêu cầu hiểu biết về ngữ âm và âm vị học; các từ được phát âm thế nào, và các âm được nhận ra như thế nào.
+
+Chú ý rằng không giống như Star Trek's Commander Data, HAL có khả năng nói các câu phủ định như "tôi không thể". Để có thể nói và tiếp nhận những điều này hay những đieuè khác (như nhận ra các cửa khoang ngủ là số nhiều) đòi hỏi hiểu biết về ngôn ngữ hình thái học, các một từ được tách thành các thành phần mang nghĩa như số ít với số nhiều.
+
+Chuyển đến các từ độc lập, HAL cần sử dụng một cấu trúc thích hợp để đưa ra câu trả lời. Ví dụ, HAL cần phải hiểu chuỗi từ này là vô nghĩa đối với Dave, mặc dù nó vẫn bao gồm chính xác số từ như trong câu gốc.
+
+(1.1) Dave Xin lỗi , tôi không thể rằng e tôi thế làm được
+
+Tri thức cần thiết để sắp xếp và tổ chức các từ để trở thành câu được gọi là cú pháp.
+
+Giờ hãy xem xét một câu hỏi trong hệ thống hỏi đáp:
+
+(1.2) Người Trung Quốc xuất khẩu bao nhiêu lụa sang Tây Âu cho đến hết thế kỷ 18?
+
+Để trả lời câu hỏi này chúng ta cần biết về nghĩa từ, nghĩa của tất cả các từ (như xuất khẩu hay lụa) cũng như tổng hợp nghĩa (cụm từ Tây Âu so với Đông hoặc Nam Âu), từ \textit{hết} có nghĩa là gì khi kết hợp với \textit{thế kỷ 18}. Chúng ta cũng cần biết về liên hệ giữa từ với cấu trúc ngữ pháp. Ví dụ chúng ta cần biết cụm từ \textit{cho đến hết thế kỷ 18} là một cụm từ chỉ thời gian, chứ không phải một đơn vị, như trong ví dụ dưới đây:
+
+(1.3) Người Trung Quốc xuất khẩu bao nhiêu lụa sang Tây Âu thông qua qua các thương nhân miền nam?
+
+
 
 
 
