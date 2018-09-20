@@ -18,10 +18,10 @@ Hãy chuyển qua một nhiệm vụ hữu ích khác, đã giúp cho rất nhi�
 
 Rất nhiều nhiệm vụ xử lý ngôn ngữ liên quan đến Web. Một trong đó là \textbf{hệ thống hỏi đáp dựa trên nền Web}. Ví dụ như web tìm kiếm, khi người dùng có thể gõ một vài từ khóa để tìm kiếm thông tin, hay có thể hỏi một câu trọn vẹn, từ đơn giản đến phức tạp:
 
-\begin{itemize}
+\begin{itemize}[noitemsep]
   \item "Bất đồng" có nghĩa là gì?
   \item Abraham Lincoln sinh năm nào?
-  \item Ở Mỹ có bao nhiêu bang?
+  \item Ở Mỹ có bao nhiêu bang trong năm đó?
   \item Người Trung Quốc xuất khẩu bao nhiêu lụa sang Anh cho đến hết thế kỷ 18?
   \item Các nhà khoa học nghĩ gì về vấn đề đạo đức trong nhân bản người?
 \end{itemize}
@@ -42,31 +42,50 @@ Chú ý rằng không giống như Star Trek's Commander Data, HAL có khả nă
 
 Chuyển đến các từ độc lập, HAL cần sử dụng một cấu trúc thích hợp để đưa ra câu trả lời. Ví dụ, HAL cần phải hiểu chuỗi từ này là vô nghĩa đối với Dave, mặc dù nó vẫn bao gồm chính xác số từ như trong câu gốc.
 
+\vspace{2mm}
+\noindent
 (1.1) Dave Xin lỗi , tôi không thể rằng e tôi thế làm được
+\vspace{2mm}
 
-Tri thức cần thiết để sắp xếp và tổ chức các từ để trở thành câu được gọi là cú pháp.
+Tri thức cần thiết để sắp xếp và tổ chức các từ để trở thành câu được gọi là \textbf{cú pháp}. Giờ hãy xem xét một câu hỏi trong hệ thống hỏi đáp:
 
-Giờ hãy xem xét một câu hỏi trong hệ thống hỏi đáp:
-
+\vspace{2mm}
+\noindent
 (1.2) Người Trung Quốc xuất khẩu bao nhiêu lụa sang Tây Âu cho đến hết thế kỷ 18?
+\vspace{2mm}
 
 Để trả lời câu hỏi này chúng ta cần biết về nghĩa từ, nghĩa của tất cả các từ (như xuất khẩu hay lụa) cũng như tổng hợp nghĩa (cụm từ Tây Âu so với Đông hoặc Nam Âu), từ \textit{hết} có nghĩa là gì khi kết hợp với \textit{thế kỷ 18}. Chúng ta cũng cần biết về liên hệ giữa từ với cấu trúc ngữ pháp. Ví dụ chúng ta cần biết cụm từ \textit{cho đến hết thế kỷ 18} là một cụm từ chỉ thời gian, chứ không phải một đơn vị, như trong ví dụ dưới đây:
 
+\vspace{2mm}
+\noindent
 (1.3) Người Trung Quốc xuất khẩu bao nhiêu lụa sang Tây Âu thông qua qua các thương nhân miền nam?
+\vspace{2mm}
 
 HAL cũng cần phân biệt câu nói của Dave là một yêu cầu, thay vì là một câu mô tả hay câu hỏi về cái kiểu, như các cách nói khác nhau dưới đây
 
 \begin{tabular}{ l l }
-	 YÊU CẦU: & HAL, Mở các cửa khoang ngủ ra. \\
-	 MÔ TẢ: & HAL, các cửa khoang ngủ đang mở. \\
-	 CÂU HỎI: & HAL, các cửa khoang ngủ có mở không
+	 YÊU CẦU: & \textit{HAL, Mở các cửa khoang ngủ ra.} \\
+	 MÔ TẢ: & \textit{HAL, các cửa khoang ngủ đang mở.} \\
+	 CÂU HỎI: & \textit{HAL, các cửa khoang ngủ có mở không}
 	\end{tabular}
  \label{table:1}
 
+Mặc dù HAL không nghe lời. Nhưng HAL hiểu đủ để trả lời một cách lịch sự với Dave. Nó có thể trả lời trống không, như \textit{Không} hay \textit{Không, tôi sẽ không mở cửa}. Thay vào đó, đầu tiên nó nói xin lỗi \textit{Xin lỗi Dave}, sau đó nó thêm vào cụm từ \textit{tôi e rằng} thay vì từ chối một cách trực tiếp. Tri thức cần có cho loại câu này là tri thức về \textbf{ngữ dụng} hay \textbf{hội thoại}.
 
+\vspace{2mm}
+\noindent
+(1.4) Nước Mỹ có bao nhiêu bang trong \textit{năm đó}?
+\vspace{2mm}
 
+\textit{Năm đó} là năm nào? Để có thể hiểu được những từ như \textit{năm đó}, hệ thống hỏi đáp cần xem xét các câu hỏi trước đó; trong trường hợp này, câu trước đó hỏi về năm Lincoln ra đời. Nhiệm vụ này gọi là \textbf{phân giải đồng tham chiếu}, sử dụng các từ như \textit{đó} hay các đại từ như nó hoặc cô ấy được đề cập trong những câu trước đó.
 
+Tổng kết lại, để có sử dụng thành thạo ngôn ngữ cần có các hiểu biết về các loại tri thức:
 
-
-
-
+\begin{itemize}[noitemsep]
+  \item Ngữ âm và âm vị học - tri thức về âm thanh trong tiếng nói
+  \item Ngôn ngữ hình thái học - tri thức về ý nghĩa của các thành phần trong từ
+  \item Ngữ pháp - tri thức về cấu trúc của các từ
+  \item Ngữ nghĩa - tri thức về nghĩa
+  \item Ngữ dụng - tri thức về sự liên hệ giữa mục tiếu và ý định của người nói
+  \item Diễn ngôn - tri thức về các đơn vị ngôn ngữ nhiều hơn một câu
+\end{itemize}
