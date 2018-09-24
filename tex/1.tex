@@ -89,3 +89,36 @@ Tổng kết lại, để có sử dụng thành thạo ngôn ngữ cần có c�
   \item Ngữ dụng - tri thức về sự liên hệ giữa mục tiếu và ý định của người nói
   \item Diễn ngôn - tri thức về các đơn vị ngôn ngữ nhiều hơn một câu
 \end{itemize}
+
+\section{Nhập nhằng}
+
+Một điều đáng chú ý về việc phân chia các tri thức về ngôn ngữ là phần lớn các nhiệm vụ trong xử lý ngôn ngữ và tiếng nói có thể xem như việc giải quyết \textbf{nhập nhằng} ở một cấp độ nhất định. Môt đầu vào được gọi là \textbf{nhập nhằng} nếu có nhiều cấu trúc ngôn ngữ có thể chỉ đến nó. Xem xét câu nói \textit{I made her duck}. Có năm cách hiểu câu trên (bạn có thể nghĩ thêm), mỗi một cách hiểu ví dụ cho sự nhâp nhằng ở từng cấp độ:
+
+\noindent
+(1.5) Tôi nấu món vịt cho cô ấy ăn.
+
+\noindent
+(1.6) Tôi nấu con vịt của cô ấy
+
+\noindent
+(1.7) Tôi tạo ra con vịt đồ chơi cho cô ấy.
+
+\noindent
+(1.8) Tôi khiến cô ấy trở nên ngốc nghếch (như con vịt).
+
+\noindent
+(1.9) Tôi biến cô ấy thành con vịt.
+
+Các nghĩa khác nhau xảy ra bởi những sự nhập nhằng. Đầu tiên, từ \textit{duck} và \textit{her} là nhập nhằng về hình thái từ và cú pháp. Từ \textit{duck} có thể là động từ hoặc một danh từ, trong khi \textit{her} có thể là đại từ tân ngữ hoặc đại từ sở hữu. Thứ hai, từ \textit{make} cũng có sự nhập nhằng ngữ nghĩa, có thể có nghĩa là \textit{make} (tạo) hoặc \textit{cook} (nấu ăn). Cuối cùng, động từ \textit{make} cũng dẫn đến sự nhập nhằng về cú pháp. \textit{Make} có thể là ngoại động từ một tân ngữ (1.6), hoặc có thể là ngoại đông từ hai tân ngữ (1.9), trong đó tân ngữ thứ nhất (\textit{her}) bị biến thành tân ngữ thứ hai (\textit{duck}). Cuối cùng, \textit{make} có thể nhận một tân ngữ trực tiếp và một động từ (1.8), tân ngữ thứ nhất (\textit{her}) bị biến thành tân ngữ thứ hai (\textit{duck}). Hơn nữa, trong một câu nói, thậm chí còn có một mức độ nhập nhằng sâu hơn; từ thứ nhất có thể là từ \textit{eye} và từ thứ hai có thể là từ \textit{maid}.
+
+Chúng tôi thường xuyên giới thiệu các mô hình và giải thuật trong quyển sách này là cách để \textbf{khử} hay \textbf{phân giải} nhập nhằng. Ví dụ để quyết định \textit{duck} là động từ hoặc danh từ có thể được giải quyết qua bài toán \textbf{gán nhãn từ loại}. Quyết định từ \textit{make} có nghĩa là "create" (tạo) hay "cook" (nấu ăn) có thể giải quyết qua bài toán \textbf{khử nhập nhằng nghĩa từ}. Phân giải nhập nhằng từ loại và nghĩa từ là hai bài toán quan trọng trong \textbf{khử nhập nhằng từ vựng}. Rất nhiều các bài toán khác có thể cũng được coi là bài toán khử nhập nhằng từ vựng. Như một hệ thống tổng hợp tiếng nói đọc từ \textit{lead} cần quyết định nó phát âm như trong \textit{lead pipe} hay \textit{lead me on}. Mặt khác, quyết định \textit{her} và \textit{duck} là một thành phần của một thực thể (như 1.5 hay 1.8) hay ở các thực thể riêng biệt (như 1.6) là một ví dụ của nhiệm vụ \textbf{khử nhập nhằng cú pháp} và có thể được giải quyết bằng phương pháp \textbf{probabilistic parsing} (phân tích câu dựa xác suất). Chúng ta cũng sẽ xem xét các sự nhập nhằng không xuất hiện trong ví dụ cụ thể này, như xác định một câu là câu trần thuật hay câu hỏi (có thể được giải quyết bằng việc \textbf{diễn giải hành động lời nói}).
+
+\section{Các mô hình và giải thuật}
+
+
+
+
+
+
+
+
