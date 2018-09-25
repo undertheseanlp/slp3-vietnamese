@@ -5,16 +5,16 @@
 \setlength\epigraphwidth{0.65\textwidth}
 \epigraphfontsize{\small}
 \epigraph{
-\itshape Dave Bowman: Mở các cửa khoang ngủ ra, HAL.\\
-HAL: Xin lỗi Dave, tôi e rằng tôi không thể làm thế được.\\
+\itshape Dave Bowman: Open the pod bay doors, HAL.\\
+HAL: I'm sorry Dave, I'm afraid I can't do that.\\
 }{Stanley Kubrick và Arthur C. Clarke,\\
-cảnh trong phim 2001: A Space Odyssey}
+cảnh trong phim \textit{2001: A Space Odyssey}}
 
 Ý tưởng về việc máy tính có khả năng xử lý ngôn ngữ tự nhiên đã đến từ rất lâu ngay từ khi máy tính mới xuất hiện. Quyển sách này nói về các phương pháp và sự thực hiện ý tưởng thú vị đó. Chúng tôi giới thiệu về một lĩnh vực nghiên cứu sôi động, liên ngành với rất nhiều tên gọi khác nhau, như \textbf{xử lý ngôn ngữ và tiếng nói}, \textbf{công nghệ ngôn ngữ con người}, \textbf{xử lý ngôn ngữ tự nhiên}, \textbf{ngôn ngữ học tính toán}, và \textbf{tổng hợp và nhận dạng tiếng nói}. Mục tiêu của lĩnh vực này là giúp máy tính có thể thực hiện các nhiệm vụ liên quan đến ngôn ngữ của con người, những nhiệm vụ có sự tương tác giữa máy tính-con người, cải thiện giao tiếp con người-con người, hoặc đơn giản xử lý văn bản và tiếng nói.
 
-Một ví dụ cho lĩnh vực này là các \textbf{máy giao tiếp}. Chiếc máy tính HAL 9000 trong phim 2001: A space Odsyssey của Stanley Kubrick là một trong những nhân vật đáng chú ý trong điện ảnh thế kỷ hai mươi. HAL là một chiếc máy thông minh có khả năng xử lý ngôn ngữ tiên tiến như hiểu và nói được tiếng Anh, và thậm chí còn đọc môi. Đến bây giờ, có thể thấy tác giả Clarke đã hơi lạc quan khi dự đoán rằng một chương trình thông minh như HAL có thể thành hiện thực. Nhưng trí tưởng tượng của ông đấy đã đi xa như thế nào? Chúng ta gọi những chương trình như HAL là các \textbf{máy giao tiếp} hay các \textbf{hệ thống hội thoại}. Trong quyển sách này, chúng ta cùng tìm hiểu về các thành phần để làm nên một chương trình hội thoại hiện đại, gồm có xử lý ngôn ngữ đầu vào (\textbf{nhận dạng tiếng nói} hay \textbf{lĩnh vực hiểu ngôn ngữ}) và xử lý ngôn ngữ đầu ra (\textbf{sinh ngôn ngữ tự nhiên} hay \textbf{tổng hợp tiếng nói})
+Một ví dụ cho lĩnh vực này là các \textbf{máy giao tiếp}. Chiếc máy tính HAL 9000 trong phim \textit{2001: A space Odsyssey} của Stanley Kubrick là một trong những nhân vật đáng chú ý trong điện ảnh thế kỷ hai mươi. HAL là một chiếc máy thông minh có khả năng xử lý ngôn ngữ tiên tiến như hiểu và nói được tiếng Anh, và thậm chí còn đọc môi. Đến bây giờ, có thể thấy tác giả Clarke đã hơi lạc quan khi dự đoán rằng một chương trình thông minh như HAL có thể thành hiện thực. Nhưng trí tưởng tượng của ông đấy đã đi xa như thế nào? Chúng ta gọi những chương trình như HAL là các \textbf{máy giao tiếp} hay các \textbf{hệ thống hội thoại}. Trong quyển sách này, chúng ta cùng tìm hiểu về các thành phần để làm nên một chương trình hội thoại hiện đại, gồm có xử lý ngôn ngữ đầu vào (\textbf{nhận dạng tiếng nói} hay \textbf{lĩnh vực hiểu ngôn ngữ}) và xử lý ngôn ngữ đầu ra (\textbf{sinh ngôn ngữ tự nhiên} hay \textbf{tổng hợp tiếng nói})
 
-Hãy chuyển qua một nhiệm vụ hữu ích khác, đã giúp cho rất nhiều người không nói tiếng anh có thể tiếp cận được với những thông tin khoa học khổng lồ trên các trang web tiếng Anh. Hay dịch cho những người nói tiếng Anh hàng trăm triệu trang wweb viết bằng cách ngôn ngữ khác như tiếng Trung Quốc. Mục tiêu của \textbf{dịch máy} là tự động dịch một văn bản từ ngôn ngữ này sang ngôn ngữ khác. Chúng tôi sẽ giới thiệu các thuật toán  và các công cụ toán học cần thiết để hiểu một chương trình dịch máy hiện đại hoạt động như thế nào. Dịch máy là một vấn đề còn gặp nhiều thách thức, chúng tôi sẽ giới thiệu các thuật toán được sử dụng trong lĩnh vực này, cũng như các thành phần chính.
+Hãy chuyển qua một nhiệm vụ hữu ích khác, đã giúp cho rất nhiều người không nói tiếng anh có thể tiếp cận được với những thông tin khoa học khổng lồ trên các trang web tiếng Anh. Hay dịch cho những người nói tiếng Anh hàng trăm triệu trang web viết bằng các ngôn ngữ khác như tiếng Trung Quốc. Mục tiêu của \textbf{dịch máy} là tự động dịch một văn bản từ ngôn ngữ này sang ngôn ngữ khác. Chúng tôi sẽ giới thiệu các thuật toán và các công cụ toán học cần thiết để hiểu một chương trình dịch máy hiện đại hoạt động như thế nào. Dịch máy là một vấn đề còn gặp nhiều thách thức, chúng tôi sẽ giới thiệu các thuật toán được sử dụng trong lĩnh vực này, cũng như các thành phần chính.
 
 Rất nhiều nhiệm vụ xử lý ngôn ngữ liên quan đến Web. Một trong đó là \textbf{hệ thống hỏi đáp dựa trên nền Web}. Ví dụ như web tìm kiếm, khi người dùng có thể gõ một vài từ khóa để tìm kiếm thông tin, hay có thể hỏi một câu trọn vẹn, từ đơn giản đến phức tạp:
 
@@ -38,7 +38,7 @@ Tất nhiên, \verb|wc| là một hệ thống rất đơn giản với sự hi�
 
 HAL cần phải nhận ra các từ từ tín hiệu âm thanh, sau đó sinh ra âm thanh từ một chuỗi từ. Các nhiệm vụ như nhận dạng tiếng nói và tổng hợp tiếng nói yêu cầu hiểu biết về ngữ âm và âm vị học; các từ được phát âm thế nào, và các âm được nhận ra như thế nào.
 
-Chú ý rằng không giống như Star Trek's Commander Data, HAL có khả năng nói các câu phủ định như "tôi không thể". Để có thể nói và tiếp nhận những điều này hay những đieuè khác (như nhận ra các cửa khoang ngủ là số nhiều) đòi hỏi hiểu biết về ngôn ngữ hình thái học, các một từ được tách thành các thành phần mang nghĩa như số ít với số nhiều.
+Chú ý rằng không giống như Star Trek's Commander Data, HAL có khả năng nói các câu phủ định như \textit{can't}. Để có thể nói và tiếp nhận những điều này hay những đieuè khác (như nhận ra \textit{doors} là số nhiều) đòi hỏi hiểu biết về \textbf{ngôn ngữ hình thái học}, các từ được tách thành các thành phần mang nghĩa như \textit{số ít} hay \textit{số nhiều}.
 
 Chuyển đến các từ độc lập, HAL cần sử dụng một cấu trúc thích hợp để đưa ra câu trả lời. Ví dụ, HAL cần phải hiểu chuỗi từ này là vô nghĩa đối với Dave, mặc dù nó vẫn bao gồm chính xác số từ như trong câu gốc.
 
@@ -64,13 +64,13 @@ Tri thức cần thiết để sắp xếp và tổ chức các từ để trở
 HAL cũng cần phân biệt câu nói của Dave là một yêu cầu, thay vì là một câu mô tả hay câu hỏi về cái kiểu, như các cách nói khác nhau dưới đây
 
 \begin{tabular}{ l l }
-	 YÊU CẦU: & \textit{HAL, Mở các cửa khoang ngủ ra.} \\
-	 MÔ TẢ: & \textit{HAL, các cửa khoang ngủ đang mở.} \\
-	 CÂU HỎI: & \textit{HAL, các cửa khoang ngủ có mở không}
+	 YÊU CẦU: & \textit{HAL, open the pod bay door.} \\
+	 MÔ TẢ: & \textit{HAL, the pood bay door is open.} \\
+	 CÂU HỎI: & \textit{HAL, is the pod bay door open?}
 	\end{tabular}
  \label{table:1}
 
-Mặc dù HAL không nghe lời. Nhưng HAL hiểu đủ để trả lời một cách lịch sự với Dave. Nó có thể trả lời trống không, như \textit{Không} hay \textit{Không, tôi sẽ không mở cửa}. Thay vào đó, đầu tiên nó nói xin lỗi \textit{Xin lỗi Dave}, sau đó nó thêm vào cụm từ \textit{tôi e rằng} thay vì từ chối một cách trực tiếp. Tri thức cần có cho loại câu này là tri thức về \textbf{ngữ dụng} hay \textbf{hội thoại}.
+Mặc dù HAL không nghe lời. Nhưng HAL hiểu đủ để trả lời một cách lịch sự với Dave. Nó có thể trả lời trống không, như \textit{No} hay \textit{No, I won't open the door}. Thay vào đó, đầu tiên nó nói xin lỗi \textit{I'm sorry}, sau đó nó thêm vào cụm từ \textit{I'm afraid} thay vì từ chối một cách trực tiếp \textit{I can't}. Tri thức cần có cho loại câu này là tri thức về \textbf{ngữ dụng} hay \textbf{hội thoại}.
 
 \vspace{2mm}
 \noindent
