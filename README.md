@@ -8,7 +8,7 @@ Sách Xử lý ngôn ngữ và tiếng nói phiên bản tiếng Việt. Phiên 
 
 |    | Danh sách chương                                        | Thành viên |                    |
 |----|---------------------------------------------------------|------------|--------------------|
-| 1  | Giới thiệu                                              | Vũ Anh     | [Đang tiến hành](pdf/1.pdf)<br/>30/09/2018 |
+| 1  | Giới thiệu                                              | Dịch: *Vũ Anh*     | [Đang tiến hành](pdf/1.pdf)<br/>30/09/2018 |
 | 2  | Biểu thức chính quy, chuẩn hóa văn bản và Edit Distance | Vũ Anh     | 14/10/2018         |
 | 3  | Mô hình ngôn ngữ với N-Grams                            |            |                    |
 | 4  | Phân loại Bayes và nhận diện cảm xúc                    |            |                    |
