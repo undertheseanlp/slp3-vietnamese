@@ -11,13 +11,21 @@
 \usepackage{xcolor}
 \usepackage{enumitem}
 
-% quote
+% ######################################
+%                  TABLE
+% ######################################
+% new line in cell
+\usepackage{makecell}
+
+% # QUOTE
 \usepackage{epigraph}
 \setlength\epigraphwidth{8cm}
 \setlength\epigraphrule{0pt}
 
 
-% chapter format
+% ######################################
+%            CHAPTER FORMAT
+% ######################################
 \usepackage[explicit]{titlesec}
 \usepackage{blindtext, array, color}
 \definecolor{gray75}{gray}{0.75}
@@ -39,6 +47,12 @@
   {\hspace*{-20pt}\thesubsection.~#1}
   {-40pt}
   {\hspace*{-80pt}\Huge}
+
+% ######################################
+%              PARAGRAPH
+% ######################################
+% tab whole paragraph
+\usepackage{changepage}
 
 % for pycharm
 % \usepackage[T1]{fontenc}

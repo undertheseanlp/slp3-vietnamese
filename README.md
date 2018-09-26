@@ -38,8 +38,8 @@ Sách Xử lý ngôn ngữ và tiếng nói phiên bản tiếng Việt. Phiên 
 | 27 | Tổng hợp tiếng nói                                      |            |                    |
 
 
-## Đóng góp
+## Tham gia đóng góp
 
-Mọi đóng góp được khuyến khích trao đổi trong mục [Issues](https://github.com/undertheseanlp/slp3-vietnamese/issues) của dự án 
+Mọi ý kiến đóng góp được khuyến khích trao đổi trong mục [Issues](https://github.com/undertheseanlp/slp3-vietnamese/issues) của dự án 
 
 Nếu bạn muốn tham gia vào nhóm dịch hay hiệu chỉnh, xin điền vào [Đơn đăng ký tham gia](https://goo.gl/forms/MpJTjblliFKi4vLO2)
