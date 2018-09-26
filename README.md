@@ -19,7 +19,7 @@ Sách Xử lý ngôn ngữ và tiếng nói phiên bản tiếng Việt. Phiên 
 | 9  | Gán nhãn từ loại                                        |            |                    |
 | 10 | Formal Grammars trong tiếng Anh                         |            |                    |
 | 11 | Syntactic Parsing                                       |            |                    |
-| 12 | Statistical Parsing                                     |            |                    |
+| 12 | Xử lý chuỗi với mô hình mạng truy hồi                   |            |                    |
 | 13 | Dependency Parsing                                      |            |                    |
 | 14 | Biểu diễn ngữ nghĩa                                     |            |                    |
 | 15 | Tính toán ngữ nghĩa                                     |            |                    |
