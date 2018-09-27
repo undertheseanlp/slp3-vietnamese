@@ -5,19 +5,16 @@
 \usepackage{latexsym}
 \usepackage{graphicx}
 \usepackage{color}
-\usepackage{booktabs}
 \usepackage{amsmath}
 \usepackage[title]{appendix}
-\usepackage{xcolor}
 \usepackage{enumitem}
 
-% ######################################
-%                  TABLE
-% ######################################
-% new line in cell
-\usepackage{makecell}
 
-% # QUOTE
+
+
+% ######################################
+%                 QUOTE
+% ######################################
 \usepackage{epigraph}
 \setlength\epigraphwidth{8cm}
 \setlength\epigraphrule{0pt}
@@ -58,6 +55,19 @@
 % \usepackage[T1]{fontenc}
 % \usepackage[utf8]{inputenc}
 % end for pycharm
+
+% ######################################
+%                 TABLE
+% ######################################
+% whole table
+% https://tex.stackexchange.com/questions/63883/color-entire-table
+\usepackage{booktabs,xcolor,siunitx}
+\setlength\fboxsep{0pt}
+\setlength\fboxrule{0pt}
+\definecolor{background}{HTML}{E6E6E6}
+
+% new line in cell
+\usepackage{makecell}
 
 \usepackage[utf8]{vietnam}
 
