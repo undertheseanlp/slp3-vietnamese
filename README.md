@@ -53,6 +53,7 @@ Các tài liệu liên quan:
 * Hoai-Thu Vuong &lt;thuvh87 at gmail dot com&gt;
 * Mai Duy Khánh &lt;khanh.md01 at gmail dot com&gt;
 * Bùi Nhật Anh &lt;buinhatanh1208 at gmail dot com&gt;
+* Nhữ Bảo Vũ &lt; nhubaovu at gmail dot com&gt;
 
 ## Tham gia đóng góp
 
