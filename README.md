@@ -18,7 +18,8 @@ Bảng thuật ngữ và kế hoạch chi tiết ([link](https://docs.google.com
 |----|---------------------------------------------------------|------------|---------------------|--------------------|
 | 1  | Giới thiệu                                              | *Vũ Anh*   | *Hoai-Thu Vuong*     | [Đang review](pdf/1.pdf)<br/>30/09/2018 |
 | 2  | Biểu thức chính quy, chuẩn hóa văn bản và Edit Distance | *Vũ Anh*   |                      | [Đang dịch](pdf/2.pdf)<br>14/10/2018|
-| 3  | Mô hình ngôn ngữ với N-Grams                            |            |         |                |
+| 3  | Mô hình ngôn ngữ với N-Grams                            |            |                      |                                     |
+
 | 4  | Phân loại Bayes và nhận diện cảm xúc                    |            |         |               |
 | 5  | Hồi quy Logistic                                        |            |         |              |
 | 6  | Vector ngữ nghĩa                                        |            |         |             |
