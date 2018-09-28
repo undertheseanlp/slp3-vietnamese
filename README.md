@@ -1,9 +1,7 @@
 # Sách "Xử lý ngôn ngữ và tiếng nói" phiên bản tiếng Việt 
 
 > Một dự án vu vơ, chắc chắn không kết thúc vào năm 2018!
-
 > Được thực hiện với tình yêu dành cho công nghệ xử lý ngôn ngữ và tiếng nói
-
 > Cùng sự ngưỡng mộ thực sự đối với hai tác giả Dan Jurafsky và James H. Martin
 
 Bản dịch tiếng việt của quyển sách **Xử lý ngôn ngữ và tiếng nói (phiên bản 3)**.
