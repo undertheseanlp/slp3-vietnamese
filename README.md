@@ -47,10 +47,10 @@ Bảng thuật ngữ và kế hoạch chi tiết ([link](https://docs.google.com
 
 ## Nhóm tác giả 
 
-* Vũ Anh <<anhv.ict91@gmail.com>>
+* Vũ Anh &lt;anhv.ict91 at gmail dot com&gt;
 * Hoai-Thu Vuong &lt;thuvh87 at gmail dot com&gt;
-* Mai Duy Khánh <<khanh.md01@gmail.com>>
-* Bùi Nhật Anh <<buinhatanh1208@gmail.com>>
+* Mai Duy Khánh &lt;khanh.md01 at gmail dot com&gt;
+* Bùi Nhật Anh &lt;buinhatanh1208 at gmail dot com&gt;
 
 ## Tham gia đóng góp
 
