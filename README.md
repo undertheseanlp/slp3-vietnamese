@@ -1,4 +1,4 @@
-# Speech and Language Processing - Xử lý ngôn ngữ và tiếng nói 
+# Sách Xử lý ngôn ngữ và tiếng nói phiên bản tiếng Việt 
 
 > Một dự án vu vơ
 
