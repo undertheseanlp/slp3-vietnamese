@@ -14,7 +14,7 @@ Bản dịch tiếng việt của quyển sách **Xử lý ngôn ngữ và tiế
 
 |    | Danh sách chương                                        | Thành viên |                    |
 |----|---------------------------------------------------------|------------|--------------------|
-| 1  | Giới thiệu                                              | Dịch: *Vũ Anh*     | [Đang review](pdf/1.pdf)<br/>30/09/2018 |
+| 1  | Giới thiệu                                              | Dịch: *Vũ Anh*<br>Hiệu chỉnh: *Hoai-Thu Vuong*     | [Đang review](pdf/1.pdf)<br/>30/09/2018 |
 | 2  | Biểu thức chính quy, chuẩn hóa văn bản và Edit Distance | Dịch: *Vũ Anh*     | [Đang dịch](pdf/2.pdf)<br>14/10/2018|
 | 3  | Mô hình ngôn ngữ với N-Grams                            |            |                    |
 | 4  | Phân loại Bayes và nhận diện cảm xúc                    |            |                    |
