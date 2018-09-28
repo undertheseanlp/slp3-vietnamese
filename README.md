@@ -1,8 +1,8 @@
 # Sách "Xử lý ngôn ngữ và tiếng nói" phiên bản tiếng Việt 
 
-> Một dự án vu vơ
+> Một dự án vu vơ, chắc chắn không kết thúc vào năm 2018
 
-> Với tình yêu dành cho công nghệ xử lý ngôn ngữ và tiếng nói
+> Được thục hiện với tình yêu dành cho công nghệ xử lý ngôn ngữ và tiếng nói
 
 > Cùng sự ngưỡng mộ đối với hai tác giả Dan Jurafsky và James H. Martin
 
@@ -54,7 +54,7 @@ Bảng thuật ngữ và kế hoạch chi tiết ([link](https://docs.google.com
 
 ## Tham gia đóng góp
 
-Mọi ý kiến đóng góp đều được chào đón. Thậm chí những đóng góp nhỏ nhất cũng giúp dự án phát triển.   
+Mọi ý kiến đóng góp đều được chào đón. Thậm chí những đóng góp nhỏ nhất cũng giúp dự án hoàn thiện hơn.   
 
 Bạn có thể tham gia đóng góp bằng rất nhiều cách:
 
@@ -76,9 +76,9 @@ Cách tốt nhất để đóng góp ý kiến là mở một issue trong mục 
 
 ### Ủng hộ
 
-* Ấn vào nút star để ủng hộ dự án
+* Ấn vào nút star để ủng hộ dự án.
 * Giới thiệu, chia sẻ với mọi người để dự án có sức lan tỏa hơn. 
 
 ### Đăng ký tham gia 
 
-Nếu bạn muốn tham gia làm thành viên chính thức, tham gia vào nhóm dịch hay hiệu chỉnh, xin điền vào [Đơn đăng ký tham gia](https://goo.gl/forms/MpJTjblliFKi4vLO2)
+Nếu bạn muốn làm thành viên chính thức của dự án, tham gia vào nhóm dịch hay hiệu chỉnh, xin vui lòng điền vào [Đơn đăng ký tham gia](https://goo.gl/forms/MpJTjblliFKi4vLO2)
