@@ -8,8 +8,14 @@ Việc dịch thường xảy ra xung đột! Mọi người nên tôn trọng c
 
 ### Kế hoạch phát triển 
 
-Mỗi một chương nên được hoàn thiện trong 2 tuần, phần dịch sẽ có từ 8-10 ngày để hoàn thiện, sau đó sẽ có 3-4 ngày để nhóm hiệu chỉnh vào review và hoàn thiện.  
+Mỗi một chương nên được hoàn thiện trong 2 tuần. Với các công việc chi tiết sau:
 
+* Bản draft (8-10 ngày): Nhóm dịch dịch từ file pdf của sách gốc, sử dụng Latex, sau đó build lại thành file pdf, tải lên google drive với định dạng `chapter_[X]_draft_[DATE]`
+* Review (1-2 ngày): Nhóm hiệu chỉnh review lần 1 qua chức năng comment của google drive.
+* Bản alpha (1-2 ngày): Sau khi nhóm hiệu chỉnh review xong, nhóm dịch tiếp nhận review và sửa lại các nội dung
+  
+Chú ý: Nên sử dụng 
+ 
 ### Định dạng của sách 
 
 Tất cả các định dạng trong sách (in đậm, in nghiêng, thuật đầu dòng, trích dẫn) đều nên giữ nguyên theo sách gốc để đảm bảo tính thống nhất. 
