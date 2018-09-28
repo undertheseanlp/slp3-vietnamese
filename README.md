@@ -16,7 +16,7 @@ Sách Xử lý ngôn ngữ và tiếng nói phiên bản tiếng Việt. Phiên 
 | 6  | Vector ngữ nghĩa                                        |            |                    |
 | 7  | Mạng neural và mô hình ngôn ngữ neural                  |            |                    |
 | 8  | Gán nhãn từ loại                                        |            |                    |
-| 9  | Gán nhãn từ loại                                        |            |                    |
+| 9  | Xử lý chuỗi với mạng hồi quy                            |            |                    |
 | 10 | Formal Grammars trong tiếng Anh                         |            |                    |
 | 11 | Syntactic Parsing                                       |            |                    |
 | 12 | Xử lý chuỗi với mô hình mạng truy hồi                   |            |                    |
