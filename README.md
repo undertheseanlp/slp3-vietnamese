@@ -58,7 +58,7 @@ Bạn có thể tham gia đóng góp bằng rất nhiều cách:
 
 ### Tham gia nhóm dịch 
 
-Công việc của nhóm dich: 
+Công việc của nhóm dịch: 
 
 * Dịch các chương sách với thời lượng 2 tuần/chương
 
