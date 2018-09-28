@@ -8,7 +8,7 @@
 
 Bản dịch tiếng việt của quyển sách **Xử lý ngôn ngữ và tiếng nói (phiên bản 3)**.
 
-Đường dẫn đến sách gốc [Speech and Language Processing (3rd edition) - Dan Jurafsky và James H. Martin](https://web.stanford.edu/~jurafsky/slp3/)
+Sách gốc *Speech and Language Processing (3rd edition) - Dan Jurafsky và James H. Martin* ([link](https://web.stanford.edu/~jurafsky/slp3/))
 
 Bảng thuật ngữ và kế hoạch chi tiết ([link](https://docs.google.com/spreadsheets/d/1iHO-ktjAj4qS9--lijADSiGdsxRmnMuEmrOJoiyLUU8/edit?usp=sharing)) 
 
