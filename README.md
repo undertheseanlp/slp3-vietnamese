@@ -43,6 +43,10 @@ Bản dịch tiếng việt của quyển sách **Xử lý ngôn ngữ và tiế
 | 27 | Nhận dạng tiếng nói                                     |            |                    |
 | 27 | Tổng hợp tiếng nói                                      |            |                    |
 
+## Nhóm tác giả 
+
+* Vũ Anh <<anhv.ict91@gmail.com>>
+* Hoai-Thu Vương <<thuvh87@gmail.com>>
 
 ## Tham gia đóng góp
 
