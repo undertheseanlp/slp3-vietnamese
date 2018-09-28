@@ -2,7 +2,7 @@
 
 > Một dự án vu vơ
 
-> Với tình yêu dành cho xử lý ngôn ngữ và tiếng nói
+> Với tình yêu dành cho công nghệ xử lý ngôn ngữ và tiếng nói
 
 > Cùng sự ngưỡng mô đối với hai tác giả Dan Jurafsky và James H. Martin
 
