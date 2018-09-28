@@ -60,9 +60,13 @@ Bạn có thể tham gia đóng góp bằng rất nhiều cách:
 
 ### Tham gia nhóm dịch 
 
-* Dịch từng chương sách với thời lượng 2 tuần/chương
+Công việc của nhóm dich: 
+
+* Dịch các chương sách với thời lượng 2 tuần/chương
 
 ### Tham gia nhóm hiệu chỉnh 
+
+Công việc của nhóm hiệu chỉnh:
 
 * Đọc các bản draft từ nhóm dịch, đưa ra các nhận xét và đề xuất sửa đổi  
 
@@ -72,8 +76,9 @@ Cách tốt nhất để đóng góp ý kiến là mở một issue trong mục 
 
 ### Ủng hộ
 
-Cách đơn giản nhất là ấn vào nút star trên repository này. Các bạn cũng có thể giới thiệu với bạn bè về dự án này để dự án có sức lan tỏa hơn. 
+* Ấn vào nút star để ủng hộ dự án
+* Giới thiệu, chia sẻ với mọi người để dự án có sức lan tỏa hơn. 
 
 ### Đăng ký tham gia 
 
-Nếu bạn muốn tham gia làm thành viên chính thức, vào nhóm dịch hay hiệu chỉnh, xin điền vào [Đơn đăng ký tham gia](https://goo.gl/forms/MpJTjblliFKi4vLO2)
+Nếu bạn muốn tham gia làm thành viên chính thức, tham gia vào nhóm dịch hay hiệu chỉnh, xin điền vào [Đơn đăng ký tham gia](https://goo.gl/forms/MpJTjblliFKi4vLO2)
