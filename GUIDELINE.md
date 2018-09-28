@@ -10,11 +10,13 @@ Việc dịch thường xảy ra xung đột! Mọi người nên tôn trọng c
 
 Mỗi một chương nên được hoàn thiện trong 2 tuần. Với các công việc chi tiết sau:
 
-* Bản draft (8-10 ngày): Nhóm dịch dịch từ file pdf của sách gốc, sử dụng Latex, sau đó build lại thành file pdf, tải lên google drive với định dạng `chapter_[X]_draft_[DATE]`
+* Bản alpha (8-10 ngày): Nhóm dịch dịch từ file pdf của sách gốc, sử dụng Latex, sau đó build lại thành file pdf, tải lên google drive với định dạng `chapter_[X]_alpha_[DATE]`
 * Review (1-2 ngày): Nhóm hiệu chỉnh review lần 1 qua chức năng comment của google drive.
-* Bản alpha (1-2 ngày): Sau khi nhóm hiệu chỉnh review xong, nhóm dịch tiếp nhận review và sửa lại các nội dung
+* Bản beta (1-2 ngày): Sau khi nhóm hiệu chỉnh review xong, nhóm dịch tiếp nhận review và sửa lại các nội dung, tải lên google drive với định dạng `chapter_[X]_beta_[DATE]`
+* Review (1 ngày): Nhóm hiệu chỉnh review lần 2 trên bản alpha
+* Bản final (1 ngày): Nhóm dịch tiếp tục nhận review và sửa lại các nội dung, hoàn thiện thành bản final 
   
-Chú ý: Nên sử dụng 
+Chú ý: Nên sử dụng các tính năng của google drive để tiến hành thảo luận, resolve comment, reopen comment. 
  
 ### Định dạng của sách 
 
