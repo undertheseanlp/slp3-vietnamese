@@ -52,7 +52,7 @@ Bảng thuật ngữ và kế hoạch chi tiết ([link](https://docs.google.com
 
 ## Tham gia đóng góp
 
-Để có một sản phẩm dịch hoàn thiện, chúng tôi rất mong nhận được sự đóng góp từ công đồng. Những đóng góp đơn giản như sửa lỗi chính tả, đề nghị thuật ngữ cho đến việc tham gia dịch một phần của chương sách đều được chào đón và trân trọng.
+Để có một sản phẩm hoàn thiện, chúng tôi rất mong nhận được sự đóng góp từ cộng đồng. Những đóng góp đơn giản như chia sẻ thông tin về dự án, sửa lỗi chính tả, cho đến việc tham gia vào nhóm dịch và hiệu chỉnh đều được chào đón và trân trọng.
 
 Bạn có thể tham gia đóng góp bằng rất nhiều cách:
 
