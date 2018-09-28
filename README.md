@@ -15,7 +15,7 @@ Bảng thuật ngữ và kế hoạch chi tiết ([link](https://docs.google.com
 ## Nội dung
 
 |    | Danh sách chương                                        | Dịch | Hiệu chỉnh |                   |
-|----|---------------------------------------------------------|------------|--------------------|
+|----|---------------------------------------------------------|------------|--------|------------|
 | 1  | Giới thiệu                                              | *Vũ Anh* | *Hoai-Thu Vuong*     | [Đang review](pdf/1.pdf)<br/>30/09/2018 |
 | 2  | Biểu thức chính quy, chuẩn hóa văn bản và Edit Distance | *Vũ Anh*   |         | [Đang dịch](pdf/2.pdf)<br>14/10/2018|
 | 3  | Mô hình ngôn ngữ với N-Grams                            |            |         |                |
