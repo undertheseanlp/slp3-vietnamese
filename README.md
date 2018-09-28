@@ -49,6 +49,8 @@ Bảng thuật ngữ và kế hoạch chi tiết ([link](https://docs.google.com
 
 * Vũ Anh <<anhv.ict91@gmail.com>>
 * Hoai-Thu Vuong &lt;thuvh87 at gmail dot com&gt;
+* Mai Duy Khánh <<khanh.md01@gmail.com>>
+* Bùi Nhật Anh <<buinhatanh1208@gmail.com>>
 
 ## Tham gia đóng góp
 
