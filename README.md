@@ -8,7 +8,10 @@ Bản dịch tiếng việt của quyển sách **Xử lý ngôn ngữ và tiế
 
 Sách gốc "Speech and Language Processing (3rd edition)" - Dan Jurafsky và James H. Martin ([link](https://web.stanford.edu/~jurafsky/slp3/))
 
-Bảng thuật ngữ và kế hoạch chi tiết ([link](https://docs.google.com/spreadsheets/d/1iHO-ktjAj4qS9--lijADSiGdsxRmnMuEmrOJoiyLUU8/edit?usp=sharing)) 
+Các tài liệu liên quan:
+
+* [Bảng thuật ngữ và kế hoạch chi tiết](https://docs.google.com/spreadsheets/d/1iHO-ktjAj4qS9--lijADSiGdsxRmnMuEmrOJoiyLUU8/edit?usp=sharing)
+* [Các quy tắc và hướng dẫn phát triển](GUIDELINE.md)
 
 ## Nội dung
 
