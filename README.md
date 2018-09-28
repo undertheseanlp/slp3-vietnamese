@@ -1,4 +1,4 @@
-# Sách Xử lý ngôn ngữ và tiếng nói phiên bản tiếng Việt 
+# Sách "Xử lý ngôn ngữ và tiếng nói" phiên bản tiếng Việt 
 
 > Một dự án vu vơ
 
@@ -6,7 +6,7 @@
 
 > Cùng sự ngưỡng mộ đối với hai tác giả Dan Jurafsky và James H. Martin
 
-Bản dịch tiếng việt của quyển sách "Xử lý ngôn ngữ và tiếng nói (phiên bản 3)".
+Bản dịch tiếng việt của quyển sách **Xử lý ngôn ngữ và tiếng nói (phiên bản 3)**.
 
 Đường dẫn đến sách gốc [Speech and Language Processing (3rd edition) - Dan Jurafsky và James H. Martin](https://web.stanford.edu/~jurafsky/slp3/)
 
