@@ -22,7 +22,7 @@ Chỉ nên dịch một thuật ngữ khi:
 
 > Có ít nhất một tài liệu khoa học chính thức (báo cáo khoa học, luận văn thạc sỹ, tiến sỹ) đã từng dịch và sử dụng thuật ngữ này. 
 
-Ví dụ như thuật ngữ **decision tree** để xuất hiện ở luận văn [Nghiên cứu một số kỹ thuật khai phá dữ liệu không gian sử dụng cây quyết định](http://lrc.tnu.edu.vn/upload/collection/brief/40738_252201416135caovannguyen.pdf) hay trong bài tạp chí [Nghiên cứu ứng dụng tập phổ biến và luật kết hợp vào bài toán phân loại văn bản tiếng Việt có xem xét ngữ nghĩa](http://www.vjol.info/index.php/JSTD/article/view/28928/24670), thì nên dịch là **cây quyết định**
+Ví dụ như thuật ngữ **decision tree** đã xuất hiện và được sử dụng ở luận văn [Nghiên cứu một số kỹ thuật khai phá dữ liệu không gian sử dụng cây quyết định](http://lrc.tnu.edu.vn/upload/collection/brief/40738_252201416135caovannguyen.pdf) hay trong bài tạp chí [Nghiên cứu ứng dụng tập phổ biến và luật kết hợp vào bài toán phân loại văn bản tiếng Việt có xem xét ngữ nghĩa](http://www.vjol.info/index.php/JSTD/article/view/28928/24670), thì nên dịch là **cây quyết định**
 
 Gợi ý: Để tra cứu một cụm từ đã có trong các tài liệu khoa học chưa, hãy sử dụng [Google Scholar](https://scholar.google.com.vn/scholar?hl=en&as_sdt=0%2C5&q=%22c%C3%A2y+quy%E1%BA%BFt+%C4%91%E1%BB%8Bnh%22&btnG=)
 
