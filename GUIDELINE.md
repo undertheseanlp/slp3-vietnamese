@@ -16,11 +16,11 @@ Tất cả các định dạng trong sách (in đậm, in nghiêng, thuật đ�
 
 ### Quyết định thuật ngữ nào nên dịch, thuật ngữ nào nên để nguyên bản
 
-Các thuật ngữ khó nên ưu tiên để nguyên bản như sách gốc. 
+Nguyên tắc: **Các thuật ngữ khó nên ưu tiên để nguyên bản như sách gốc!** 
 
 Chỉ nên dịch một thuật ngữ khi:
 
-> Có ít nhất một tài liệu khoa học chính thức (báo cáo khoa học, luận văn thạc sỹ, tiến sỹ) đã từng dịch thuật ngữ này rồi. 
+> Có ít nhất một tài liệu khoa học chính thức (báo cáo khoa học, luận văn thạc sỹ, tiến sỹ) đã từng dịch và sử dụng thuật ngữ này. 
 
 Ví dụ như thuật ngữ **decision tree** để xuất hiện ở luận văn [Nghiên cứu một số kỹ thuật khai phá dữ liệu không gian sử dụng cây quyết định](http://lrc.tnu.edu.vn/upload/collection/brief/40738_252201416135caovannguyen.pdf) hay trong bài tạp chí [Nghiên cứu ứng dụng tập phổ biến và luật kết hợp vào bài toán phân loại văn bản tiếng Việt có xem xét ngữ nghĩa](http://www.vjol.info/index.php/JSTD/article/view/28928/24670), thì nên dịch là **cây quyết định**
 
