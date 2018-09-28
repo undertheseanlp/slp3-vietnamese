@@ -18,8 +18,8 @@ Các tài liệu liên quan:
 
 |    | Danh sách chương                                        | Dịch       | Hiệu chỉnh           |                   |
 |----|---------------------------------------------------------|------------|---------------------|--------------------|
-| 1  | [Giới thiệu](https://github.com/rain1024/slp2-pdf/blob/master/chapter-wise-pdf/%5B01%5D%20Introduction.pdf)     | *Vũ Anh*   | *Hoai-Thu Vuong*<br>*Bùi Nhật Anh* | [Đang review](pdf/1.pdf)<br/>30/09/2018 |
-| 2  | [Biểu thức chính quy, chuẩn hóa văn bản và Edit Distance](https://web.stanford.edu/~jurafsky/slp3/2.pdf)        | *Vũ Anh*   |                      | [Đang dịch](pdf/2.pdf)<br>14/10/2018|
+| 1  | Giới thiệu                                              | *Vũ Anh*   | *Hoai-Thu Vuong*<br>*Bùi Nhật Anh* | [Đang review](pdf/1.pdf)<br/>[Link gốc]((https://github.com/rain1024/slp2-pdf/blob/master/chapter-wise-pdf/%5B01%5D%20Introduction.pdf))<br>30/09/2018 |
+| 2  | Biểu thức chính quy, chuẩn hóa văn bản và Edit Distance | *Vũ Anh*   |                      | [Đang dịch](pdf/2.pdf)<br>[Link gốc](https://web.stanford.edu/~jurafsky/slp3/2.pdf)<br>  14/10/2018|
 | 3  | Mô hình ngôn ngữ với N-Grams                            |            |                      |               |
 | 4  | Phân loại Bayes và nhận diện cảm xúc                    |            |                      |               |
 | 5  | Hồi quy Logistic                                        |            |                      |               |
