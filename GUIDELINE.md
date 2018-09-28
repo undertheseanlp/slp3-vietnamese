@@ -8,7 +8,7 @@ Việc dịch thường xảy ra xung đột! Mọi người nên tôn trọng c
 
 ### Kế hoạch phát triển 
 
-Mỗi bản dịch cho một chương sẽ có từ 8-10 ngày để hoàn thiện, sau đó sẽ có 3-4 ngày để nhóm hiệu chỉnh vào review và hoàn thiện.  
+Mỗi một chương nên được hoàn thiện trong 2 tuần, phần dịch sẽ có từ 8-10 ngày để hoàn thiện, sau đó sẽ có 3-4 ngày để nhóm hiệu chỉnh vào review và hoàn thiện.  
 
 ### Định dạng của sách 
 
