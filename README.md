@@ -67,15 +67,26 @@ Công việc của nhóm dịch:
 
 * Dịch các chương sách với thời lượng 2 tuần/chương
 
+Yêu cầu với thành viên của nhóm dịch: 
+
+* Thành thạo latex
+* Có kinh nghiệm trong lĩnh vực xử lý ngôn ngữ tự nhiên (ít nhất 2 năm) 
+* Có thể sắp xếp thời gian để đảm bảo tiến độ dự án
+
 ### Tham gia nhóm hiệu chỉnh 
 
-Công việc của nhóm hiệu chỉnh:
+Công việc của thành viên của nhóm hiệu chỉnh:
 
-* Đọc các bản draft từ nhóm dịch, đưa ra các nhận xét và đề xuất sửa đổi  
+* Đọc các bản draft từ nhóm dịch, đưa ra các nhận xét và đề xuất sửa đổi
+
+Yêu cầu với nhóm hiệu chỉnh:
+
+* Có kiến thức cơ bản về xử lý ngôn ngữ tự nhiên
+* Có thể sắp xếp thời gian để đảm bảo tiến độ dự án   
 
 ### Đóng góp ý kiến
 
-Cách tốt nhất để đóng góp ý kiến là mở một issue trong mục [Issues](https://github.com/undertheseanlp/slp3-vietnamese/issues) của dự án.
+Mọi ý kiến đóng góp, xin mở một issue trong mục [Issues](https://github.com/undertheseanlp/slp3-vietnamese/issues) của dự án.
 
 ### Ủng hộ
 
