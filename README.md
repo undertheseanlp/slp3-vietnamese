@@ -46,7 +46,7 @@ Bản dịch tiếng việt của quyển sách **Xử lý ngôn ngữ và tiế
 ## Nhóm tác giả 
 
 * Vũ Anh <<anhv.ict91@gmail.com>>
-* Hoai-Thu Vuong <thuvh87 at gmail dot com>
+* Hoai-Thu Vuong &lt;thuvh87 at gmail dot com&gt;
 
 ## Tham gia đóng góp
 
