@@ -1,0 +1,98 @@
+\documentclass[11pt]{book}
+\usepackage[utf8]{vietnam}
+\usepackage[vietnam,english]{babel}
+
+\usepackage{times}
+\usepackage{multirow}
+\usepackage{url}
+\usepackage{latexsym}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage[title]{appendix}
+\usepackage{enumitem}
+
+\usepackage{cite}
+\usepackage{undertheseabook}
+
+% ######################################
+%                 QUOTE
+% ######################################
+\usepackage{epigraph}
+\setlength\epigraphwidth{8cm}
+\setlength\epigraphrule{0pt}
+
+
+% ######################################
+%            CHAPTER FORMAT
+% ######################################
+\usepackage[explicit]{titlesec}
+\usepackage{blindtext, array, color}
+\definecolor{gray75}{gray}{0.75}
+\newcommand{\hsp}{\hspace{20pt}}
+
+\titleformat{\chapter}[block]
+	{\Huge\bfseries}
+	{\hspace*{-30pt}\color{gray75}\raisebox{-1.2ex}{\fontsize{50pt}{0pt}\selectfont \thechapter}}{20pt}
+	{\begin{tabular}[t]{@{\color{gray75}\vrule width 2pt}>{\hsp}l}#1\end{tabular}}
+
+\titleformat{\section}[display]
+  {\normalfont\scshape\huge}
+  {\hspace*{-30pt}\thesection.~#1}
+  {-30pt}
+  {\hspace*{-100pt}\Huge}
+
+\titleformat{\subsection}[display]
+  {\normalfont\scshape\large}
+  {\hspace*{-20pt}\thesubsection.~#1}
+  {-40pt}
+  {\hspace*{-80pt}\Huge}
+
+% ######################################
+%              PARAGRAPH
+% ######################################
+% tab whole paragraph
+\usepackage{changepage}
+
+% for pycharm
+% \usepackage[T1]{fontenc}
+% \usepackage[utf8]{inputenc}
+% end for pycharm
+
+% ######################################
+%                 TABLE
+% ######################################
+% whole table
+% https://tex.stackexchange.com/questions/63883/color-entire-table
+\usepackage{booktabs,xcolor,siunitx}
+\setlength\fboxsep{0pt}
+\setlength\fboxrule{0pt}
+\definecolor{background}{HTML}{E6E6E6}
+
+% new line in cell
+\usepackage{makecell}
+
+\aclfinalcopy % Uncomment this line for the final submission
+\newcommand\BibTeX{B{\sc ib}\TeX}
+
+\usepackage{varioref}
+
+% ######################################
+%              PDF BOOKMARK
+% ######################################
+% Tutorial: https://tex.stackexchange.com/a/26193
+\usepackage{hyperref}
+\hypersetup{%
+    pdfencoding=auto}
+
+\usepackage{cleveref}
+
+\makeatletter
+\newcommand\footnoteref[1]{\protected@xdef\@thefnmark{\ref{#1}}\@footnotemark}
+\makeatother
+
+\title{Xử lý ngôn ngữ và tiếng nói}
+
+\include{notation}
+
+\begin{document}

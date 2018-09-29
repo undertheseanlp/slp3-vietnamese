@@ -6,7 +6,7 @@ fi
 inputfile=util/$name.tex
 output="tmp"
 pdflatex -file-line-error -interaction=nonstopmode -synctex=1 -output-format=pdf -output-directory=$output $inputfile
-bibtex $name.aux
+bibtex tmp/2.aux
 pdflatex -file-line-error -interaction=nonstopmode -synctex=1 -output-format=pdf -output-directory=$output $inputfile
 pdflatex -file-line-error -interaction=nonstopmode -synctex=1 -output-format=pdf -output-directory=$output $inputfile
 
