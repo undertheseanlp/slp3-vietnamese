@@ -1,7 +1,6 @@
 \documentclass[11pt]{book}
 \usepackage[utf8]{vietnam}
 \usepackage[english,vietnam]{babel}
-
 \usepackage{times}
 \usepackage{multirow}
 \usepackage{url}
@@ -85,19 +84,19 @@
 %              PDF BOOKMARK
 % ######################################
 % Tutorial: https://tex.stackexchange.com/a/26193
+\usepackage[numbered]{bookmark}
 \usepackage{hyperref}
-\hypersetup{%
-    pdfencoding=auto}
-
-\usepackage{cleveref}
+\hypersetup{pdfencoding=auto}
+\usepackage{pdfpages}
 
 \makeatletter
 \newcommand\footnoteref[1]{\protected@xdef\@thefnmark{\ref{#1}}\@footnotemark}
 \makeatother
-
+\bookmark[page=1,level=-2]{Sample document}
 
 
 \title{Xử lý ngôn ngữ và tiếng nói}
+
 
 \include{notation}
 
