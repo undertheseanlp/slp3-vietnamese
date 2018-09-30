@@ -1,5 +1,6 @@
 \setcounter{chapter}{0}
 
+
 \chapter{Giới thiệu về xử lý ngôn ngữ tự nhiên}
 
 \setlength\epigraphwidth{0.65\textwidth}
@@ -119,7 +120,7 @@ Một trong những điểm nhấn trong 50 năm nghiên cứu về xử lý ng�
 
 Ở dạng đơn giản nhất, state machines là các mô hình hình thức bao gồm các trạng thái, chuyển giữa các trạng thái, và một biểu diễn đầu vào. Một vài biến thể của mô hình cơ bản này như \textbf{deterministic} và \textbf{non-deterministic finite-state automata} và \textbf{finite-state transducers}.
 
-Liên quan chặt chẽ đến các mô hình này là các hệ thống formal rule. Chúng ta sẽ xem xét những mô hình quan trọng nhất như \textbf{regular grammars} và \textbf{regular relations}, \textbf{context-free grammars}, và \textbf{feature-augmented grammars}. Các hệ thống máy trạng thái và formal rule là các công cụ chính để xử lý các tri thức về âm vị học, ngôn ngữ hình thái học và cú pháp.
+Liên quan chặt chẽ đến các mô hình này là các hệ thống formal rule. Chúng ta sẽ xem xét những mô hình quan trọng nhất như \textbf{regular grammars} và \textbf{regular relations}, \textbf{context-free grammars}, và \textbf{feature-augmented grammars}. Các hệ thống state machines và formal rule là các công cụ chính để xử lý các tri thức về âm vị học, ngôn ngữ hình thái học và cú pháp.
 
 Lớp mô hình thứ ba đóng vai trò quan trọng trong việc mô hình hóa tri thức là logic. Chúng ta sẽ tìm hiểu về \textbf{first order logic}, hay còn gọi là \textbf{predicate calculus}, cũng như các mô hình hình thức liên quan như lambda-calculus, feature-structues hay semantic primitives. Các biểu diễn logic này thường được sử dụng để mô hình hóa ngữ nghĩa và ngữ dụng, mặc dù các kỹ thuật gần đây thường tập trung vào các phương pháp hiệu quả hơn từ các ngữ liệu phi logic.
 
@@ -191,9 +192,9 @@ May thay, với mục đích của cuốn sách, các kết quả đó không li
 Tôi tin rằng cuối thế kỷ này, việc sử dụng ngôn và các ý kiến được giáo dục sẽ thay đổi nhiều đến mức chúng ta có thể trò chuyện với các máy tính suy nghĩ mà không cảm thấy bị mâu thuẫn.
 \end{adjustwidth}
 
-Ngày nay, rõ ràng là bất kể mọi người tin hay biết gì về cách thức hoạt động của máy tính, mọi người thường nói về chúng và tương tác với chúng như là những thực thể trong xã hội. Mọi người thường nói chuyện với máy tính nếu họ nghĩ máy tính là người; họ sẽ lịch sự, đối xử như những thành viên, hi vọng rằng máy tính có thể hiểu nhu cầu của họ, và có thể tương tác với họ một cách tự hiên. Ví dụ, \citet*{reeves1996media} phát hiện rằng khi một máy tính hỏi một người đánh giá máy tính như thế nào, người đó đưa ra nhiều phản hồi tính cực khi một máy tính khác hỏi các câu tương tự. Con người thường sợ trở nên bất lịch sự. Trong một thử nghiệm khác, Reeves và Nass phát hiện rằng con người thường cho điểm cao hơn nếu máy tính biết tâng bốc. Từ các thiên hướng này, các hệ thống dựa vào ngôn ngữ và tiếng nói cần đưa cho người dùng những giao diện tự nhiên nhất. Điều này dẫn đến sự tập trung dài hạn vào thiết kế cho các \textbf{máy giao tiếp} và các hệ thống thông minh có thể giao tiếp.
+Ngày nay, rõ ràng là bất kể mọi người tin hay biết gì về cách thức hoạt động của máy tính, mọi người thường nói về chúng và tương tác với chúng như là những thực thể trong xã hội. Mọi người thường nói chuyện với máy tính nếu họ nghĩ máy tính là người; họ sẽ lịch sự, đối xử như những thành viên, hi vọng rằng máy tính có thể hiểu nhu cầu của họ, và có thể tương tác với họ một cách tự nhiên. Ví dụ, \citet*{reeves1996media} phát hiện rằng khi một máy tính hỏi một người đánh giá máy tính như thế nào, người đó đưa ra nhiều phản hồi tính cực khi một máy tính khác hỏi các câu tương tự. Con người thường sợ trở nên bất lịch sự. Trong một thử nghiệm khác, Reeves và Nass phát hiện rằng con người thường cho điểm cao hơn nếu máy tính biết tâng bốc. Từ các thiên hướng này, các hệ thống dựa vào ngôn ngữ và tiếng nói cần đưa cho người dùng những giao diện tự nhiên nhất. Điều này dẫn đến sự tập trung dài hạn vào thiết kế cho các \textbf{máy giao tiếp} và các hệ thống thông minh có thể giao tiếp.
 
-\section{Các kết quả tốt nhất}
+\section{Các cột mốc quan trọng}
 
 \setlength\epigraphwidth{0.7\textwidth}
 \epigraphfontsize{\small}
@@ -239,7 +240,7 @@ Những năm 1960 cho thấy sự phát triển của các mô hình tâm lý h�
 
 \subsection{Bốn mô hình: 1970-1983}
 
-Gia đoạn tiếp theo chứng kiến sự bùng nổ trong nghiên cứu về xử lý ngôn ngữ và tiếng nói và sự phát triển của các mô hình vẫn thống trị các hướng nghiên cứu trong ngành.
+Giai đoạn tiếp theo chứng kiến sự bùng nổ trong nghiên cứu về xử lý ngôn ngữ và tiếng nói và sự phát triển của các mô hình vẫn thống trị các hướng nghiên cứu trong ngành.
 
 Mô hình \textbf{stochastic} đóng vai trò to lớn trong sự phát triển các giải thuật nhận dạng tiếng nói trong giai đoạn này, đặc biệt là việc sử dụng mô hình Hidden Markov Model và metaphor trong noisy channel và decoding, phát triển độc lập bởi Jelinek, Bahl, Mercer và các đồng nghiệp tại trung tâm nghiên cứu IBM's Thomas J. Watson, Baker tại đại học Carnegie Mellon University, người chịu ảnh hưởng bởi các công trình của Baum và đồng nghiệp tại Institute for Defense Analysis tại Princeton. AT\&T's Bell Laboratories cũng đóng vai trò trung tâm trong lĩnh vực xử lý và tổng hợp tiếng nói, đọc Rabiner và Juang (1993) để biết thêm chi tiết về công trình này.
 
