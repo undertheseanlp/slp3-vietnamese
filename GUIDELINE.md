@@ -1,6 +1,6 @@
 # Guideline
 
-Tập hợp các nguyên tắc và hướng dẫn phát triển cho việc dịch và hiệu chỉnh trong dự án này. 
+Tập hợp các nguyên tắc và hướng dẫn cho việc dịch và hiệu chỉnh trong dự án này. 
 
 ### Code of Conduct 
 

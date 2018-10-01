@@ -11,7 +11,7 @@ Sách gốc "Speech and Language Processing (3rd edition)" - Dan Jurafsky và Ja
 Các tài liệu liên quan:
 
 * [Bảng thuật ngữ và kế hoạch chi tiết](https://docs.google.com/spreadsheets/d/1iHO-ktjAj4qS9--lijADSiGdsxRmnMuEmrOJoiyLUU8/edit?usp=sharing)
-* [Các quy tắc và hướng dẫn phát triển](GUIDELINE.md)
+* [Các quy tắc và hướng dẫn](GUIDELINE.md)
 * [Đơn đăng ký tham gia](https://goo.gl/forms/MpJTjblliFKi4vLO2)
 
 ## Nội dung
