@@ -2,3 +2,5 @@ technique_report.pdf
 .idea
 tmp
 !tmp/.gitkeep
+.DS_Store
+
