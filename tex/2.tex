@@ -17,32 +17,124 @@ ELIZA: DOES IT PLEASE YOU TO BELIEVE I AM AFRAID OF YOU\\
 }
 }{Weizenbaum (1966)}
 
-Đoạn hội thoại trên là từ \textbf{ELIZA}, một hệ thống xử lý ngôn ngữ tự nhiên đầu tiên có thể thực hiện những đoạn hội thoại với người dùng bằng cách bắt chước các câu nói trước đó của một nhà tâm lý học (Weizenbaum, 1966). ELIZA là một chương trình đơn giản sử dụng phương pháp nhanạ dạng các cụm từ như "Bạn là X" và sau đó chuyển thành câu hỏi hợp lý như "Điều gì khiến bạn nghĩ tôi là X?". Kỹ thuật đơn giản này đạt được thành công trong lĩnh vực này vì ELIZA không cần \textit{biết} điều gì để bắt chước lại nhà tâm lý học. Trong ghi chú của Weizebaum, đây là một trong những ít chương trình hội thoại mà người nghe có thể phản ứng mà không cần biết điều gì về thế giới. Cách bắt chước của ELIZA đạt được nhiều thanh công đáng chú ý: rất nhiều người tauwơng tác với ELIZA bắt đầu tin rằng nó \textit{thực sự} hiểu họ và vấn đề của họ, rất nhiều người tiếp tục tin vào khả năng của ELIZA mặc dù đã biết về cách vận hành của nó (Weizenbaum, 1976), và ngay cả trong thời điểm này, những chatbots như vậy cũng rất thú vị.
+Đoạn hội thoại trên là từ \textbf{ELIZA}, một hệ thống xử lý ngôn ngữ tự nhiên đầu tiên có thể thực hiện những đoạn hội thoại với người dùng bằng cách bắt chước các câu nói trước đó của một nhà tâm lý học (Weizenbaum, 1966). ELIZA là một chương trình đơn giản sử dụng phương pháp nhận dạng các cụm từ như "Bạn là X" và sau đó chuyển thành câu hỏi hợp lý như "Điều gì khiến bạn nghĩ tôi là X?". Kỹ thuật đơn giản này đạt được thành công trong lĩnh vực này vì ELIZA không cần \textit{biết} điều gì để bắt chước lại nhà tâm lý học. Trong ghi chú của Weizebaum, đây là một trong những ít chương trình hội thoại mà người nghe có thể phản ứng mà không cần biết điều gì về thế giới. Cách bắt chước của ELIZA đạt được nhiều thanh công đáng chú ý: rất nhiều người tauwơng tác với ELIZA bắt đầu tin rằng nó \textit{thực sự} hiểu họ và vấn đề của họ, rất nhiều người tiếp tục tin vào khả năng của ELIZA mặc dù đã biết về cách vận hành của nó (Weizenbaum, 1976), và ngay cả trong thời điểm này, những \textbf{chatbots} như vậy cũng rất thú vị.
 
-Tất nhiên, những chương trình hội thoại hiện đại có rất nhiều kỹ thuật; chúng có thể trả lời trả lời các câu hỏi, đặt vé máy bay hoặc tìm nhà hàng, các kỹ thuật chúng sử dụng dựa nhiều vào việc hiểu sâu sắc ý định của người dùng, chúng ta sẽ cùng tìm hiểu trong chương 25. Tuy nhiên, những phương pháp dựa vào luật như ở ELIZA hay các chabot khác đóng vai trò quan trọng trong việc xử lý ngôn ngữ tự nhiên.
+Tất nhiên, những chương trình hội thoại hiện đại có rất nhiều kỹ thuật khác; chúng có thể trả lời trả lời các câu hỏi, đặt vé máy bay hoặc tìm nhà hàng, các kỹ thuật chúng sử dụng dựa nhiều vào việc hiểu sâu sắc ý định của người dùng, chúng ta sẽ cùng tìm hiểu trong chương 24. Tuy nhiên, những phương pháp dựa vào luật như ở ELIZA hay các chabot khác đóng vai trò quan trọng trong việc xử lý ngôn ngữ tự nhiên.
 
 Chúng ta sẽ bắt đầu với công cụ quan trọng nhất trong việc biểu diễn các luật văn bản: \textbf{biểu thức chính quy}. Các biểu thức chính quy có thể chỉ định một chuỗi chúng ta muốn tách ra từ một văn bản, từ các cụm từ "Bạn là X" như ở ELIZA, cho đến các chuỗi như \$199 hay \$24.99 để trích xuất giá từ một bảng trong một văn bản.
 
+Sau đó, chúng ta sẽ chuyển sang một lớp các bài toán được gọi là \textbf{text normalization}, trong đó các biểu thức chính quy đóng vai trò quan trọng. Chuẩn hóa text có nghĩa là chuyển chúng về dạng chúng về dạng tiêu chuẩn. Ví dụ, công việc đầu tiên chúng ta thường làm khi xử lý ngôn ngữ liện quan đến việc \textbf{tokenizing} từ, bài toán \textbf{tokenization}. Mỗi từ tiếng Anh được tách biệt với các từ khác bằng khoảng trống. Nhưng khoảng trống không phải khi nào cũng hiệu quả. Các từ như \textit{New York} hay \textit{rock 'n' roll} thường được coi là một từ mặc dù chúng cách nhau bởi các khoảng trống, trong khi đó có khi chúng ta phải tách cụm từ I'm thành I và am. Trong quá trình xử lý các tweets vaf text chúng ta cần tokenize các biểu tượng cảm xúc như \verb|:)| hay các hashtags như \verb|#nlproc|. Với một vài ngôn ngữ, như Trung Quốc, không có khoảng cách giữa các từ, nên việc tách từ trở nên khó khăn hơn.
+
+Một khía cạnh khác của việc chuẩn hóa text là \textbf{lemmatization}, bài toán xác định hai từ có cùng gốc, dù được viết khác nhau. Ví dụ, các từ \textit{sang}, \textit{sung} và \textit{sings} đều là các dạng khác nhau của động từ \textit{sing}. Từ \textit{sing} là một \textit{lemma} của các từ này, và một \textbf{lemmatizer} sẽ chuyển đổi tất cả các từ này về sing. Lemmatization rất quan trọng trong quá trình phân tích ngôn ngữ hình thái học của các ngôn ngữ phức tạp như tiếng Ả Rập. \textbf{Stemming} là một dạng đơn giản hơn của lemmatization trong đó chúng ta thường loại bỏ các phần đuôi ở cuối mỗi từ. Chuẩn hóa text cũng bao gồm bài toán tách câu: tách một text ra thành nhiều câu, sử dụng các dấu hiệu như dấu chấm hay dấu chấm cảm.
+
+Cuối cùng, chúng ta cần so sánh các từ với các chuỗi khác. Chúng tôi sẽ giới thiệu một độ đo gọi là \textbf{edit distance} để đo sự tương đồng của hai chuỗi dựa vào số lượng các thay đổi (thêm, xóa, thay thế) cần thiết để chuyển từ chuỗi này sang chuỗi kia. Edit distance là một thuật toán với các ứng dụng được sử dụng rộng rãi trong xử lý ngôn ngữ tự nhiên, từ sửa lỗi chính tả, nhận dạng tiếng nói đến phân giải đồng tham chiếu.
+
 \section{Biểu thức chính quy}
 
-Một trong những thành công lớn trong khoa học máy tính là biểu thức chính quy, một ngôn ngữ để chỉ định các chuỗi tìm kiếm.
+\setlength\epigraphwidth{0.6\textwidth}
+\epigraphfontsize{\small}
+\epigraph{
+{\textit{SIR ANDREW: \hspace{0.5cm}Her C’s, her U’s and her T’s: why that?}
+}
+}{Shakespeare, \textit{Twelfth Night}}
+
+Một trong những thành công lớn trong lĩnh vực chuẩn hóa ở khoa học máy tính là \textbf{regular expression (RE)}, một ngôn ngữ để chỉ định các chuỗi tìm kiếm. Đặc tả ngôn ngữ thường được sử dụng trong tất cả các ngôn ngữ máy tính, chương trình soạn thảo văn bản, hay trong các công cụ xử lý text trong Unix như grep hay Emacs. Một cách chính thống, một regular expression là biểu thức đại điện cho một tập hợp các chuỗi. Nó đặc biệt hữu ích cho việc tìm kiếm trên văn bản, khi chúng ta sử dụng các \textbf{pattern} để tìm kiếm và một \textbf{corpus} để tìm kiếm trong đó. Một hàm tìm kiếm regular expression sẽ tìm kiếm trong toàn bộ corpus, trả về các chuỗi tương ứng với các mẫu. Corpus có thể là một tài liệu hoặc một tập các tài liệu. Ví dụ, một lệnh trong Unix grep nhận dầu vào là một regular expression và trả lời tất cả các dòng trong văn bản đầu vào khớp với lại biểu thức.
+
+Một tìm kiếm có thể được cấu hình để tả về tất cả các dòng khớp, trong trường hợp có nhiều dòng khớp, hoặc chỉ là dòng khớp đầu tiên. Trong các ví dụ dưới, chúng tôi sẽ gạch chận những phần của chuỗi khớp với biểu thức trong regular expression và chỉ gạch chân phần khớp đầu tiên. Chúng tôi thể hiện regular expression trong các dấu gạch (/) nhưng hãy lưu ý những dấu gạch (/) này \textit{không} thuộc regular expression.
+
+Regular expression có rất nhiều biến thể. Chúng ta sẽ mô tả \textbf{dạng mở rộng của regular expression}; những chương trình phân tích regular expression có thể chỉ nhận một vài biểu thức, và có thể xử lý một vài biểu thức hơi khác nhau. Sử dụng một công cụ thử nghiệm regular expression rất hữu dụng để thử nghiệm các biểu thức của bạn và khám phá các biến thể.
 
 \subsection{Các biểu thức chính quy cơ bản}
 
-Dạng đơn giản nhất của biểu thức chính quy là một dãy các kí tự. Để tìm kiếm từ \textit{woodchuck}, ta gõ \verb|/woodchuck|. Biểu thức \verb|/Buttercup/| khớp với tất cả các chuỗi có chứa cụm từ \textit{Buttercup}; \verb|grep|
+Dạng đơn giản nhất của biểu thức chính quy là một dãy các kí tự. Để tìm kiếm từ \textit{woodchuck}, ta gõ \verb|/woodchuck|. Biểu thức \verb|/Buttercup/| khớp với tất cả các chuỗi có chứa cụm từ \textit{Buttercup}; \verb|grep| với biểu thức này có thể trả ra dòng \textit{I'm called little Buttercup}. Một chuỗi tìm kiếm có thể chỉ chứa một ký tự (như \verb|/!/|) hoặc một chuỗi các ký tự (như \verb|/urgl/|)
 
 \begin{figure}[h]
 	\begin{tabular}{ l l }
 	 \hline
 	 RE & Example Patterns Matched \\
 	 \hline
-	 /woodchucks & interesting links to \underline{woodchucks} and lemurs \\
-	 /a/ & M\underline{a}ry Ann stopped by Mona's  \\
-	 /!/ & "You've left the burglar behind again\underline{!}" said Nori \\
+	 \verb|/woodchucks/| & interesting links to \underline{woodchucks} and lemurs \\
+	 \verb|/a/| & M\underline{a}ry Ann stopped by Mona's  \\
+	 \verb|/!/| & "You've left the burglar behind again\underline{!}" said Nori \\
 	 \hline
 	\end{tabular}
  \caption{Ví dụ các biểu thức chính quy đơn giản}
  \label{table:1}
 \end{figure}
 
-abc ~\cite{Le-Hong16} def
+Regular exxpression là case sensitive (phân biệt chữ hoa chữ thường); dạng viết thường /s/ khác với dạng với hoa /S/ (/s/ khớp với ký tự s thường, chứ không khớp với ký tự S hoa). Có nghĩa là mẫu /woodchunks/ không khớp với chuỗi Woodchucks. Chúng ta có thể giải quyết vấn đề này với việc sử dụng ký tự ngoặc vuông [ và ]. Chuỗi các ký tự trong ngoặc vuông định nghĩa một disjunction (thuật ngữ tuyển trong tập hợp) của các ký tự. Ví dụ, hình 2.2 cho thấy mẫu /[wW]/ có thể khớp được với cả hai ký từ w và W.
+
+\begin{figure}[h]
+	\begin{tabular}{ l l l }
+	 \hline
+	 RE & Match & Example Patterns \\
+	 \hline
+	 \verb|/[wW]oodchucks/| & Woodchuck hoặc woodchuck & "\underline{Woodchuck}" \\
+	 \verb|/[abc]/| & 'a', 'b' hoặc 'c' & "in uomnini, in sold\underline{a}ti" \\
+	 \verb|/[1234567890]/| & bất kỳ chữ số nào & "plenty of \underline{7} to 5"
+	 \hline
+	\end{tabular}
+ \caption{Sử dụng ngoặc vuông [] để định nghĩa disjuction của chuỗi ký tự}
+ \label{table:2}
+\end{figure}
+
+Biểu thức /[1234567890]/ chỉ định bất kỳ chữ số nào. Mặc dù, tập hợp các ký tự số và chữ là một phần quan trọng trong các biểu thức, đôi khi chúng có thể hơi kỳ quặc (ví dụ, thật bất tiện khi phải định nghĩa /[ABCDEFGHIJKLMNOPQRSTUVWXYZ]/ với ý nghĩa "khớp bất kỳ chữ cái nào"). Trong những trường hợp mà các ký tự liền nhau, có thể sử dụng dấu gạch ngang (-) để thể hiện bất kỳ ký tự nào trong khoảng. Mẫu /[2-5]/ chỉ định bất kỳ ký tự nào trong tập 2, 3, 4 và 5. Mẫu /[b-g]/ chỉ định bất kỳ cứ nào trong tập b, c, d, e, f hay g. Một vài ví dụ khác được thể hiện trong bảng 2.3
+
+\begin{figure}[h]
+	\begin{tabular}{ l l l }
+	 \hline
+	 RE & Match & Example Patterns \\
+	 \hline
+	 \verb|/[A-Z]/| & bất kỳ ký tự hoa nào & "we should call it '\underline{D}renched Blossoms'" \\
+	 \verb|/[a-z]/| & bất kỳ ký tự thường nào & "\underline{m}y beans were impatient to be hoed!" \\
+	 \verb|/[0-9]/| & bất kỳ chữ số nào & "Chapter \underline{1}: Down the Rabbit Hole"
+	 \hline
+	\end{tabular}
+ \caption{Sử dụng ngoặc vuông [] với dấu gạch ngang - để định nghĩa một khoảng}
+ \label{table:2.3}
+\end{figure}
+
+Ngoặc vuông có thể được sử dụng để chỉ định một ký tự không nằm trong chuỗi bằng cách sử dụng dấu mũ \symbol{94}. Nếu dấu mũ \symbol{94} là ký tự đầu tiên sau ký tự mở ngoặc vuông [, mẫu sẽ mang nghĩa không khớp. Ví dụ, mẫu \verb|/[^a]/| khớp với bất kỳ ký tự nào (bao gồm cả các ký đặc biệt) ngoại trừ ký tự a. Điều này chỉ đúng nếu dấu mũ là ký tự đầu tiên sau dấu mở ngoặc vuông. Nếu nó xuất hiện ở nơi khác, nó được xử lý như dấu mũ bình thường. Hình 2.4 thể hiện một vài ví dụ
+
+\begin{figure}[h]
+	\begin{tabular}{ l l l }
+	 \hline
+	 RE & Match & Example Patterns \\
+	 \hline
+	 \verb|/[^A-Z]/| & không phải là một ký tự viết hoa & "O\underline{y}fn pripetchik" \\
+	 \verb|/[^Ss]/| & không phải S hoặc s & "\underline{I} have no exquisite reason for't" \\
+	 \verb|/[^\.]/| & không phải một dấu chấm & "\underline{o}ur resident Djinm" \\
+	 \verb|/[e^]/| & ký tự e hoặc dấu mũ & "look up \underline{^} now" \\
+	 \verb|/a^b/| & chuỗi a\^\normalsize{b} & "look up \underline{a\^\normalsize{b}} now" \\
+	 \hline
+	\end{tabular}
+ \caption{Dấu \^ \normalsize{} để đảo ngược ý nghĩa hay để khớp ký tự \^\normalsize{}. Xem phần sau: sử dụng ký tự gạch chéo \symbol{92} để chỉ định ký tự đặc biệt dấu chấm}
+ \label{table:2.4}
+\end{figure}
+
+Làm sao chúng ta có thể chỉ định các thành phần tùy chọn, như ký tự s trong woodchuck và woodchucks? Chúng ta không thể sử dụng ngoặc vuông, vì nó chỉ cho chúng ta "s hoặc S", chứ không cho phép chúng ta chỉ định "s hoặc không có gì". Để làm được điều này chúng ta sử dụng dấu hỏi chấm /?/, với ý nghĩa "ký tự này hoặc không gì cả", như thể hiện trong hình 2.5
+
+\begin{figure}[h]
+	\begin{tabular}{ l l l }
+	 \hline
+	 RE & Match & Example Patterns \\
+	 \hline
+	 \verb|/woodchucks?/| & woodchuck hoặc woodchucks & "\underline{woodchuck}" \\
+	 \verb|/colou?r/| & color hoặc colour & "\underline{colour}" \\
+	 \hline
+	\end{tabular}
+ \caption{Dấu hỏi chấm ? chỉ ra thành phần tùy chọn}
+ \label{table:2.5}
+\end{figure}
+
+Chúng ta có thể coi dấu hỏi chấm như là "chứa không hoặc một ký tự trước". Đó là một cách để chỉ định chúng ta muốn so khớp một chuỗi bao nhiêu lần, điều rất quan trọng trong regular expression. Ví dụ, xem xét các tiếng của cừu, sẽ có các chuỗi như sau:
+
+baa!\\
+\indent baaa!\\
+\indent baaaa!\\
+\indent baaaaa!\\
+\indent ...
+
+Ngôn ngữ này bao gồm các chuỗi với một ký tự b, theo sau bởi ít nhất hai ký tự a, kết thúc bằng dấu chấm cảm.
+
+
