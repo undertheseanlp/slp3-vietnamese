@@ -57,3 +57,12 @@ Sau khi đã dịch một thuật ngữ, cần thêm vào [**Danh sách Thuật 
 * Vị trí xuất hiện trong sách 
 * Các tài liệu khoa học có sử dụng từ để xuất
 
+### Ghi chú về cách dịch
+
+* Bước 1: Dịch các text trước, không cần chú ý đến trau chuốt câu văn, định dạng
+* Bước 2: Sau mỗi đoạn, cần định dạng lại
+* Bước 3: Đọc lại 
+
+Chú ý: Trong quyển sách này, phần citation được làm riêng, sẽ để ở một phần riêng biệt  
+
+
