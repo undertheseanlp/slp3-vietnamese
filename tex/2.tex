@@ -187,3 +187,35 @@ Các mẫu có thể nhập nhằng theo các cách khác. Xem biểu thức \ve
 Tuy nhiên, có những cách để chỉ định các mẫu non-greedy, việc việc sử dụng ký tự ?. Phép toán *? sẽ khớp với ít chuỗi nhất có thể. Phép toán +? sẽ khớp với ít ký tự nhất có thể.
 
 \subsection{Một ví dụ đơn giản}
+
+Giả sử chúng ta muốn viết một RE để tìm kiếm các mạo từ tiếng Anh the. Một mẫu đơn giản (nhưng không chính xác) có thể là:
+
+\vspace{0.6em}
+
+\noindent \verb|/the/|
+
+\vspace{0.6em}
+
+Một vấn đề với mẫu này là nó thiếu trường hợp từ the ở đầu câu và trở thành dạng viết hoa (The). Đầu này dẫn đến mẫu sau:
+
+\vspace{0.6em}
+
+\noindent \verb|/the/|
+
+\vspace{0.6em}
+
+Nhưng mẫu này vẫn sai do bắt thừa các trường hợp, chuỗi the ở trong một từ khác (như other hay theology). Nên chúng ta sẽ chỉ định word boundary ở cả hai đầu:
+
+\vspace{0.6em}
+
+\noindent \verb|/\b[tT]he\b/|
+
+\vspace{0.6em}
+
+
+
+
+
+
+
+
