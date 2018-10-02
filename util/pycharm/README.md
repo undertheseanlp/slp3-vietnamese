@@ -42,11 +42,13 @@ Cơ bản
 
 Format 
 
-| Key   | Abbr           | Ý nghĩa                     |
-|-------|----------------|-----------------------------|
-| b     | bold           | Bôi đâm                     |
-| i     | italic         | In nghiêng                  |
-| ic    | Inline code    |                             |
+| Key     | Abbr           | Ý nghĩa                     |
+|---------|----------------|-----------------------------|
+| b       | bold           | Bôi đâm                     |
+| un      | underline      | Gạch chân                   |
+| i       | italic         | In nghiêng                  |
+| ic      | Inline code    |                             |
+| ttt     | textttt        | Font code                   |
 
 Headings
 
@@ -70,20 +72,20 @@ Code
 
 Ghi chú
 
-| Phím tắt | Ý nghĩa       |
+| Phím tắt | Abbr          |
 |----------|---------------|
 | diary    | Nhật ký       |
 | fn       | Footnote      | 
 
 Ký tự đặc biệt
 
-| Phím tắt  | Ý nghĩa                     |
-|-----------|-----------------------------|
-| chs       | Ký tự khoảng trắng          |
-| chvs      | Ký tự khoảng trắng hiển thị |
-| ch\       | Ký tự gạch chéo             |
-| ch$       | Ký tự đô la                 |
-| ch^       | Ký tự dấu mũ                | 
+| Phím tắt | Abbr                    | Ý nghĩa                     |
+|----------|-------------------------|-----------------------------|
+| chs      | Character Space         | Ký tự khoảng trắng          |
+| chvs     | Character Visible Space | Ký tự khoảng trắng hiển thị |
+| ch\      | Character Slash         | Ký tự gạch chéo             |
+| ch$      | Character Dollar        | Ký tự đô la                 |
+| ch^      | Character Caret         | Ký tự dấu mũ                |
 
 #### Chi tiết 
 
