@@ -135,6 +135,30 @@ baa!\\
 \indent baaaaa!\\
 \indent ...
 
-Ngôn ngữ này bao gồm các chuỗi với một ký tự b, theo sau bởi ít nhất hai ký tự a, kết thúc bằng dấu chấm cảm.
+Ngôn ngữ này bao gồm các chuỗi với một ký tự b, theo sau bởi ít nhất hai ký tự a, kết thúc bằng dấu chấm cảm. Tập hợp các phép toán cho phép chúng ta định nghĩa "một vài phần tử" sử dụng ký hiệu sao *, được gọi là Kleene *. Kleene * có ý nghĩa "không hoặc nhiều lần hơn xuất hiện của ký tự hoặc biểu thức trước". Nên /a*/ nghĩa là "bất kỳ chuỗi nào không có hoặc có một hoặc nhiều ký tự a". Nó sẽ khớp với chuỗi a hoặc aaaaaa, nhưng nó cũng khớp với Off Minor do chuỗi Off Minor không có ký tự a. Nên biểu thức khớp một hoặc nhiều ký tự a là /aa*/, với ý nghĩa một ký tự a theo sau bởi không hiệu nhiều ký tự a. Các biểu thức phức tạp hơn cũng có thể lặp lại. Như /[ab]*/ có nghĩa là "không hoặc nhiều ký tự a hoặc b" (chứ không phải, không hoặc nhiều ký tự đóng ngoặc vuông ]). Nó sẽ khớp với các chuỗi như aaaa hoặc ababab hoặc bbbbb.
 
+Để chỉ định nhiều chữ số (thường hữu ích cho việc xác định giá) chúng ta có thể mở rộng từ biểu thức /[0-9]/ cho việc khớp một chữ số. Một số nguyên (một chuỗi của các số) có thể được định nghĩa /[0-9][0-9]*/. (Tại sao không phải chỉ đơn giản là /[0-9]*/?)
 
+Đôi khi, sẽ là quá lằng nhằng nếu cần phải viết biểu thức cho số hai lần như vậy, nên một cách ngắn hơn để chỉ định "ít nhất một" của một ký tự. Đó là Kleene +, có nghĩa là "xảy ra một hoặc nhiều lần liên tiếp của ký tự hoặc biểu thức trước đó". Đo đó, biểu thức /[0-9]+/ là một cách đơn giản hơn để chỉ định "một chuỗi các số". Do đó, có hai cách để thể hiện ngôn ngữ của cừu: /baaa*!/ và /baa+!/.
+
+Một ký tự rất quan trọng trong các biểu thức chính quy là dấu chấm (/./), một ký tự wildcard để khớp bất kì ký tự đơn nào (trừ ký tự xuống dòng), như được thể hiện trong hình 2.6.
+
+\begin{figure}[h]
+	\begin{tabular}{ l l l }
+	 \hline
+	 RE & Match & Example Patterns \\
+	 \hline
+	 \verb|/beg.n/| & bất kỳ cứ tự nào ở giữa beg và n & begin, beg'n, begun \\
+	 \hline
+	\end{tabular}
+ \caption{Sử dụng dấu chấm . để chỉ định bất kỳ ký tự nào}
+ \label{table:2.6}
+\end{figure}
+
+Wildcard thường được sử dụng với Kleene sao với ý nghĩa "bất kì chuỗi nào". Ví dụ, giả sử chúng ta muốn tìm bất kỳ dòng nào cho một từ hai lần, ví dụ aardvark, xuất hiện hai lần. Chúng ta có thể chỉ định một biểu thức như /aardvark.*aardvark/.
+
+Anchors là các ký tự đặc biệt để chỉ định vị trí trong một biểu thức chính quy. Hai anchor quan trọng nhất là dấu mũ \verb|^| và ký hiệu đô la \verb|$|. Dấu mũ \verb|^| khớp với vị trị đầu dòng. Biểu thức \verb|/^The/| chỉ khớp với các từ The xuất hiện ở đầu dòng. Do đó, ký tự dấu mũ \verb|^| có ba tác dụng: để chỉ định vị trí đầu dòng, để chỉ định negation khi ở trong ngoặc vuông, hoặc là chỉ định ký tự dấu mũ \verb|^| (ngữ cảnh nào cho phép các chương trình grep hay Python biết được chức năng nào có dấu mũ được sử dụng?). Ký hiệu đô la \verb|$| khớp với vị trí cuối dùng. Nên biểu thức \textvisiblespace \verb|$| là một biểu thức hữu dụng để ác định một khoảng trống ở vị trí cuối câu, biểu thức \verb|^The dog\.$| khớp với dòng chứa chính xác cụm từ The dog. (Chúng ta phải dùng ký tự gạch chéo ở đây để chỉ dấu . có nghĩa là ký tự dấu chấm chứ không phải là wildcard.
+
+Cũng có hai anchor khác: \verb|\b| chỉ định word boundary, và \verb|\B| chỉ định không phải word boundary. Do đó, \verb|\bthe\b| khớp với chữ the mà không khớp chữ other. Một "từ" trong một biểu thức chính quy thường được định nghĩ là một chuỗi các số, dấu gạch dưới và các chữ cái; định nghĩa này dựa vào định nghĩa "từ" trong các ngôn ngữ lập trình. Ví dụ, \verb|\b99\b| khớp với chuỗi 99 trong There are 99 bottles of beer on the wall (vì trước và sau 99 có dấu cách), nhưng sẽ không khớp với chuỗi 99 trong câu There are 299 bottles of beer on the wall (ví trước 99 không phải là một khoảng trống mà là một số). Nhưng nó sẽ khớp với 99 trong \textit{\symbol{36}99} (do trước 99 là dấu đô la (\symbol{36}), nó không phải là một chữ số, dấu gạch dưới hay chữ cái)
+
+\subsection{Disjunction, Grouping và Precendence}
