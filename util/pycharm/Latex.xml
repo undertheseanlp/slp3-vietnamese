@@ -494,4 +494,84 @@
       <option name="XML" value="false" />
     </context>
   </template>
+  <template name="chs" value="\textvisiblespace" description="Character Space" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Bash" value="false" />
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="CoffeeScript" value="false" />
+      <option name="Django" value="false" />
+      <option name="HAML" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="JSON" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="PUPPET_FILE" value="false" />
+      <option name="Python" value="false" />
+      <option name="REQUEST" value="false" />
+      <option name="SQL" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="XML" value="false" />
+    </context>
+  </template>
+  <template name="ch\" value="\symbol{92}$END$" description="Character Slash" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Bash" value="false" />
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="CoffeeScript" value="false" />
+      <option name="Django" value="false" />
+      <option name="HAML" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="JSON" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="PUPPET_FILE" value="false" />
+      <option name="Python" value="false" />
+      <option name="REQUEST" value="false" />
+      <option name="SQL" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="XML" value="false" />
+    </context>
+  </template>
+  <template name="ch$" value="\symbol{36}$END$" description="Character Dollar" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Bash" value="false" />
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="CoffeeScript" value="false" />
+      <option name="Django" value="false" />
+      <option name="HAML" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="JSON" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="PUPPET_FILE" value="false" />
+      <option name="Python" value="false" />
+      <option name="REQUEST" value="false" />
+      <option name="SQL" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="XML" value="false" />
+    </context>
+  </template>
+  <template name="ch^" value="\symbol{94}$END$" description="Character Caret" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Bash" value="false" />
+      <option name="CSS" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="CoffeeScript" value="false" />
+      <option name="Django" value="false" />
+      <option name="HAML" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="JSON" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="PUPPET_FILE" value="false" />
+      <option name="Python" value="false" />
+      <option name="REQUEST" value="false" />
+      <option name="SQL" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="XML" value="false" />
+    </context>
+  </template>
 </templateSet>

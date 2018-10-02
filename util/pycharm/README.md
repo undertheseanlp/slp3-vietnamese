@@ -75,6 +75,15 @@ Ghi chú
 | diary    | Nhật ký       |
 | fn       | Footnote      | 
 
+Ký tự đặc biệt
+
+| Phím tắt | Ý nghĩa            |
+|----------|--------------------|
+| chs      | Ký tự khoảng trắng |
+| ch\      | Ký tự gạch chéo    |
+| ch$      | Ký tự đô la        |
+| ch^      | Ký tự dấu mũ       | 
+
 #### Chi tiết 
 
 b: Bôi đậm
