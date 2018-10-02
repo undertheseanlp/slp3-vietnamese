@@ -574,7 +574,7 @@
       <option name="XML" value="false" />
     </context>
   </template>
-  <template name="ttt" value="\textttt{$TEXT$}$END$" description="Text TTT" toReformat="false" toShortenFQNames="true">
+  <template name="ttt" value="\texttt{$TEXT$}$END$" description="Text TTT" toReformat="false" toShortenFQNames="true">
     <variable name="TEXT" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="Bash" value="false" />

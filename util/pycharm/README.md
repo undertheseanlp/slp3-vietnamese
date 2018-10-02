@@ -48,7 +48,7 @@ Format
 | un      | underline      | Gạch chân                   |
 | i       | italic         | In nghiêng                  |
 | ic      | Inline code    |                             |
-| ttt     | textttt        | Font code                   |
+| ttt     | texttt         | Font code                   |
 
 Headings
 
