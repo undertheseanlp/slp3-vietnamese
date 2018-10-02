@@ -162,3 +162,28 @@ Anchors là các ký tự đặc biệt để chỉ định vị trí trong mộ
 Cũng có hai anchor khác: \verb|\b| chỉ định word boundary, và \verb|\B| chỉ định không phải word boundary. Do đó, \verb|\bthe\b| khớp với chữ the mà không khớp chữ other. Một "từ" trong một biểu thức chính quy thường được định nghĩ là một chuỗi các số, dấu gạch dưới và các chữ cái; định nghĩa này dựa vào định nghĩa "từ" trong các ngôn ngữ lập trình. Ví dụ, \verb|\b99\b| khớp với chuỗi 99 trong There are 99 bottles of beer on the wall (vì trước và sau 99 có dấu cách), nhưng sẽ không khớp với chuỗi 99 trong câu There are 299 bottles of beer on the wall (ví trước 99 không phải là một khoảng trống mà là một số). Nhưng nó sẽ khớp với 99 trong \textit{\symbol{36}99} (do trước 99 là dấu đô la (\symbol{36}), nó không phải là một chữ số, dấu gạch dưới hay chữ cái)
 
 \subsection{Disjunction, Grouping và Precendence}
+
+Giả sử chúng ta muốn tìm kiếm trong các văn bản về động vật, cụ thể là về chó và mèo. Trong những trường hợp đó, chúng ta có thể muốn tìm những cụm từ như cat hoặc dog. Do chúng ta không thể sử dụng ngoặc vuông để định nghĩa "cat or dog" (tại sao chúng ta không thể xây dựng biểu thức /[catdog]/?), chúng ta cần một phép toán mới, phép toán disjunction, hay được gọi là ký tự pipe \verb|||. Mẫu /cat|dog/ khớp với một trong hai chuỗi cat hoặc dog.
+
+Đôi khi chúng ta muốn phép toán disjunction này nằm ở giữa một chuỗi lớn hơn, ví dụ, giả sử tôi muốn tìm kiếm thông về về loài cá cho người anh họ David của tôi. Làm sao tôi có thể chỉ định tôi muốn guppy hoặc guppies? Chúng ta không thể viết là /guppy|ies/, bởi vì mẫu này chỉ khớp với chuỗi guppy hoặc ies. Đó là bởi vì các chuỗi như guppy sẽ được ưu tiên hơn phép toán disjunction. Để phép toán disjunction có thể áp dụng lên một mẫu, chúng ta cần ký tự mở ngoặc ( và ). Bao một mẫu trong một ngoặc đơn để khiến nó hoạt động như một ký tự đối với các phép toán như pipe | hay Kleene*. Do đó, mẫu /guppy(y|ies)/ sẽ chỉ định điều chúng ta muốn, phép toán disjunction chỉ áp dụng trên các phần đuôi y và ies.
+
+Phép toán mở ngoặc đơn ( cũng hữu dụng khi làm việc với các phép toán như Kleene *. Không giống như phép toán |, Kleene * áp dụng mặc định cho không phải một ký tự, mà là toàn bộ chuỗi. Giả sử chúng ta muốn khớp một chuỗi lặp lại, ví dụ như một dòng mà có nhiều tên cột ở dạng \textit{Column 1 \hspace{0.1em} Column 2 \hspace{0.1em} Column 3}. Biểu thức \texttt{/Column\textvisiblespace[0-9]+\textvisiblespace*/} sẽ không khớp với bấy kỳ cột nào, thay vào đó, nó sẽ khớp với một cột theo sau bởi bất kỳ khoảng trắng nào!. Ký tự sao ở đấy chỉ áp dụng chủ ký tự khoảng trắng ở trước nó, chứ không phải cho toàn bộ biểu thức. Với dấu ngoặc đơn, chúng ta có thể viết lại biểu thức \texttt{/(Column\textvisiblespace[0-9]+\textvisiblespace*)*/} để khớp với các chuỗi có dạng bắt đầu với từ Column, theo sau bởi một dấu cách, theo sau bởi các số và có thể có khoảng trắng hay không, toàn bộ mẫu này lặp lại nhiều lần.
+
+Ý tưởng một phép toán có thể được ưu tiên so với phép toán khác, khiến chúng ta đôi khi phải sử dụng ngoặc đơn để chỉ định điều chúng ta muốn, là một dạng của phân cấp độ ưu tiên pháp toán trong regular expressions. Bảng dưới đây thể hiện thứ tự ưu tiên trong RE, từ ưu tiên cao nhất đến thấp nhất
+
+\begin{center}
+\begin{tabular}{ l l }
+	 Parenthesis & \verb|()| \\
+	 Counters  & \verb|* + ? {}| \\
+	 Sequences and anchors & \verb|the ^my end$| \\
+	 Disjunction & \verb||| \\
+\end{tabular}
+\end{center}
+
+Từ bảng này, do counters có độ ưu tiên hơn sequences, \verb|/the*| sẽ khớp với chuỗi theeeee mà không khớp với thethe. Vì sequences có độ ưu tiên cao hơn disjunction, /the|any/ khớp với the hoặc any mà không khớp với theny.
+
+Các mẫu có thể nhập nhằng theo các cách khác. Xem biểu thức \verb|/[a-z]*/| khi so khớp với chuỗi \textit{one upon a time}. Do \verb|/[a-z]*| khớp không hoặc nhiều chữ cái, biểu thức có thể khớp với không có gì, hoặc chỉ một chữ cái o, on, onc hoặc once. Trong các trường hợp này, regular expression luôn khớp với chuỗi dài nhất có thể, chúng ta gọi những mẫu như vậy là greedy, do chúng sẽ mở rộng cho đến khi khớp càng nhiều ký tự càng tốt.
+
+Tuy nhiên, có những cách để chỉ định các mẫu non-greedy, việc việc sử dụng ký tự ?. Phép toán *? sẽ khớp với ít chuỗi nhất có thể. Phép toán +? sẽ khớp với ít ký tự nhất có thể.
+
+\subsection{Một ví dụ đơn giản}
