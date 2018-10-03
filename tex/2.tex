@@ -235,6 +235,29 @@ Quá trình chúng ta vừa trải qua thường xảy ra hai dạng lỗi: fals
 
 Giờ chúng ta hãy thử một ví dụ hữu ích hơn thể hiện sức mạnh của các biểu thức chính quy. Giả sử chúng ta muốn xây dựng một ứng dụng giúp người dùng mua máy tính trên Web. Người dùng có thể muốn "máy tính có tốc độ ít nhất 6 GHz, 500 GB ổ cứng và giá nhỏ hơn \$1000". Để làm được loại trích rút thông tin này, chúng ta cần các tìm kiếm các chuỗi dạng 6 GHz, 500 GB, Mac hoặc \$999.99. Trong phần này, chúng ta sẽ tìm hiểu một vài biểu thức chính quy đơn giản để thực hiện nhiệm vụ này.
 
-Đầu tiên, hãy xây dựng biểu thức cho việc khớp giá
+Đầu tiên, hãy xây dựng biểu thức cho việc khớp giá. Đây là biểu thức đầu tiên cho việc khớp một dấu đô la theo sau bởi các số.
 
 \codeexamples{/$[0-9]+/}
+
+	Chú ý rằng ký tự \symbol{36} có chức năng khác nếu nó đứng ở cuối biểu thức như chúng ta đã thảo luanạ ở phần trước. Phần lớn các chương trình dịch biểu thức chính quy đủ thông minh để nhận ra ký tự \symbol{36} ở đây không chỉ cuối file. (Như một bài kiểm tra suy nghĩ, bạn hãy nghĩ cách làm sao các chương trình dịch regex có thể tìm ra chức năng của \symbol{36} trong ví dụ này.)
+
+Giờ chúng ta hãy đối mặt với vấn đề số thực. Chúng ta sẽ thêm dấu . vào giữa các số:
+
+\codeexamples{/$[0-9]+\.[0-9][0-9]/}
+
+Mẫu này chỉ khớp với chuỗi \symbol{36}199.99 nhưng không khớp với \symbol{36}199. Chúng ta cần thêm ký tự ? và đảm bảo chúng ta có một word boundary:
+
+\codeexamples{/(^|\W)$[0-9]+(\.[0-9][0-9])?\b/}
+
+Cuối cùng, mẫu này khớp với các giá như \symbol{36}1999999.99, giá này rất cao nên không thực tế. Chúng ta cần hạn chế số tiền:
+
+\codeexamples{/(^|\W)$[0-9]{0,3}(\.[0-9][0-9])?\b/}
+
+Làm sao để chỉ định tốc độ của vi xử l >6GHz. Đây là mẫu cho điều đó:
+
+\vspace{0.6em}
+
+\noindent \texttt{/\b[6-9]+\textvisiblespace*(GHz|[Gg]igahertz)\b/}
+
+\vspace{0.6em}
+
