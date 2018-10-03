@@ -212,10 +212,29 @@ Nhưng mẫu này vẫn sai do bắt thừa các trường hợp, chuỗi the �
 
 \vspace{0.6em}
 
+Giả sử chúng ta cần làm nó mà không sử dụng \verb|/\b/|. Chúng ta muốn điều này do \verb|/\b/| không làm việc với dấu gạch dưới và số như là wơrd boundaries; nhưng chúng ta có thẻ muốn tìm the trong ngữ cảnh nó có dấu gạch ngang hay số. Chúng ta cần chỉ chúng ta muốn những thực thể mà không có chữ cái ở cả hai hướng của từ the
 
+\vspace{0.6em}
 
+\noindent \verb|/[^a-zA-Z][tT]he[^a-zA-Z]/|
 
+\vspace{0.6em}
 
+Nhưng vẫn còn một vấn đề với mẫu này: nó không tìm thấy từ the khi nó bắt đầu một dòng. Đó là do biểu thức \verb|[^a-zA-Z]|, vốn để loại những từ trong đó có chứa the, lại yêu cầu một ký tự đơn ở trước the. Chúng ta có thể tránh điều này bằng cách chỉ định trước the hoặc không phải là chữ cái hoặc là ký tự bắt đầu dòng, điều tương tự với mẫu ở cuối dòng
 
+\codeexamples{/(^|[^a-zA-Z])[tT]he([^a-zA-Z]\|$)/}
 
+Quá trình chúng ta vừa trải qua thường xảy ra hai dạng lỗi: false postives, chuỗi chúng ta đã khớp sai như other và there và false negative, chuỗi mà chúng ta bỏ sót, như The. Xác định hai dạng lỗi này còn xuất hiện nhiều lần trong việc triển khai các hệ thống xử lý ngôn ngữ và tiếng nói. Giảm thiểu lỗi trong hệ thống do đó gồm hai công việc chính:
 
+\begin{itemize}
+  \item Tăng precision (giảm false postivies)
+  \item Tăng recall (giảm false negatives)
+\end{itemize}
+
+\subsection{Một ví dụ phức tạp hơn}
+
+Giờ chúng ta hãy thử một ví dụ hữu ích hơn thể hiện sức mạnh của các biểu thức chính quy. Giả sử chúng ta muốn xây dựng một ứng dụng giúp người dùng mua máy tính trên Web. Người dùng có thể muốn "máy tính có tốc độ ít nhất 6 GHz, 500 GB ổ cứng và giá nhỏ hơn \$1000". Để làm được loại trích rút thông tin này, chúng ta cần các tìm kiếm các chuỗi dạng 6 GHz, 500 GB, Mac hoặc \$999.99. Trong phần này, chúng ta sẽ tìm hiểu một vài biểu thức chính quy đơn giản để thực hiện nhiệm vụ này.
+
+Đầu tiên, hãy xây dựng biểu thức cho việc khớp giá
+
+\codeexamples{/$[0-9]+/}
