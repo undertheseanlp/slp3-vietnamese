@@ -247,17 +247,53 @@ Giờ chúng ta hãy đối mặt với vấn đề số thực. Chúng ta sẽ 
 
 Mẫu này chỉ khớp với chuỗi \symbol{36}199.99 nhưng không khớp với \symbol{36}199. Chúng ta cần thêm ký tự ? và đảm bảo chúng ta có một word boundary:
 
-\codeexamples{/(^|\W)$[0-9]+(\.[0-9][0-9])?\b/}
+\vspace{0.6em}
+
+\noindent \texttt{/(^|\W)$[0-9]+(\.[0-9][0-9])?\b/}
+
+\vspace{0.6em}
 
 Cuối cùng, mẫu này khớp với các giá như \symbol{36}1999999.99, giá này rất cao nên không thực tế. Chúng ta cần hạn chế số tiền:
 
-\codeexamples{/(^|\W)$[0-9]{0,3}(\.[0-9][0-9])?\b/}
+\vspace{0.6em}
+
+\noindent \texttt{/(\symbol{94}|\symbol{92}W)\$[0-9]+\{0,3\}(\symbol{92}.[0-9][0-9])?\symbol{92}b/}
+
+\vspace{0.6em}
 
 Làm sao để chỉ định tốc độ của vi xử l >6GHz. Đây là mẫu cho điều đó:
 
 \vspace{0.6em}
 
-\noindent \texttt{/\b[6-9]+\textvisiblespace*(GHz|[Gg]igahertz)\b/}
+\noindent \texttt{/\symbol{92}b[6-9]+\textvisiblespace*(GHz|[Gg]igahertz)\symbol{92}b/}
 
 \vspace{0.6em}
+
+Chú ý rằng chúng tôi sử dụng \texttt{/\textvisiblespace*/} có nghĩa là "không hiều nhiều khoảng trắng" do có trường hợp có nhiều khoảng trắng ở đó. Với dung lượng ổ cứng, chung sta phải tiếp tục sử dụng số thực (5.5 GB); chú ý việc sử dụng ? để khiến s tùy chọn:
+
+\vspace{0.6em}
+
+\noindent \texttt{/\symbol{92}b[6-9]+\textvisiblespace*(GHz|[Gg]igahertz)\symbol{92}b/}
+
+\vspace{0.6em}
+
+Chỉnh sửa biểu thức này để nó có thể khớp với nhiều hơn 500 GB được để lại như một bài tập cho bạn đọc.
+
+\subsection{Thêm nhiều phép toán}
+
+Hình 2.7 thể hiện nhiều phép toán cho chọn khoảng, thường được sử dụng để tiếp kiệm thời gian gõ. Bên cạnh Kleene * và Kleene +, chúng ta có thể chỉ định trực tiếp số lượng, bằng cách cho chúng vào ngoặc vuông. Biểu thức \verb|/{3}/| ý nghĩa là "xảy ra chính xác 3 lần của ký tự hay biểu thức trước đó". Nên biểu thức \verb|/a\.{24}z| sẽ khớp với a theo sau 24 số theo sau bởi z (chứ không phải a theo sau bởi 23 hoặc 25 dấu chấm rồi đến z)
+
+\begin{figure}[h]
+	\begin{tabular}{ l l l l }
+	 \hline
+	 RE & Expansion & Match & First Matches \\
+	 \hline
+	 \symbol{92}d & [0-9] & chữ số & Party\textvisiblespace of\textvisiblespace \underline{5} \\
+	 \symbol{92}D & \verb|[^0-9]| & không phải số & \underline{B}lue\textvisiblespace moon \\
+	 \hline
+	\end{tabular}
+ \caption{Ví dụ các biểu thức chính quy đơn giản}
+ \label{table:1}
+\end{figure}
+
 
