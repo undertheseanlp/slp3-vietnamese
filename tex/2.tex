@@ -288,11 +288,35 @@ Hình 2.7 thể hiện nhiều phép toán cho chọn khoảng, thường đư�
 	 \hline
 	 RE & Expansion & Match & First Matches \\
 	 \hline
-	 \symbol{92}d & [0-9] & chữ số & Party\textvisiblespace of\textvisiblespace \underline{5} \\
+	 \symbol{92}d & \verb|[0-9]| & chữ số & Party\textvisiblespace of\textvisiblespace \underline{5} \\
 	 \symbol{92}D & \verb|[^0-9]| & không phải số & \underline{B}lue\textvisiblespace moon \\
+	 \symbol{92}w & \verb|[a-zA-Z0-9_]| & chữ cái, chữ số, dấu gạch dưới & \underline{D}aiyu  \\
+	 \symbol{92}W & \verb|[^\w]| & không phải chữ cái, chữ số hay dấu gạch dưới & \underline{D}aiyu  \\
+	 \symbol{92}s & \texttt{[\textvisiblespace \symbol{92}r\symbol{92}t\symbol{92}n\symbol{92}f]} & khoảng trắng (tab, dấu cách) &  \\
+	  \symbol{92}S & \verb|[^\s]| & không phải khoảng trắng &  \underline{i}n\textvisiblespace Concord \\
 	 \hline
 	\end{tabular}
- \caption{Ví dụ các biểu thức chính quy đơn giản}
+ \caption{Viết tắt cho tập hợp các ký tự}
+ \label{table:1}
+\end{figure}
+
+Khoảng cũng có được định nghĩa. Biểu thức \verb|/{n,m}/| biểu diễn khoảng từ n đến m xảy ra của các ký tự hoặc biểu thức trước đó, biểu thức \verb|{n,}| chỉ định có ít nhất n lần xảy ra ký tự hoặc biểu thức truowcs đó. Các biểu thức dùng để biểu thị khoảng được tổng kết trong bảng 2.8
+
+\begin{figure}[h]
+	\begin{tabular}{ l l  }
+	 \hline
+	 RE & Expansion  \\
+	 \hline
+	 * & không hoặc nhiều   \\
+	 + & một hoặc nhiều    \\
+	 ? & không hoặc một    \\
+	 \{n\} & chính xác n lần    \\
+	 \{n,m\} & từ n đến m lần    \\
+	 \{n,\} & ít nhất n lần    \\
+	 \{,m\} & nhiều nhất m lần    \\
+	 \hline
+	\end{tabular}
+ \caption{Các biểu thức cho việc đếm}
  \label{table:1}
 \end{figure}
 
