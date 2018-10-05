@@ -320,4 +320,33 @@ Khoảng cũng có được định nghĩa. Biểu thức \verb|/{n,m}/| biểu 
  \label{table:1}
 \end{figure}
 
+Cuối cùng, các ký tự đặc biệt được chỉ định đằng sau ký tự gạch chéo (\symbol{92}) (xem hình 2.9). Hai ký tự đặc biệt phổ biết nhất là ký tự xuống dòng (\symbol{92}n) và ký tự tab (\symbol{92}t). Để chỉ định chính các ký tự đặc biệt (như .,*,[ và \symbol{92}), hãy đặt chúng đằng sau ký tự gạch chéo (ví dụ \verb|/\./|, \verb|/\*/| và \verb|/\\/|).
+
+\begin{figure}[h]
+	\begin{tabular}{ l l l }
+	 \hline
+	 RE & Match & First Patterns Matched \\
+	 \hline
+	 \verb|\*| & ký tự dấu sao "*"  & "K\underline{*}A*P*L*A*N"  \\
+	 \verb|\.| & ký tự dấu chấm "."  & "Dr\underline{.} Livington, I presume"  \\
+	 \verb|\?| & ký tự dấu hỏi chấm & "Why don't they come and lend a hand \underline{?}"  \\
+	 \verb|\n| & ký tự xuống dòng  &  \\
+	 \verb|\t| & ký tự tab & \\
+	 \hline
+	\end{tabular}
+ \caption{Các biểu thức cho việc đếm}
+ \label{table:1}
+\end{figure}
+
+\subsection{Thay thế biểu thức chính quy, nhóm và ELIZA}
+
+Một trong những ứng dụng quan trọng của regular expression là thay thế chuỗi. Ví dụ, một phép toán thay thế \verb|s/regexp1/pattern/| sử dụng trong Python hay trong các chương trình Unix như vim hay sed cho phép một chuỗi được định nghĩa bởi biểu thức chính quy được thay thể bởi chuỗi khác:
+
+\vspace{0.6em}
+
+\noindent \texttt{s/colour/color}
+
+\vspace{0.6em}
+
+Nó thường được sử dụng để chỉ đến một phần con của chuỗi được khớp. Ví dụ, chúng ta muốn đặt những ngoặc nhọn quanh một số trong một chuỗi, như đổi the 35 boxes thành the the <35> boxes. Chúng ta muốn một cách nào đó để trỏ đến vị trí mà chúng ta muốn thay thể để thêm ngoặc. Để làm việc này, chúng ta đặt ngoặc đơn
 
