@@ -17,36 +17,36 @@ ELIZA: DOES IT PLEASE YOU TO BELIEVE I AM AFRAID OF YOU\\
 }
 }{Weizenbaum (1966)}
 
-Đoạn hội thoại trên là từ \textbf{ELIZA}, một hệ thống xử lý ngôn ngữ tự nhiên đầu tiên có thể thực hiện những đoạn hội thoại với người dùng bằng cách bắt chước các câu nói trước đó của một nhà tâm lý học (Weizenbaum, 1966). ELIZA là một chương trình đơn giản sử dụng phương pháp nhận dạng các cụm từ như "Bạn là X" và sau đó chuyển thành câu hỏi hợp lý như "Điều gì khiến bạn nghĩ tôi là X?". Kỹ thuật đơn giản này đạt được thành công trong lĩnh vực này vì ELIZA không cần \textit{biết} điều gì để bắt chước lại nhà tâm lý học. Trong ghi chú của Weizebaum, đây là một trong những ít chương trình hội thoại mà người nghe có thể phản ứng mà không cần biết điều gì về thế giới. Cách bắt chước của ELIZA đạt được nhiều thanh công đáng chú ý: rất nhiều người tauwơng tác với ELIZA bắt đầu tin rằng nó \textit{thực sự} hiểu họ và vấn đề của họ, rất nhiều người tiếp tục tin vào khả năng của ELIZA mặc dù đã biết về cách vận hành của nó (Weizenbaum, 1976), và ngay cả trong thời điểm này, những \textbf{chatbots} như vậy cũng rất thú vị.
+Đoạn hội thoại trên là từ \textbf{ELIZA}, một hệ thống xử lý ngôn ngữ tự nhiên đầu tiên có thể thực hiện những đoạn hội thoại với người dùng bằng cách bắt chước các câu nói trước đó của một nhà tâm lý học (Weizenbaum, 1966). ELIZA là một chương trình đơn giản sử dụng phương pháp nhận dạng các cụm từ như "Bạn là X" và sau đó chuyển thành câu hỏi hợp lý như "Điều gì khiến bạn nghĩ tôi là X?". Kỹ thuật đơn giản này đã đạt được thành công vì ELIZA không cần \textit{biết} điều gì để bắt chước lại nhà tâm lý học. Trong ghi chú của Weizebaum, đây là một trong những ít chương trình hội thoại có thể trả lời các câu hỏi mà không cần biết điều gì về thế giới. Cách bắt chước của ELIZA đạt được nhiều thành công đáng chú ý: rất nhiều người tương tác với ELIZA bắt đầu tin rằng nó \textit{thực sự} hiểu họ và vấn đề của họ, rất nhiều người tiếp tục tin vào khả năng của ELIZA mặc dù đã biết về cách vận hành của nó (Weizenbaum, 1976), và ngay cả trong thời điểm này, những \textbf{chatbots} như vậy cũng rất thú vị.
 
-Tất nhiên, những chương trình hội thoại hiện đại có rất nhiều kỹ thuật khác; chúng có thể trả lời trả lời các câu hỏi, đặt vé máy bay hoặc tìm nhà hàng, các kỹ thuật chúng sử dụng dựa nhiều vào việc hiểu sâu sắc ý định của người dùng, chúng ta sẽ cùng tìm hiểu trong chương 24. Tuy nhiên, những phương pháp dựa vào luật như ở ELIZA hay các chabot khác đóng vai trò quan trọng trong việc xử lý ngôn ngữ tự nhiên.
+Tất nhiên, những chương trình hội thoại hiện đại có rất nhiều kỹ thuật khác; chúng có thể trả lời các câu hỏi, đặt vé máy bay hoặc tìm nhà hàng, các kỹ thuật chúng sử dụng dựa nhiều vào việc hiểu sâu sắc ý định của người dùng, như chúng ta sẽ cùng tìm hiểu trong chương 24. Tuy nhiên, những phương pháp dựa vào luật như ở ELIZA hay các chabot khác luôn đóng vai trò quan trọng trong việc xử lý ngôn ngữ tự nhiên.
 
-Chúng ta sẽ bắt đầu với công cụ quan trọng nhất trong việc biểu diễn các luật văn bản: \textbf{biểu thức chính quy}. Các biểu thức chính quy có thể chỉ định một chuỗi chúng ta muốn tách ra từ một văn bản, từ các cụm từ "Bạn là X" như ở ELIZA, cho đến các chuỗi như \$199 hay \$24.99 để trích xuất giá từ một bảng trong một văn bản.
+Chúng ta sẽ bắt đầu với công cụ quan trọng nhất trong việc biểu diễn các luật văn bản: \textbf{biểu thức chính quy}. Các biểu thức chính quy có thể chỉ định một chuỗi chúng ta muốn tách ra từ một văn bản, từ các cụm từ "Bạn là X" như ở ELIZA, cho đến các chuỗi như \$199 hay \$24.99 để trích xuất giá tiền từ một bảng trong một văn bản.
 
-Sau đó, chúng ta sẽ chuyển sang một lớp các bài toán được gọi là \textbf{text normalization}, trong đó các biểu thức chính quy đóng vai trò quan trọng. Chuẩn hóa text có nghĩa là chuyển chúng về dạng chúng về dạng tiêu chuẩn. Ví dụ, công việc đầu tiên chúng ta thường làm khi xử lý ngôn ngữ liện quan đến việc \textbf{tokenizing} từ, bài toán \textbf{tokenization}. Mỗi từ tiếng Anh được tách biệt với các từ khác bằng khoảng trống. Nhưng khoảng trống không phải khi nào cũng hiệu quả. Các từ như \textit{New York} hay \textit{rock 'n' roll} thường được coi là một từ mặc dù chúng cách nhau bởi các khoảng trống, trong khi đó có khi chúng ta phải tách cụm từ I'm thành I và am. Trong quá trình xử lý các tweets vaf text chúng ta cần tokenize các biểu tượng cảm xúc như \verb|:)| hay các hashtags như \verb|#nlproc|. Với một vài ngôn ngữ, như Trung Quốc, không có khoảng cách giữa các từ, nên việc tách từ trở nên khó khăn hơn.
+Sau đó, chúng ta sẽ chuyển sang một lớp các bài toán được gọi là \textbf{text normalization} (chuẩn hóa văn bản), trong đó các biểu thức chính quy đóng vai trò quan trọng. Chuẩn hóa văn bản có nghĩa là chuyển chúng về dạng chúng về dạng tiêu chuẩn. Như công việc đầu tiên chúng ta thường làm khi xử lý ngôn ngữ liện quan đến việc \textbf{tokenizing} từ (tách từ), bài toán \textbf{tokenization}. Mỗi từ tiếng Anh được tách biệt với các từ khác bằng khoảng trống. Tuy nhiên, khoảng trống không phải khi nào cũng hiệu quả. Các từ như \textit{New York} hay \textit{rock 'n' roll} thường được coi là một từ mặc dù chúng cách nhau bởi các khoảng trống, trong khi đó có khi chúng ta phải tách cụm từ \textit{I'm} thành \textit{I} và \textit{am}. Trong quá trình xử lý các tweets và văn bản chúng ta cần tokenize các \textbf{biểu tượng cảm xúc} (emoticons) như \verb|:)| hay các \textbf{hashtags} như \verb|#nlproc|. Với một vài ngôn ngữ như tiếng Trung Quốc, khi không có khoảng cách giữa các từ, việc tách từ trở nên khó khăn hơn.
 
-Một khía cạnh khác của việc chuẩn hóa text là \textbf{lemmatization}, bài toán xác định hai từ có cùng gốc, dù được viết khác nhau. Ví dụ, các từ \textit{sang}, \textit{sung} và \textit{sings} đều là các dạng khác nhau của động từ \textit{sing}. Từ \textit{sing} là một \textit{lemma} của các từ này, và một \textbf{lemmatizer} sẽ chuyển đổi tất cả các từ này về sing. Lemmatization rất quan trọng trong quá trình phân tích ngôn ngữ hình thái học của các ngôn ngữ phức tạp như tiếng Ả Rập. \textbf{Stemming} là một dạng đơn giản hơn của lemmatization trong đó chúng ta thường loại bỏ các phần đuôi ở cuối mỗi từ. Chuẩn hóa text cũng bao gồm bài toán tách câu: tách một text ra thành nhiều câu, sử dụng các dấu hiệu như dấu chấm hay dấu chấm cảm.
+Một khía cạnh khác của việc chuẩn hóa văn bản là \textbf{lemmatization}, bài toán xác định hai từ xuất phát cùng gốc hay không, dù được viết khác nhau. Ví dụ, các từ \textit{sang}, \textit{sung} và \textit{sings} đều là các dạng khác nhau của động từ \textit{sing}. Từ \textit{sing} là một \textit{lemma} của các từ này, và một \textbf{lemmatizer} sẽ chuyển đổi tất cả các từ này về \textit{sing}. Lemmatization rất quan trọng trong quá trình phân tích ngôn ngữ hình thái học của các ngôn ngữ phức tạp như tiếng Ả Rập. \textbf{Stemming} là một dạng đơn giản hơn của lemmatization trong đó chúng ta thường loại bỏ các phần đuôi ở cuối mỗi từ. Chuẩn hóa văn bản cũng bao gồm bài toán tách câu: tách một văn bản ra thành nhiều câu, bằng cách sử dụng các dấu hiệu như dấu chấm hay dấu chấm cảm.
 
-Cuối cùng, chúng ta cần so sánh các từ với các chuỗi khác. Chúng tôi sẽ giới thiệu một độ đo gọi là \textbf{edit distance} để đo sự tương đồng của hai chuỗi dựa vào số lượng các thay đổi (thêm, xóa, thay thế) cần thiết để chuyển từ chuỗi này sang chuỗi kia. Edit distance là một thuật toán với các ứng dụng được sử dụng rộng rãi trong xử lý ngôn ngữ tự nhiên, từ sửa lỗi chính tả, nhận dạng tiếng nói đến phân giải đồng tham chiếu.
+Cuối cùng, chúng ta cần so sánh một chuỗi với các chuỗi khác. Chúng tôi sẽ giới thiệu một độ đo gọi là \textbf{edit distance} (khoảng cách sửa đổi) để đo sự tương đồng của hai chuỗi dựa vào số lượng các thay đổi (thêm, xóa, thay thế) cần thiết để chuyển từ chuỗi này sang chuỗi kia. Edit distance là một thuật toán với các ứng dụng được sử dụng rộng rãi trong xử lý ngôn ngữ tự nhiên, từ sửa lỗi chính tả, nhận dạng tiếng nói đến phân giải đồng tham chiếu.
 
 \section{Biểu thức chính quy}
 
-\setlength\epigraphwidth{0.6\textwidth}
+\setlength\epigraphwidth{0.57\textwidth}
 \epigraphfontsize{\small}
 \epigraph{
-{\textit{SIR ANDREW: \hspace{0.5cm}Her C’s, her U’s and her T’s: why that?}
+{\textit{SIR ANDREW: \hspace{0.15cm}Her C’s, her U’s and her T’s: why that?}
 }
 }{Shakespeare, \textit{Twelfth Night}}
 
-Một trong những thành công lớn trong lĩnh vực chuẩn hóa ở khoa học máy tính là \textbf{regular expression (RE)}, một ngôn ngữ để chỉ định các chuỗi tìm kiếm. Đặc tả ngôn ngữ thường được sử dụng trong tất cả các ngôn ngữ máy tính, chương trình soạn thảo văn bản, hay trong các công cụ xử lý text trong Unix như grep hay Emacs. Một cách chính thống, một regular expression là biểu thức đại điện cho một tập hợp các chuỗi. Nó đặc biệt hữu ích cho việc tìm kiếm trên văn bản, khi chúng ta sử dụng các \textbf{pattern} để tìm kiếm và một \textbf{corpus} để tìm kiếm trong đó. Một hàm tìm kiếm regular expression sẽ tìm kiếm trong toàn bộ corpus, trả về các chuỗi tương ứng với các mẫu. Corpus có thể là một tài liệu hoặc một tập các tài liệu. Ví dụ, một lệnh trong Unix grep nhận dầu vào là một regular expression và trả lời tất cả các dòng trong văn bản đầu vào khớp với lại biểu thức.
+Một trong những thành công lớn trong lĩnh vực chuẩn hóa ở khoa học máy tính là \textbf{regular expression (RE)} (biểu thức chính quy), một ngôn ngữ để chỉ định các chuỗi tìm kiếm. Đặc tả ngôn ngữ thường được sử dụng trong tất cả các ngôn ngữ lập trình, chương trình soạn thảo văn bản, hay các công cụ xử lý văn bản trong Unix như grep hay Emacs. Một cách chính thống, một biểu thức chính quy là một biểu thức đại điện cho một tập hợp các chuỗi. Nó đặc biệt hữu ích cho việc tìm kiếm trên văn bản, khi chúng ta sử dụng các \textbf{pattern} (mẫu) để tìm kiếm và một \textbf{corpus} (tập văn bản) để tìm kiếm trong đó. Một hàm tìm kiếm trong biểu thức thức chính quy sẽ tìm kiếm ở toàn bộ tập văn bản, trả về các chuỗi khớp tương ứng với các mẫu. Tập văn bản có thể là một tài liệu hoặc một tập các tài liệu. Ví dụ, lệnh \verb|grep| trong Unix nhận đầu vào là một biểu thức chính quy và trả ra tất cả các dòng trong văn bản đầu vào khớp với biểu thức đó.
 
-Một tìm kiếm có thể được cấu hình để tả về tất cả các dòng khớp, trong trường hợp có nhiều dòng khớp, hoặc chỉ là dòng khớp đầu tiên. Trong các ví dụ dưới, chúng tôi sẽ gạch chận những phần của chuỗi khớp với biểu thức trong regular expression và chỉ gạch chân phần khớp đầu tiên. Chúng tôi thể hiện regular expression trong các dấu gạch (/) nhưng hãy lưu ý những dấu gạch (/) này \textit{không} thuộc regular expression.
+Một biểu thức tìm kiếm có thể được cấu hình để trả về tất cả các dòng khớp, trong trường hợp có nhiều dòng khớp, hoặc chỉ là dòng khớp đầu tiên. Trong các ví dụ dưới, chúng tôi sẽ gạch chân những phần của chuỗi khớp với biểu thức chính quy tương ứng và chỉ gạch chân phần khớp đầu tiên. Chúng tôi đặt các biểu thức trong các dấu gạch chéo nhưng hãy lưu ý những dấu gạch chéo này \textit{không} thuộc vào biểu thức chính quy.
 
-Regular expression có rất nhiều biến thể. Chúng ta sẽ mô tả \textbf{dạng mở rộng của regular expression}; những chương trình phân tích regular expression có thể chỉ nhận một vài biểu thức, và có thể xử lý một vài biểu thức hơi khác nhau. Sử dụng một công cụ thử nghiệm regular expression rất hữu dụng để thử nghiệm các biểu thức của bạn và khám phá các biến thể.
+Biểu thức chính quy có rất nhiều biến thể. Chúng tôi sẽ mô tả \textbf{dạng mở rộng của biểu thức chính quy}; có những chương trình phân tích biểu thức chính quy có thể chỉ nhận một vài biểu thức, hoặc có thể xử lý một vài biểu thức hơi khác nhau. Sử dụng một công cụ thử nghiệm biểu thức chính quy trực tuyến rất hữu dụng để thử nghiệm các biểu thức của bạn và tìm hiểu sự khác nhau giữa các chương trình.
 
 \subsection{Các biểu thức chính quy cơ bản}
 
-Dạng đơn giản nhất của biểu thức chính quy là một dãy các kí tự. Để tìm kiếm từ \textit{woodchuck}, ta gõ \verb|/woodchuck|. Biểu thức \verb|/Buttercup/| khớp với tất cả các chuỗi có chứa cụm từ \textit{Buttercup}; \verb|grep| với biểu thức này có thể trả ra dòng \textit{I'm called little Buttercup}. Một chuỗi tìm kiếm có thể chỉ chứa một ký tự (như \verb|/!/|) hoặc một chuỗi các ký tự (như \verb|/urgl/|)
+Dạng đơn giản nhất của biểu thức chính quy là một dãy các kí tự. Để tìm kiếm từ \textit{woodchuck}, ta gõ \verb|/woodchuck|. Biểu thức \verb|/Buttercup/| khớp với tất cả các chuỗi có chứa cụm từ \textit{Buttercup}; \verb|grep| với biểu thức này có thể trả ra dòng \textit{I'm called little Buttercup}. Một biểu thức tìm kiếm có thể chỉ chứa một ký tự (như \verb|/!/|) hoặc một chuỗi các ký tự (như \verb|/urgl/|)
 
 \begin{figure}[h]
 	\begin{tabular}{ l l }
@@ -62,7 +62,7 @@ Dạng đơn giản nhất của biểu thức chính quy là một dãy các k�
  \label{table:1}
 \end{figure}
 
-Regular exxpression là case sensitive (phân biệt chữ hoa chữ thường); dạng viết thường /s/ khác với dạng với hoa /S/ (/s/ khớp với ký tự s thường, chứ không khớp với ký tự S hoa). Có nghĩa là mẫu /woodchunks/ không khớp với chuỗi Woodchucks. Chúng ta có thể giải quyết vấn đề này với việc sử dụng ký tự ngoặc vuông [ và ]. Chuỗi các ký tự trong ngoặc vuông định nghĩa một disjunction (thuật ngữ tuyển trong tập hợp) của các ký tự. Ví dụ, hình 2.2 cho thấy mẫu /[wW]/ có thể khớp được với cả hai ký từ w và W.
+Các biểu thức chính quy thuộc dạng case sensitive (phân biệt chữ hoa chữ thường); dạng viết thường \verb|/s/| khác với dạng với hoa \verb|/S/| (\verb|/s/| khớp với ký tự \textit{/s/} thường, chứ không khớp với ký tự \textit{S} hoa). Có nghĩa là mẫu \verb|/woodchunks/| không khớp với chuỗi \textit{Woodchucks}. Chúng ta có thể giải quyết vấn đề này với việc sử dụng ký tự ngoặc vuông [ và ]. Chuỗi các ký tự trong ngoặc vuông định nghĩa một \textbf{disjunction} (tuyển) của các ký tự. Ví dụ, hình 2.2 cho thấy mẫu \verb|/[wW]/| có thể khớp được với cả hai ký từ \textit{w} và \textit{W}.
 
 \begin{figure}[h]
 	\begin{tabular}{ l l l }
@@ -71,14 +71,14 @@ Regular exxpression là case sensitive (phân biệt chữ hoa chữ thường);
 	 \hline
 	 \verb|/[wW]oodchucks/| & Woodchuck hoặc woodchuck & "\underline{Woodchuck}" \\
 	 \verb|/[abc]/| & 'a', 'b' hoặc 'c' & "in uomnini, in sold\underline{a}ti" \\
-	 \verb|/[1234567890]/| & bất kỳ chữ số nào & "plenty of \underline{7} to 5"
+	 \verb|/[1234567890]/| & bất kỳ chữ số nào & "plenty of \underline{7} to 5" \\
 	 \hline
 	\end{tabular}
  \caption{Sử dụng ngoặc vuông [] để định nghĩa disjuction của chuỗi ký tự}
  \label{table:2}
 \end{figure}
 
-Biểu thức /[1234567890]/ chỉ định bất kỳ chữ số nào. Mặc dù, tập hợp các ký tự số và chữ là một phần quan trọng trong các biểu thức, đôi khi chúng có thể hơi kỳ quặc (ví dụ, thật bất tiện khi phải định nghĩa /[ABCDEFGHIJKLMNOPQRSTUVWXYZ]/ với ý nghĩa "khớp bất kỳ chữ cái nào"). Trong những trường hợp mà các ký tự liền nhau, có thể sử dụng dấu gạch ngang (-) để thể hiện bất kỳ ký tự nào trong khoảng. Mẫu /[2-5]/ chỉ định bất kỳ ký tự nào trong tập 2, 3, 4 và 5. Mẫu /[b-g]/ chỉ định bất kỳ cứ nào trong tập b, c, d, e, f hay g. Một vài ví dụ khác được thể hiện trong bảng 2.3
+Biểu thức \verb|/[1234567890]/| sẽ khớp với bất kỳ chữ số nào. Mặc dù, tập hợp các ký tự số và chữ là một phần quan trọng trong các biểu thức, đôi khi chúng có thể hơi kỳ quặc (ví dụ, thật bất tiện khi phải định nghĩa \texttt{/[ABCDEFGHIJKLMNOPQRSTUVWXYZ]/} với ý nghĩa "khớp bất kỳ chữ cái nào"). Trong những trường hợp mà các ký tự liền nhau, có thể sử dụng dấu gạch ngang (-) để thể hiện bất kỳ ký tự nào trong \textbf{khoảng}. Biểu thức \verb|/[2-5]/| khớp với  các ký tự trong tập \textit{2}, \textit{3}, \textit{4} và \textit{5}. Biểu thức /[b-g]/ sẽ khớp với các ký tự trong tập \textit{b}, \textit{c}, \textit{d}, \textit{e}, \textit{f} hay \textit{g}. Một vài ví dụ khác được thể hiện trong bảng 2.3
 
 \begin{figure}[h]
 	\begin{tabular}{ l l l }
@@ -87,14 +87,14 @@ Biểu thức /[1234567890]/ chỉ định bất kỳ chữ số nào. Mặc dù
 	 \hline
 	 \verb|/[A-Z]/| & bất kỳ ký tự hoa nào & "we should call it '\underline{D}renched Blossoms'" \\
 	 \verb|/[a-z]/| & bất kỳ ký tự thường nào & "\underline{m}y beans were impatient to be hoed!" \\
-	 \verb|/[0-9]/| & bất kỳ chữ số nào & "Chapter \underline{1}: Down the Rabbit Hole"
+	 \verb|/[0-9]/| & bất kỳ chữ số nào & "Chapter \underline{1}: Down the Rabbit Hole" \\
 	 \hline
 	\end{tabular}
- \caption{Sử dụng ngoặc vuông [] với dấu gạch ngang - để định nghĩa một khoảng}
+ \caption{Sử dụng ngoặc vuông [] với dấu gạch ngang - để định nghĩa khoảng}
  \label{table:2.3}
 \end{figure}
 
-Ngoặc vuông có thể được sử dụng để chỉ định một ký tự không nằm trong chuỗi bằng cách sử dụng dấu mũ \symbol{94}. Nếu dấu mũ \symbol{94} là ký tự đầu tiên sau ký tự mở ngoặc vuông [, mẫu sẽ mang nghĩa không khớp. Ví dụ, mẫu \verb|/[^a]/| khớp với bất kỳ ký tự nào (bao gồm cả các ký đặc biệt) ngoại trừ ký tự a. Điều này chỉ đúng nếu dấu mũ là ký tự đầu tiên sau dấu mở ngoặc vuông. Nếu nó xuất hiện ở nơi khác, nó được xử lý như dấu mũ bình thường. Hình 2.4 thể hiện một vài ví dụ
+Ngoặc vuông có thể được sử dụng để chỉ định một ký tự không nằm trong chuỗi bằng cách sử dụng dấu mũ \symbol{94}. Nếu dấu mũ \symbol{94} là ký tự đầu tiên sau ký tự mở ngoặc vuông [, mẫu sẽ mang nghĩa không khớp. Ví dụ, mẫu \verb|/[^a]/| khớp với bất kỳ ký tự nào (bao gồm cả các ký đặc biệt) ngoại trừ ký tự \textit{a}. Điều này chỉ đúng nếu dấu mũ là ký tự đầu tiên sau dấu mở ngoặc vuông. Nếu nó xuất hiện ở nơi khác, nó được xử lý như dấu mũ bình thường. Hình 2.4 thể hiện một vài ví dụ
 
 \begin{figure}[h]
 	\begin{tabular}{ l l l }
@@ -112,7 +112,7 @@ Ngoặc vuông có thể được sử dụng để chỉ định một ký tự
  \label{table:2.4}
 \end{figure}
 
-Làm sao chúng ta có thể chỉ định các thành phần tùy chọn, như ký tự s trong woodchuck và woodchucks? Chúng ta không thể sử dụng ngoặc vuông, vì nó chỉ cho chúng ta "s hoặc S", chứ không cho phép chúng ta chỉ định "s hoặc không có gì". Để làm được điều này chúng ta sử dụng dấu hỏi chấm /?/, với ý nghĩa "ký tự này hoặc không gì cả", như thể hiện trong hình 2.5
+Làm sao chúng ta có thể chỉ định các thành phần tùy chọn, như ký tự \textit{s} trong \textit{woodchuck} và \textit{woodchucks?} Chúng ta không thể sử dụng ngoặc vuông, vì nó chỉ cho chúng ta "s hoặc S", chứ không cho phép chúng ta chỉ định "s hoặc không có gì". Để làm được điều này chúng ta sử dụng dấu hỏi chấm \textit{/?/}, với ý nghĩa "ký tự này hoặc không gì cả", như thể hiện trong hình 2.5
 
 \begin{figure}[h]
 	\begin{tabular}{ l l l }
@@ -127,7 +127,7 @@ Làm sao chúng ta có thể chỉ định các thành phần tùy chọn, như 
  \label{table:2.5}
 \end{figure}
 
-Chúng ta có thể coi dấu hỏi chấm như là "chứa không hoặc một ký tự trước". Đó là một cách để chỉ định chúng ta muốn so khớp một chuỗi bao nhiêu lần, điều rất quan trọng trong regular expression. Ví dụ, xem xét các tiếng của cừu, sẽ có các chuỗi như sau:
+Chúng ta có thể coi dấu hỏi chấm như là "chứa hoặc không chứa ký tự trước". Đó là một cách để chỉ định chúng ta muốn so khớp một chuỗi bao nhiêu lần, điều rất quan trọng trong các biểu thức chính quy. Ví dụ, xem xét các tiếng kêu  của cừu, sẽ có các chuỗi như sau:
 
 baa!\\
 \indent baaa!\\
@@ -135,13 +135,13 @@ baa!\\
 \indent baaaaa!\\
 \indent ...
 
-Ngôn ngữ này bao gồm các chuỗi với một ký tự b, theo sau bởi ít nhất hai ký tự a, kết thúc bằng dấu chấm cảm. Tập hợp các phép toán cho phép chúng ta định nghĩa "một vài phần tử" sử dụng ký hiệu sao *, được gọi là Kleene *. Kleene * có ý nghĩa "không hoặc nhiều lần hơn xuất hiện của ký tự hoặc biểu thức trước". Nên /a*/ nghĩa là "bất kỳ chuỗi nào không có hoặc có một hoặc nhiều ký tự a". Nó sẽ khớp với chuỗi a hoặc aaaaaa, nhưng nó cũng khớp với Off Minor do chuỗi Off Minor không có ký tự a. Nên biểu thức khớp một hoặc nhiều ký tự a là /aa*/, với ý nghĩa một ký tự a theo sau bởi không hiệu nhiều ký tự a. Các biểu thức phức tạp hơn cũng có thể lặp lại. Như /[ab]*/ có nghĩa là "không hoặc nhiều ký tự a hoặc b" (chứ không phải, không hoặc nhiều ký tự đóng ngoặc vuông ]). Nó sẽ khớp với các chuỗi như aaaa hoặc ababab hoặc bbbbb.
+Ngôn ngữ này bao gồm các chuỗi có dạng: bắt đầu với một ký tự b, theo sau bởi ít nhất hai ký tự a, cuối cùng kết thúc bằng dấu chấm cảm. Phép toán cho phép chúng ta định nghĩa "một vài ký tự a" sử dụng ký hiệu sao *, được gọi là Kleene *. Kleene * có ý nghĩa "không hoặc nhiều lần xuất hiện của ký tự hoặc biểu thức trước đó". Nên \verb|/a*/| có nghĩa là "bất kỳ chuỗi nào có hoặc không có ký tự a". Nó sẽ khớp với chuỗi \textit{a} hoặc \textit{aaaaaa}, nhưng nó cũng khớp với \textit{Off Minor} do chuỗi \textit{Off Minor} không có ký tự \textit{a}. Do đó, biểu thức khớp một hoặc nhiều ký tự \textit{a} là \verb|/aa*/|, với ý nghĩa một ký tự \textit{a} theo sau bởi không hoặc nhiều ký tự a. Các biểu thức phức tạp hơn cũng có thể lặp lại. Như \verb|/[ab]*/| có nghĩa là "không hoặc nhiều ký tự a hoặc b" (chứ không phải, không hoặc nhiều ký tự đóng ngoặc vuông ]). Nó sẽ khớp với các chuỗi như \textit{aaaa} hoặc \textit{ababab} hoặc \textit{bbbbb}.
 
-Để chỉ định nhiều chữ số (thường hữu ích cho việc xác định giá) chúng ta có thể mở rộng từ biểu thức /[0-9]/ cho việc khớp một chữ số. Một số nguyên (một chuỗi của các số) có thể được định nghĩa /[0-9][0-9]*/. (Tại sao không phải chỉ đơn giản là /[0-9]*/?)
+Để chỉ định nhiều chữ số (thường hữu ích cho việc xác định giá) chúng ta có thể mở rộng từ biểu thức \verb|/[0-9]/| cho việc khớp một chữ số. Một số nguyên (một chuỗi của các số) có thể được định nghĩa \verb|/[0-9][0-9]*/|. (Tại sao không phải chỉ đơn giản là \verb|/[0-9]*/?|)
 
-Đôi khi, sẽ là quá lằng nhằng nếu cần phải viết biểu thức cho số hai lần như vậy, nên một cách ngắn hơn để chỉ định "ít nhất một" của một ký tự. Đó là Kleene +, có nghĩa là "xảy ra một hoặc nhiều lần liên tiếp của ký tự hoặc biểu thức trước đó". Đo đó, biểu thức /[0-9]+/ là một cách đơn giản hơn để chỉ định "một chuỗi các số". Do đó, có hai cách để thể hiện ngôn ngữ của cừu: /baaa*!/ và /baa+!/.
+Đôi khi, thật lằng nhằng nếu cần phải viết biểu thức cho số hai lần như vậy, một cách ngắn gọn hơn để chỉ định "ít nhất một" của một ký tự. Đó là Kleene \textbf{+}, có nghĩa là "xảy ra một hoặc nhiều lần liên tiếp của ký tự hoặc biểu thức trước đó". Đo đó, biểu thức \verb|/[0-9]+/| là một cách đơn giản hơn để chỉ định "một chuỗi các số". Do đó, có hai cách để thể hiện ngôn ngữ của cừu: \verb|/baaa*!/| hoặc \verb|/baa+!/|.
 
-Một ký tự rất quan trọng trong các biểu thức chính quy là dấu chấm (/./), một ký tự wildcard để khớp bất kì ký tự đơn nào (trừ ký tự xuống dòng), như được thể hiện trong hình 2.6.
+Một ký tự rất quan trọng trong các biểu thức chính quy là dấu chấm (\verb|/./|), một \textbf{wildcard} để khớp bất kì ký tự đơn nào (trừ ký tự xuống dòng), như được thể hiện trong hình 2.6.
 
 \begin{figure}[h]
 	\begin{tabular}{ l l l }
@@ -155,21 +155,21 @@ Một ký tự rất quan trọng trong các biểu thức chính quy là dấu 
  \label{table:2.6}
 \end{figure}
 
-Wildcard thường được sử dụng với Kleene sao với ý nghĩa "bất kì chuỗi nào". Ví dụ, giả sử chúng ta muốn tìm bất kỳ dòng nào cho một từ hai lần, ví dụ aardvark, xuất hiện hai lần. Chúng ta có thể chỉ định một biểu thức như /aardvark.*aardvark/.
+Wildcard thường được sử dụng với Kleene * với ý nghĩa "bất kì chuỗi nào". Ví dụ, giả sử chúng ta muốn tìm bất kỳ dòng nào cho một từ hai lần, ví dụ aardvark, xuất hiện hai lần. Chúng ta có thể chỉ định một biểu thức như /aardvark.*aardvark/.
 
-Anchors là các ký tự đặc biệt để chỉ định vị trí trong một biểu thức chính quy. Hai anchor quan trọng nhất là dấu mũ \verb|^| và ký hiệu đô la \verb|$|. Dấu mũ \verb|^| khớp với vị trị đầu dòng. Biểu thức \verb|/^The/| chỉ khớp với các từ The xuất hiện ở đầu dòng. Do đó, ký tự dấu mũ \verb|^| có ba tác dụng: để chỉ định vị trí đầu dòng, để chỉ định negation khi ở trong ngoặc vuông, hoặc là chỉ định ký tự dấu mũ \verb|^| (ngữ cảnh nào cho phép các chương trình grep hay Python biết được chức năng nào có dấu mũ được sử dụng?). Ký hiệu đô la \verb|$| khớp với vị trí cuối dùng. Nên biểu thức \textvisiblespace \verb|$| là một biểu thức hữu dụng để ác định một khoảng trống ở vị trí cuối câu, biểu thức \verb|^The dog\.$| khớp với dòng chứa chính xác cụm từ The dog. (Chúng ta phải dùng ký tự gạch chéo ở đây để chỉ dấu . có nghĩa là ký tự dấu chấm chứ không phải là wildcard.
+Anchors là các ký tự đặc biệt để chỉ định vị trí trong một biểu thức chính quy. Hai anchor quan trọng nhất là dấu mũ \verb|^| và ký hiệu đô la \verb|$|. Dấu mũ \verb|^| khớp với vị trị đầu dòng. Biểu thức \verb|/^The/| chỉ khớp với các từ \textit{The} xuất hiện ở đầu dòng. Do đó, ký tự dấu mũ \verb|^| có ba tác dụng: để chỉ định vị trí đầu dòng, để chỉ phủ định khi ở trong ngoặc vuông, hoặc là chỉ định ký tự dấu mũ \verb|^| (ngữ cảnh nào cho phép các chương trình grep hay Python biết được chức năng nào có dấu mũ được sử dụng?). Ký hiệu đô la \verb|$| khớp với vị trí cuối dùng. Nên biểu thức \textvisiblespace \verb|$| là một biểu thức hữu dụng để xác định một khoảng trống ở vị trí cuối câu, biểu thức \verb|^The dog\.$| khớp với dòng chứa chính xác cụm từ \textit{The dog.} (Chúng ta phải dùng ký tự gạch chéo ở đây để chỉ dấu \verb|.| có nghĩa là ký tự dấu chấm chứ không phải là wildcard.
 
-Cũng có hai anchor khác: \verb|\b| chỉ định word boundary, và \verb|\B| chỉ định không phải word boundary. Do đó, \verb|\bthe\b| khớp với chữ the mà không khớp chữ other. Một "từ" trong một biểu thức chính quy thường được định nghĩ là một chuỗi các số, dấu gạch dưới và các chữ cái; định nghĩa này dựa vào định nghĩa "từ" trong các ngôn ngữ lập trình. Ví dụ, \verb|\b99\b| khớp với chuỗi 99 trong There are 99 bottles of beer on the wall (vì trước và sau 99 có dấu cách), nhưng sẽ không khớp với chuỗi 99 trong câu There are 299 bottles of beer on the wall (ví trước 99 không phải là một khoảng trống mà là một số). Nhưng nó sẽ khớp với 99 trong \textit{\symbol{36}99} (do trước 99 là dấu đô la (\symbol{36}), nó không phải là một chữ số, dấu gạch dưới hay chữ cái)
+Ngoài ra còn có hai anchor khác: \verb|\b| chỉ định word boundary, và \verb|\B| chỉ định không phải word boundary. Do đó, \verb|\bthe\b| khớp với chữ \textit{the} mà không khớp chữ \textit{other}. Một "từ" trong một biểu thức chính quy thường được định nghĩ là một chuỗi các số, dấu gạch dưới và các chữ cái; định nghĩa này dựa vào định nghĩa "từ" trong các ngôn ngữ lập trình. Ví dụ, \verb|\b99\b| khớp với chuỗi \textit{99} trong \textit{There are 99 bottles of beer on the wall} (vì trước và sau \textit{99} có dấu cách), nhưng sẽ không khớp với chuỗi \textit{99} trong câu \textit{There are 299 bottles of beer on the wall} (vì trước 99 không phải là một khoảng trống mà là một số). Nhưng nó sẽ khớp với \textit{99} trong \textit{\symbol{36}99} (do trước 99 là dấu đô la (\symbol{36}), nó không phải là một chữ số, dấu gạch dưới hay chữ cái)
 
 \subsection{Disjunction, Grouping và Precendence}
 
-Giả sử chúng ta muốn tìm kiếm trong các văn bản về động vật, cụ thể là về chó và mèo. Trong những trường hợp đó, chúng ta có thể muốn tìm những cụm từ như cat hoặc dog. Do chúng ta không thể sử dụng ngoặc vuông để định nghĩa "cat or dog" (tại sao chúng ta không thể xây dựng biểu thức /[catdog]/?), chúng ta cần một phép toán mới, phép toán disjunction, hay được gọi là ký tự pipe \verb|||. Mẫu /cat|dog/ khớp với một trong hai chuỗi cat hoặc dog.
+Giả sử chúng ta muốn tìm kiếm trong các văn bản về động vật, cụ thể là về chó và mèo. Trong những trường hợp đó, chúng ta có thể muốn tìm những cụm từ như \textit{cat} hoặc \textit{dog}. Do chúng ta không thể sử dụng ngoặc vuông để định nghĩa "cat or dog" (tại sao chúng ta không thể xây dựng biểu thức \verb|/[catdog]/?|), chúng ta cần một phép toán mới, phép toán \textbf{disjunction}, hay được gọi là ký tự \textbf{pipe} \verb|||. Mẫu \verb=/cat|dog/= khớp với một trong hai chuỗi \textit{cat} hoặc \textit{dog}.
 
-Đôi khi chúng ta muốn phép toán disjunction này nằm ở giữa một chuỗi lớn hơn, ví dụ, giả sử tôi muốn tìm kiếm thông về về loài cá cho người anh họ David của tôi. Làm sao tôi có thể chỉ định tôi muốn guppy hoặc guppies? Chúng ta không thể viết là /guppy|ies/, bởi vì mẫu này chỉ khớp với chuỗi guppy hoặc ies. Đó là bởi vì các chuỗi như guppy sẽ được ưu tiên hơn phép toán disjunction. Để phép toán disjunction có thể áp dụng lên một mẫu, chúng ta cần ký tự mở ngoặc ( và ). Bao một mẫu trong một ngoặc đơn để khiến nó hoạt động như một ký tự đối với các phép toán như pipe | hay Kleene*. Do đó, mẫu /guppy(y|ies)/ sẽ chỉ định điều chúng ta muốn, phép toán disjunction chỉ áp dụng trên các phần đuôi y và ies.
+Đôi khi chúng ta muốn phép toán disjunction này nằm ở giữa một chuỗi lớn hơn, ví dụ, giả sử tôi muốn tìm kiếm thông về về loài cá cho người anh họ David của tôi. Làm sao tôi có thể chỉ định tôi muốn \textit{guppy} hoặc \textit{guppies}? Chúng ta không thể viết là \texttt{/guppy|ies/}, bởi vì mẫu này chỉ khớp với chuỗi \textit{guppy} hoặc \textit{ies}. Đó là bởi vì các chuỗi như \textit{guppy} sẽ được ưu tiên hơn phép toán disjunction. Để phép toán disjunction có thể áp dụng lên một mẫu, chúng ta cần ký tự mở ngoặc ( và đóng ngoặc ). Bao một mẫu trong một ngoặc đơn để khiến nó hoạt động như một ký tự đối với các phép toán như pipe \verb||| hay Kleene \verb|*|. Mẫu \texttt{/guppy(y|ies)/} sẽ chỉ định điều chúng ta muốn, phép toán disjunction chỉ áp dụng trên các phần đuôi \textit{y} và \textit{ies}.
 
-Phép toán mở ngoặc đơn ( cũng hữu dụng khi làm việc với các phép toán như Kleene *. Không giống như phép toán |, Kleene * áp dụng mặc định cho không phải một ký tự, mà là toàn bộ chuỗi. Giả sử chúng ta muốn khớp một chuỗi lặp lại, ví dụ như một dòng mà có nhiều tên cột ở dạng \textit{Column 1 \hspace{0.1em} Column 2 \hspace{0.1em} Column 3}. Biểu thức \texttt{/Column\textvisiblespace[0-9]+\textvisiblespace*/} sẽ không khớp với bấy kỳ cột nào, thay vào đó, nó sẽ khớp với một cột theo sau bởi bất kỳ khoảng trắng nào!. Ký tự sao ở đấy chỉ áp dụng chủ ký tự khoảng trắng ở trước nó, chứ không phải cho toàn bộ biểu thức. Với dấu ngoặc đơn, chúng ta có thể viết lại biểu thức \texttt{/(Column\textvisiblespace[0-9]+\textvisiblespace*)*/} để khớp với các chuỗi có dạng bắt đầu với từ Column, theo sau bởi một dấu cách, theo sau bởi các số và có thể có khoảng trắng hay không, toàn bộ mẫu này lặp lại nhiều lần.
+Phép toán mở ngoặc đơn ( cũng hữu dụng khi làm việc với các phép toán như Kleene \verb|*|. Không giống như phép toán |, Kleene \verb|*| áp dụng mặc định cho không phải một ký tự, mà là toàn bộ chuỗi. Giả sử chúng ta muốn khớp một chuỗi lặp lại, ví dụ như một dòng mà có nhiều tên cột ở dạng \textit{Column 1 \hspace{0.1em} Column 2 \hspace{0.1em} Column 3}. Biểu thức \texttt{/Column\textvisiblespace[0-9]+\textvisiblespace*/} sẽ không khớp với bấy kỳ cột nào, thay vào đó, nó sẽ khớp với một cột theo sau bởi bất kỳ khoảng trắng nào!. Ký tự sao ở đấy chỉ áp dụng chủ ký tự khoảng trắng ở trước nó, chứ không phải cho toàn bộ biểu thức. Với dấu ngoặc đơn, chúng ta có thể viết lại biểu thức \texttt{/(Column\textvisiblespace[0-9]+\textvisiblespace*)*/} để khớp với các chuỗi có dạng bắt đầu với từ \textit{Column}, theo sau bởi một dấu cách, theo sau bởi các số và có thể có khoảng trắng hay không, toàn bộ mẫu này lặp lại nhiều lần.
 
-Ý tưởng một phép toán có thể được ưu tiên so với phép toán khác, khiến chúng ta đôi khi phải sử dụng ngoặc đơn để chỉ định điều chúng ta muốn, là một dạng của phân cấp độ ưu tiên pháp toán trong regular expressions. Bảng dưới đây thể hiện thứ tự ưu tiên trong RE, từ ưu tiên cao nhất đến thấp nhất
+Ý tưởng một phép toán có thể được ưu tiên so với phép toán khác, khiến chúng ta đôi khi phải sử dụng ngoặc đơn để chỉ định điều chúng ta muốn, là một dạng của phân cấp \textbf{độ ưu tiên} phép toán trong các biểu thức chính quy. Bảng dưới đây thể hiện thứ tự ưu tiên trong RE, từ ưu tiên cao nhất đến thấp nhất
 
 \begin{center}
 \begin{tabular}{ l l }
@@ -180,15 +180,15 @@ Phép toán mở ngoặc đơn ( cũng hữu dụng khi làm việc với các p
 \end{tabular}
 \end{center}
 
-Từ bảng này, do counters có độ ưu tiên hơn sequences, \verb|/the*| sẽ khớp với chuỗi theeeee mà không khớp với thethe. Vì sequences có độ ưu tiên cao hơn disjunction, /the|any/ khớp với the hoặc any mà không khớp với theny.
+Từ bảng này, do counters có độ ưu tiên hơn sequences, \verb|/the*/| sẽ khớp với chuỗi \textit{theeeee} mà không khớp với \textit{thethe}. Vì sequences có độ ưu tiên cao hơn disjunction, \texttt{/the|any/} khớp với \verb|the| hoặc \verb|any| mà không khớp với \verb|theny|.
 
-Các mẫu có thể nhập nhằng theo các cách khác. Xem biểu thức \verb|/[a-z]*/| khi so khớp với chuỗi \textit{one upon a time}. Do \verb|/[a-z]*| khớp không hoặc nhiều chữ cái, biểu thức có thể khớp với không có gì, hoặc chỉ một chữ cái o, on, onc hoặc once. Trong các trường hợp này, regular expression luôn khớp với chuỗi dài nhất có thể, chúng ta gọi những mẫu như vậy là greedy, do chúng sẽ mở rộng cho đến khi khớp càng nhiều ký tự càng tốt.
+Các mẫu có thể nhập nhằng theo các cách khác. Xem biểu thức \verb|/[a-z]*/| khi so khớp với chuỗi \textit{one upon a time}. Do \verb|/[a-z]*/| khớp với không hoặc nhiều chữ cái, biểu thức có thể khớp với không có gì, hoặc chỉ một chữ cái \textit{o}, \textit{on}, \textit{onc} hoặc \textit{once}. Trong các trường hợp này, biểu thức chính quy luôn khớp với chuỗi dài nhất có thể, chúng ta gọi những mẫu như vậy là \textbf{greedy} (tham lam), do chúng sẽ mở rộng cho đến khi khớp càng nhiều ký tự càng tốt.
 
-Tuy nhiên, có những cách để chỉ định các mẫu non-greedy, việc việc sử dụng ký tự ?. Phép toán *? sẽ khớp với ít chuỗi nhất có thể. Phép toán +? sẽ khớp với ít ký tự nhất có thể.
+Tuy nhiên, có những cách để chỉ định các mẫu \textbf{non-greedy}, việc việc sử dụng ký tự \verb|?|. Phép toán \verb|*?| hay \verb|+?| sẽ khớp với ít chuỗi nhất có thể.
 
 \subsection{Một ví dụ đơn giản}
 
-Giả sử chúng ta muốn viết một RE để tìm kiếm các mạo từ tiếng Anh the. Một mẫu đơn giản (nhưng không chính xác) có thể là:
+Giả sử chúng ta muốn viết một biểu thức chính quy để tìm kiếm các mạo từ tiếng Anh \textit{the}. Một mẫu đơn giản (nhưng không chính xác) có thể là:
 
 \vspace{0.6em}
 
@@ -196,7 +196,7 @@ Giả sử chúng ta muốn viết một RE để tìm kiếm các mạo từ ti
 
 \vspace{0.6em}
 
-Một vấn đề với mẫu này là nó thiếu trường hợp từ the ở đầu câu và trở thành dạng viết hoa (The). Đầu này dẫn đến mẫu sau:
+Một vấn đề với mẫu này là nó thiếu trường hợp từ \textit{the} ở đầu câu và trở thành dạng viết hoa (\textit{The}). Đầu này dẫn đến mẫu sau:
 
 \vspace{0.6em}
 
@@ -204,7 +204,7 @@ Một vấn đề với mẫu này là nó thiếu trường hợp từ the ở 
 
 \vspace{0.6em}
 
-Nhưng mẫu này vẫn sai do bắt thừa các trường hợp, chuỗi the ở trong một từ khác (như other hay theology). Nên chúng ta sẽ chỉ định word boundary ở cả hai đầu:
+Nhưng mẫu này vẫn sai do bắt thừa các trường hợp, chuỗi \textit{the} ở trong một từ khác (như \textit{other} hay \textit{theology}). Nên chúng ta sẽ chỉ định word boundary ở cả hai đầu:
 
 \vspace{0.6em}
 
@@ -212,7 +212,7 @@ Nhưng mẫu này vẫn sai do bắt thừa các trường hợp, chuỗi the �
 
 \vspace{0.6em}
 
-Giả sử chúng ta cần làm nó mà không sử dụng \verb|/\b/|. Chúng ta muốn điều này do \verb|/\b/| không làm việc với dấu gạch dưới và số như là wơrd boundaries; nhưng chúng ta có thẻ muốn tìm the trong ngữ cảnh nó có dấu gạch ngang hay số. Chúng ta cần chỉ chúng ta muốn những thực thể mà không có chữ cái ở cả hai hướng của từ the
+Giả sử chúng ta cần làm nó mà không sử dụng \verb|/\b/|. Chúng ta muốn điều này do \verb|/\b/| không làm việc với dấu gạch dưới và số như là wơrd boundaries; nhưng chúng ta có thẻ muốn tìm \textit{the} trong ngữ cảnh nó có dấu gạch ngang hay số. Chúng ta cần chỉ chúng ta muốn những thực thể mà không có chữ cái ở cả hai hướng của từ the
 
 \vspace{0.6em}
 
@@ -220,28 +220,28 @@ Giả sử chúng ta cần làm nó mà không sử dụng \verb|/\b/|. Chúng t
 
 \vspace{0.6em}
 
-Nhưng vẫn còn một vấn đề với mẫu này: nó không tìm thấy từ the khi nó bắt đầu một dòng. Đó là do biểu thức \verb|[^a-zA-Z]|, vốn để loại những từ trong đó có chứa the, lại yêu cầu một ký tự đơn ở trước the. Chúng ta có thể tránh điều này bằng cách chỉ định trước the hoặc không phải là chữ cái hoặc là ký tự bắt đầu dòng, điều tương tự với mẫu ở cuối dòng
+Nhưng vẫn còn một vấn đề với mẫu này: nó không tìm thấy từ the khi nó bắt đầu một dòng. Đó là do biểu thức \verb|[^a-zA-Z]|, vốn để loại những từ trong đó có chứa \textit{the}, lại yêu cầu một ký tự đơn ở trước the. Chúng ta có thể tránh điều này bằng cách chỉ định trước \textit{the} hoặc không phải là chữ cái hoặc là ký tự bắt đầu dòng, và tương tự với vị trí cuối dòng
 
 \codeexamples{/(^|[^a-zA-Z])[tT]he([^a-zA-Z]\|$)/}
 
-Quá trình chúng ta vừa trải qua thường xảy ra hai dạng lỗi: false postives, chuỗi chúng ta đã khớp sai như other và there và false negative, chuỗi mà chúng ta bỏ sót, như The. Xác định hai dạng lỗi này còn xuất hiện nhiều lần trong việc triển khai các hệ thống xử lý ngôn ngữ và tiếng nói. Giảm thiểu lỗi trong hệ thống do đó gồm hai công việc chính:
+Quá trình chúng ta vừa trải qua thường xảy ra hai dạng lỗi: \textbf{false postives}, chuỗi chúng ta đã khớp sai như \textit{other} và \textit{there} và \textbf{false negative}, chuỗi mà chúng ta bỏ sót, như \textit{The}. Xác định hai dạng lỗi này còn xuất hiện nhiều lần trong việc triển khai các hệ thống xử lý ngôn ngữ và tiếng nói. Giảm thiểu lỗi trong hệ thống do đó gồm hai công việc chính:
 
 \begin{itemize}
-  \item Tăng precision (giảm false postivies)
-  \item Tăng recall (giảm false negatives)
+  \item Tăng \textbf{precision} (độ chính xác) (giảm false postivies)
+  \item Tăng \textbf{recall} (độ hồi tưởng) (giảm false negatives)
 \end{itemize}
 
 \subsection{Một ví dụ phức tạp hơn}
 
-Giờ chúng ta hãy thử một ví dụ hữu ích hơn thể hiện sức mạnh của các biểu thức chính quy. Giả sử chúng ta muốn xây dựng một ứng dụng giúp người dùng mua máy tính trên Web. Người dùng có thể muốn "máy tính có tốc độ ít nhất 6 GHz, 500 GB ổ cứng và giá nhỏ hơn \$1000". Để làm được loại trích rút thông tin này, chúng ta cần các tìm kiếm các chuỗi dạng 6 GHz, 500 GB, Mac hoặc \$999.99. Trong phần này, chúng ta sẽ tìm hiểu một vài biểu thức chính quy đơn giản để thực hiện nhiệm vụ này.
+Giờ chúng ta hãy thử một ví dụ hữu ích hơn thể hiện sức mạnh của các biểu thức chính quy. Giả sử chúng ta muốn xây dựng một ứng dụng giúp người dùng mua máy tính trên Web. Người dùng có thể muốn "máy tính có tốc độ ít nhất 6 GHz, 500 GB ổ cứng và giá nhỏ hơn \$1000". Để làm được loại trích rút thông tin này, chúng ta cần các tìm kiếm các chuỗi dạng \textit{6 GHz}, \textit{500 GB}, \textit{Mac} hoặc \textit{\$999.99}. Trong phần này, chúng ta sẽ tìm hiểu một vài biểu thức chính quy đơn giản để thực hiện nhiệm vụ này.
 
-Đầu tiên, hãy xây dựng biểu thức cho việc khớp giá. Đây là biểu thức đầu tiên cho việc khớp một dấu đô la theo sau bởi các số.
+Đầu tiên, hãy xây dựng biểu thức cho việc khớp giá tiền. Đây là biểu thức đầu tiên cho việc khớp một dấu đô la theo sau bởi các số.
 
 \codeexamples{/$[0-9]+/}
 
-	Chú ý rằng ký tự \symbol{36} có chức năng khác nếu nó đứng ở cuối biểu thức như chúng ta đã thảo luanạ ở phần trước. Phần lớn các chương trình dịch biểu thức chính quy đủ thông minh để nhận ra ký tự \symbol{36} ở đây không chỉ cuối file. (Như một bài kiểm tra suy nghĩ, bạn hãy nghĩ cách làm sao các chương trình dịch regex có thể tìm ra chức năng của \symbol{36} trong ví dụ này.)
+	Chú ý rằng ký tự \symbol{36} có chức năng khác nếu nó đứng ở cuối biểu thức như chúng ta đã thảo luận ở phần trước. Phần lớn các chương trình dịch biểu thức chính quy đủ thông minh để nhận ra ký tự \symbol{36} ở đây không chỉ cuối văn bản. (Như một bài kiểm tra, bạn hãy nghĩ cách làm sao các chương trình dịch có thể tìm ra chức năng đúng của \symbol{36} trong ví dụ này.)
 
-Giờ chúng ta hãy đối mặt với vấn đề số thực. Chúng ta sẽ thêm dấu . vào giữa các số:
+Giờ chúng ta hãy đối mặt với vấn đề số thực. Chúng ta sẽ thêm dấu \verb|.| vào giữa các số:
 
 \codeexamples{/$[0-9]+\.[0-9][0-9]/}
 
@@ -249,11 +249,11 @@ Mẫu này chỉ khớp với chuỗi \symbol{36}199.99 nhưng không khớp v�
 
 \vspace{0.6em}
 
-\noindent \texttt{/(^|\W)$[0-9]+(\.[0-9][0-9])?\b/}
+\noindent \texttt{/(\symbol{94}|\symbol{92}W)\symbol{36}[0-9]+(\symbol{92}.[0-9][0-9])?\symbol{92}b/}
 
 \vspace{0.6em}
 
-Cuối cùng, mẫu này khớp với các giá như \symbol{36}1999999.99, giá này rất cao nên không thực tế. Chúng ta cần hạn chế số tiền:
+Cuối cùng, mẫu này có thể khớp thừa các giá trị như \textit{\symbol{36}1999999.99}, giá tiền này rất cao nên không thực tế. Chúng ta cần hạn chế số tiền:
 
 \vspace{0.6em}
 
@@ -261,29 +261,30 @@ Cuối cùng, mẫu này khớp với các giá như \symbol{36}1999999.99, giá
 
 \vspace{0.6em}
 
-Làm sao để chỉ định tốc độ của vi xử l >6GHz. Đây là mẫu cho điều đó:
+Làm sao để chỉ định tốc độ của vi xử lý >6GHz. Đây là mẫu cho điều đó:
 
 \vspace{0.6em}
 
-\noindent \texttt{/\symbol{92}b[6-9]+\textvisiblespace*(GHz|[Gg]igahertz)\symbol{92}b/}
+\noindent \texttt{/\symbol{92}b[0-9]+\textvisiblespace*(GHz|[Gg]igahertz)\symbol{92}b/}
 
 \vspace{0.6em}
 
-Chú ý rằng chúng tôi sử dụng \texttt{/\textvisiblespace*/} có nghĩa là "không hiều nhiều khoảng trắng" do có trường hợp có nhiều khoảng trắng ở đó. Với dung lượng ổ cứng, chung sta phải tiếp tục sử dụng số thực (5.5 GB); chú ý việc sử dụng ? để khiến s tùy chọn:
+Chú ý rằng chúng tôi sử dụng \texttt{/\textvisiblespace*/} có nghĩa là "không hoặc nhiều khoảng trắng" do có trường hợp có nhiều khoảng trắng ở đó. Với dung lượng ổ cứng, chúng ta phải tiếp tục sử dụng số thực (5.5 GB); chú ý việc sử dụng \verb|?| để khiến ký tự \textit{s} tùy chọn:
 
 \vspace{0.6em}
 
-\noindent \texttt{/\symbol{92}b[6-9]+\textvisiblespace*(GHz|[Gg]igahertz)\symbol{92}b/}
+\noindent \texttt{/\symbol{92}b[0-9]+(\symbol{92}.[0-9]+)?\textvisiblespace *(GB|[Gg]igabytes?)\symbol{92}b/}
 
 \vspace{0.6em}
 
-Chỉnh sửa biểu thức này để nó có thể khớp với nhiều hơn 500 GB được để lại như một bài tập cho bạn đọc.
+Chỉnh sửa biểu thức này để nó có thể khớp với giá trị nhiều hơn \textit{500 GB} được để lại như một bài tập dành cho bạn đọc.
 
 \subsection{Thêm nhiều phép toán}
 
-Hình 2.7 thể hiện nhiều phép toán cho chọn khoảng, thường được sử dụng để tiếp kiệm thời gian gõ. Bên cạnh Kleene * và Kleene +, chúng ta có thể chỉ định trực tiếp số lượng, bằng cách cho chúng vào ngoặc vuông. Biểu thức \verb|/{3}/| ý nghĩa là "xảy ra chính xác 3 lần của ký tự hay biểu thức trước đó". Nên biểu thức \verb|/a\.{24}z| sẽ khớp với a theo sau 24 số theo sau bởi z (chứ không phải a theo sau bởi 23 hoặc 25 dấu chấm rồi đến z)
+Hình 2.7 thể hiện nhiều phép toán cho việc chọn khoảng, thường được sử dụng để tiếp kiệm thời gian gõ. Bên cạnh Kleene \verb|*| và Kleene \verb|+|, chúng ta có thể chỉ định trực tiếp số lượng, bằng cách cho chúng vào ngoặc vuông. Biểu thức \verb|/{3}/| ý nghĩa là "xảy ra chính xác 3 lần của ký tự hay biểu thức trước đó". Nên biểu thức \verb|/a\.{24}z| sẽ khớp với chuỗi bắt đầu bằng \textit{a} theo sau bởi 24 dấu chấm và cuối cùng là chữ \textit{z} (chứ không phải bắt đầu bằng a theo sau bởi 23 hoặc 25 dấu chấm rồi đến z)
 
 \begin{figure}[h]
+    \hspace{-2em}
 	\begin{tabular}{ l l l l }
 	 \hline
 	 RE & Expansion & Match & First Matches \\
@@ -291,7 +292,7 @@ Hình 2.7 thể hiện nhiều phép toán cho chọn khoảng, thường đư�
 	 \symbol{92}d & \verb|[0-9]| & chữ số & Party\textvisiblespace of\textvisiblespace \underline{5} \\
 	 \symbol{92}D & \verb|[^0-9]| & không phải số & \underline{B}lue\textvisiblespace moon \\
 	 \symbol{92}w & \verb|[a-zA-Z0-9_]| & chữ cái, chữ số, dấu gạch dưới & \underline{D}aiyu  \\
-	 \symbol{92}W & \verb|[^\w]| & không phải chữ cái, chữ số hay dấu gạch dưới & \underline{D}aiyu  \\
+	 \symbol{92}W & \verb|[^\w]| & không phải chữ cái, chữ số hay dấu gạch dưới & \underline{!}!!!  \\
 	 \symbol{92}s & \texttt{[\textvisiblespace \symbol{92}r\symbol{92}t\symbol{92}n\symbol{92}f]} & khoảng trắng (tab, dấu cách) &  \\
 	  \symbol{92}S & \verb|[^\s]| & không phải khoảng trắng &  \underline{i}n\textvisiblespace Concord \\
 	 \hline
@@ -300,9 +301,10 @@ Hình 2.7 thể hiện nhiều phép toán cho chọn khoảng, thường đư�
  \label{table:1}
 \end{figure}
 
-Khoảng cũng có được định nghĩa. Biểu thức \verb|/{n,m}/| biểu diễn khoảng từ n đến m xảy ra của các ký tự hoặc biểu thức trước đó, biểu thức \verb|{n,}| chỉ định có ít nhất n lần xảy ra ký tự hoặc biểu thức truowcs đó. Các biểu thức dùng để biểu thị khoảng được tổng kết trong bảng 2.8
+Một khoảng cũng có được định nghĩa. Biểu thức \verb|/{n,m}/| biểu diễn khoảng từ n đến m lần xảy ra các ký tự hoặc biểu thức trước đó, biểu thức \verb|{n,}| chỉ định có ít nhất n lần xảy ra ký tự hoặc biểu thức trước đó. Các biểu thức dùng để biểu thị khoảng được tổng kết trong bảng 2.8
 
 \begin{figure}[h]
+    \centering
 	\begin{tabular}{ l l  }
 	 \hline
 	 RE & Expansion  \\
@@ -320,7 +322,8 @@ Khoảng cũng có được định nghĩa. Biểu thức \verb|/{n,m}/| biểu 
  \label{table:1}
 \end{figure}
 
-Cuối cùng, các ký tự đặc biệt được chỉ định đằng sau ký tự gạch chéo (\symbol{92}) (xem hình 2.9). Hai ký tự đặc biệt phổ biết nhất là ký tự xuống dòng (\symbol{92}n) và ký tự tab (\symbol{92}t). Để chỉ định chính các ký tự đặc biệt (như .,*,[ và \symbol{92}), hãy đặt chúng đằng sau ký tự gạch chéo (ví dụ \verb|/\./|, \verb|/\*/| và \verb|/\\/|).
+
+Cuối cùng, các ký tự đặc biệt được chỉ định đằng sau ký tự gạch chéo (\symbol{92}) (xem hình 2.9). Hai ký tự đặc biệt phổ biết nhất là ký tự xuống dòng (\texttt{\symbol{92}n}) và ký tự tab (\texttt{\symbol{92}t}). Để chỉ định chính các ký tự đặc biệt (như .,*,[ và \symbol{92}), hãy đặt chúng đằng sau ký tự gạch chéo (ví dụ \verb|/\./|, \verb|/\*/| và \verb|/\\/|).
 
 \begin{figure}[h]
 	\begin{tabular}{ l l l }
@@ -338,9 +341,10 @@ Cuối cùng, các ký tự đặc biệt được chỉ định đằng sau ký
  \label{table:1}
 \end{figure}
 
-\subsection{Thay thế biểu thức chính quy, nhóm và ELIZA}
+\vspace{2em}
+\subsection{Thay thế trong biểu thức chính quy, capture group và ELIZA}
 
-Một trong những ứng dụng quan trọng của regular expression là thay thế chuỗi. Ví dụ, một phép toán thay thế \verb|s/regexp1/pattern/| sử dụng trong Python hay trong các chương trình Unix như vim hay sed cho phép một chuỗi được định nghĩa bởi biểu thức chính quy được thay thể bởi chuỗi khác:
+Một trong những ứng dụng quan trọng của biểu thức chính quy là thay thế chuỗi. Ví dụ, một biểu thức thay thế \verb|s/regexp1/pattern/| sử dụng trong Python hay trong các chương trình Unix như \textit{vim} hay \textit{sed} cho phép một chuỗi định nghĩa bởi biểu thức chính quy được thay thể bởi chuỗi khác:
 
 \vspace{0.6em}
 
@@ -348,5 +352,85 @@ Một trong những ứng dụng quan trọng của regular expression là thay 
 
 \vspace{0.6em}
 
-Nó thường được sử dụng để chỉ đến một phần con của chuỗi được khớp. Ví dụ, chúng ta muốn đặt những ngoặc nhọn quanh một số trong một chuỗi, như đổi the 35 boxes thành the the <35> boxes. Chúng ta muốn một cách nào đó để trỏ đến vị trí mà chúng ta muốn thay thể để thêm ngoặc. Để làm việc này, chúng ta đặt ngoặc đơn
+Nó thường được sử dụng để chỉ đến một phần của chuỗi được khớp. Ví dụ, chúng ta muốn đặt những ngoặc nhọn quanh một số trong một chuỗi, như đổi \textit{the 35 boxes} thành the \textit{the <35> boxes}. Chúng ta muốn một cách nào đó để trỏ đến vị trí mà chúng ta muốn thay thể để thêm ngoặc. Để làm việc này, chúng ta đặt ngoặc đơn bao ngoài mẫu thứ nhất và sử dụng phép toán number \verb|\1| trong mẫu thức hai để trỏ đến. Biểu thức như sau:
+
+\vspace{0.6em}
+
+\noindent \verb|s/([0-9]+)/<\1>/|
+
+\vspace{0.6em}
+
+Các phép ngoặc và số có thể sử dụng để chỉ định một chuỗi hoặc biểu thức phải xảy ra hai lần trong văn bản. Ví dụ, giả sử chúng ta đang tìm kiếm mẫu \textit{"the Xer they were, the Xer they will be"}, trong trường hợp này chúng ta muốn một ràng buộc là hai chữ X đều cùng mỗi chuỗi. Ta thực hiện điều này bằng cách đưa X vào dấu ngoặc đơn, sau đó thay thế chữ X thứ hai bằng ký tự \verb|\1|, như sau
+
+\vspace{0.6em}
+
+\noindent \verb|/the (.*)er they were, the \1er they will be/|
+
+\vspace{0.6em}
+
+Ở đây, \verb|\1| sẽ thay thế bất kỳ chuỗi nào được khớp với phần tử trong ngoặc. Nên mẫu này sẽ khớp với \textit{the bigger they were, the bigger they will be}, và không khớp với \textit{the bigger they were, the faster they will be}.
+
+Việc sử dụng ngoặc để lưu một mẫu vào bộ nhớ được gọi là \textbf{capture group}. Mỗi lần một capture group được sử dụng (như trong ngoặc đơn), thành phần khớp sẽ được lưu ở một thanh ghi có đánh số. Nếu bạn muốn khớp hai chuỗi khác nhau, \verb|\2| có nghĩa là phần được khớp với capture group thứ 2. Do đó
+
+\vspace{0.6em}
+
+\noindent \verb|/the (.*)er they (.*), the \1er we \2/|
+
+\vspace{0.6em}
+
+\noindent sẽ khớp với \textit{the faster they ran, thefaster we ran}, và không khớp với \textit{the faster they ran, the faster we ate.} Tương tự, capture thứ ba được lưu tại \verb|\3|, thứ tư được lưu tại \verb|\4|, và cứ thế.
+
+Các dấu ngoặc do đó có hai tác dụng trong các biểu thức chính quy, chúng được sử dụng để nhóm các cụm từ để chỉ định thứ tự phép toán nào được ưu tiên thực hiện, và chúng được sử dụng để lưu thành phần khớp vào bộ nhớ. Trong trường hợp chúng ta muốn sử dụng ngoặc để tạo nhóm, nhưng không muốn lưu thành phần khớp vào thanh ghi. Chúng ta sẽ sử dụng một \textbf{non-capturing group}, được sử dụng bằng cách thêm \verb|?:| sau dấu mở ngoặc, với dạng \verb|(?: pattern)|.
+
+\vspace{0.6em}
+
+\noindent \texttt{/(?:some|a few) (people|cats) like some \symbol{92}1/}
+
+\vspace{0.6em}
+
+\noindent sẽ khớp với \textit{some cats like some cats}, và không khớp với \textit{some cats like some a few.}
+
+Thay thế và capture group được sử dụng rất nhiều để xây dựng một chương trình chatbot đơn giản như ELIZA (Weizenbaum, 1966). Hãy xem xét lại đoạn hội thoại mà ELIZE giả nhà tâm lý học Rogerian
+
+\vspace{1em}
+\colorbox{background}{
+\begin{tabular}{ l  l}
+  User_1:& Men are all alike. \\
+  ELIZA_1:& IN WHAT WAY \\
+  User_2:& They're always bugging us about something or other. \\
+  ELIZA_2: & CAN YOU THINK OF A SPECIFIC EXAMPLE \\
+  User_3:&Well, my boy friend made me come here. \\
+  ELIZE_3:& YOUR BOYFRIEND MADE YOU COME HERE \\
+  User_4:& He says I'm depressed much of the time. \\
+  ELIZA_4:&I AM SORRY TO HEAR YOU ARE DEPRESSED.
+\end{tabular}
+}
+
+ELIZA hoạt động bằng cách có một tập hợp các biểu thức thay thế, mỗi một thành phần khớp sẽ được sửa đổi một chút. Chuỗi đầu vào đầu tiên được chuyển ra dạng in hoa. Việc thay thế thứ nhất sẽ thấy tất cả các từ \textit{MY} thành \textit{YOUR}, và \textit{I'M} thành \textit{YOU ARE}. Tập hợp các thay thế tiếp theo sẽ khớp và thay thế các mẫu khác từ chuỗi đầu vào. Sau đây là một vài ví dụ:
+
+\hspace*{-3em}
+\colorbox{background}{
+\begin{tabular}{ l }
+    \texttt{s/.* I'M (depressed|sad) .*/I AM SORRY TO HERE YOU ARE \symbol{92}1/}\\
+    \texttt{s/.* I AM (depressed|sad) .*/WHY DO YOU THINK YOU ARE \symbol{92}1/}\\
+    \texttt{s/.* all .*/IN WHAT WAY/}\\
+    \texttt{s/.* always .*/CAN YOU THINK OF A SPECIFIC EXAMPLE}
+\end{tabular}
+}
+
+Do nhiều mẫu thay thế có thể áp dụng với một chuỗi đầu vào, chuỗi thay thế được gán một chỉ số và được áp dụng theo thứ tự. Tạo các mẫu là một chủ đề trong bài tập 2.3, và chúng ta sẽ bàn chi tiết về kiến trúc của ELIZA trong chương 24.
+
+\vspace{20em}
+
+\subsection{Lookahead}
+
+Cuối cùng , sẽ có lúc chúng ta muốn dự đoán về tương lai, tìm kiếm ở trước chuỗi để xem một mẫu có khớp, nhưng không thể sử dụng tính năng con trỏ khớp, nên chúng ta có thể xử lý với các mẫu nếu chúng xảy ra.
+
+Lookahead sử dụng cú pháp \verb|(?| mà chúng ta thấy ở phần trước cho các non-capture group. Phép toán \verb|(?= pattern)| sẽ trả về true nếu mẫu xảy ra. Negative lookahead thường được sử dụng khi chúng ta phân tích một mẫu phức tạp nhưng muốn loại bỏ một trường hợp đặc biệt. Ví dụ giả sử chúng ta muốn khớp, tại vị trí đầu dòng, bất kỳ từ nào không bắt đầu với "Volcano". Chúng ta có thể sử dụng negative lookahead để làm việc đó:
+
+\vspace{0.6em}
+
+\noindent \texttt{/\symbol{94}(?!Volcano)[A-Za-z]+/}
+
+\vspace{0.6em}
 
