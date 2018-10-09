@@ -59,10 +59,18 @@ Sau khi đã dịch một thuật ngữ, cần thêm vào [**Danh sách Thuật 
 
 ### Ghi chú về cách dịch
 
+**Các bước dịch**
+
 * Bước 1: Dịch các text trước, không cần chú ý đến trau chuốt câu văn, định dạng
 * Bước 2: Sau mỗi đoạn, cần định dạng lại
 * Bước 3: Đọc lại 
 
-Chú ý: Trong quyển sách này, phần citation được làm riêng, sẽ để ở một phần riêng biệt  
+Chú ý: Trong quyển sách này, phần citation được làm riêng, sẽ để ở một phần riêng biệt
+
+**Cách viết latex**
+
+Mỗi câu nên viết trong một dòng. Điều này sẽ giúp quá trình review, fix lỗi, confirm lỗi được dễ dàng hơn.   
+
+
 
 
