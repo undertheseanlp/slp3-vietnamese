@@ -426,7 +426,10 @@ Do nhiều mẫu thay thế có thể áp dụng với một chuỗi đầu vào
 
 Cuối cùng, sẽ có lúc chúng ta muốn dự đoán về tương lai, tìm kiếm ở trước chuỗi để xem một mẫu có khớp, nhưng không thể sử dụng tính năng con trỏ khớp, nên chúng ta có thể xử lý với các mẫu nếu chúng xảy ra.
 
-Lookahead sử dụng cú pháp \verb|(?| mà chúng ta thấy ở phần trước cho các non-capture group. Phép toán \verb|(?= pattern)| sẽ trả về true nếu mẫu xảy ra. Negative lookahead thường được sử dụng khi chúng ta phân tích một mẫu phức tạp nhưng muốn loại bỏ một trường hợp đặc biệt. Ví dụ giả sử chúng ta muốn khớp, tại vị trí đầu dòng, bất kỳ từ nào không bắt đầu với "Volcano". Chúng ta có thể sử dụng negative lookahead để làm việc đó:
+Lookahead assertion sử dụng cú pháp \verb|(?| mà chúng ta thấy ở phần trước cho các non-capture group.
+Phép toán \verb|(?= pattern)| sẽ trả về true nếu mẫu xảy ra, nhưng với zero-width, vị trí khớp không được lưu lại.
+Negative lookahead thường được sử dụng khi chúng ta phân tích một mẫu phức tạp nhưng muốn loại bỏ một trường hợp đặc biệt.
+Ví dụ khi cần tìm kiếm tất cả những từ ở đầu dòng mà không bắt đầu với "Volcano", chúng ta có thể sử dụng negative lookahead để làm việc đó:
 
 \vspace{0.6em}
 
@@ -436,4 +439,7 @@ Lookahead sử dụng cú pháp \verb|(?| mà chúng ta thấy ở phần trư�
 
 \section{Từ}
 
-Trước khi chúng ta bàn đến vấn đề xử lý từ, chúng ta cần quyết định một từ có nghĩa là gì. Hãy bắt đầu bằng việc xem xét một ngữ liệu (corpus hay dạng số nhiều corpora), một tập hợp các văn bản hoặc tiếng nói mà máy tính có thể đọc được. Ví dụ, ngữ liệu Brown là một tập hợp gồm một triệu từ được tổng hợp từ 500 văn bản tiếng Anh với nhiều thể loại (tin tức, truyện giả tưởng, truyện không giả tưởng, học thuật, ...), tổng hợp bởi đại học Brown
+Trước khi chúng ta bàn đến vấn đề xử lý từ, chúng ta cần quyết định một từ có nghĩa là gì. Hãy bắt đầu bằng việc xem xét một ngữ liệu (corpus hay dạng số nhiều corpora), một tập hợp các văn bản hoặc tiếng nói mà máy tính có thể đọc được. Ví dụ, kho ngữ liệu Brown là một tập hợp gồm một triệu từ được tổng hợp từ 500 văn bản tiếng Anh với nhiều thể loại (tin tức, truyện giả tưởng, truyện không giả tưởng, học thuật, ...), tổng hợp bởi đại học Brown vào năm 1963-64 (Kucera and Francis, 1967). Bao nhiều từ xuất hiện ở trong câu sau?
+
+He stepped out into the hall, was delighted to encounter a water brother.
+
