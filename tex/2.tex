@@ -441,5 +441,8 @@ Ví dụ khi cần tìm kiếm tất cả những từ ở đầu dòng mà khô
 
 Trước khi chúng ta bàn đến vấn đề xử lý từ, chúng ta cần quyết định một từ có nghĩa là gì. Hãy bắt đầu bằng việc xem xét một ngữ liệu (corpus hay dạng số nhiều corpora), một tập hợp các văn bản hoặc tiếng nói mà máy tính có thể đọc được. Ví dụ, kho ngữ liệu Brown là một tập hợp gồm một triệu từ được tổng hợp từ 500 văn bản tiếng Anh với nhiều thể loại (tin tức, truyện giả tưởng, truyện không giả tưởng, học thuật, ...), tổng hợp bởi đại học Brown vào năm 1963-64 (Kucera and Francis, 1967). Bao nhiều từ xuất hiện ở trong câu sau?
 
-He stepped out into the hall, was delighted to encounter a water brother.
+\hspace{0.8cm} He stepped out into the hall, was delighted to encounter a water brother.
 
+Câu này có 13 từ nếu chúng ta không coi những dấu câu là từ, 15 từ nếu tính cả các dấu câu. Việc quyết định có coi dấu chấm ("."), phẩy (","), hay các dấu khác có phải là từ không phụ thuộc vào bài toán. Các dấu thường rất hũu ích trong việc chia tách (dấu phẩy, dấu chấm, dấu hai chấm) và xác định ý định (dấu hỏi chấm, dấu chấm cảm, dấu ngoặc kép). Với một số bài toán, như gán nhãn từ loại, parsing hay tổng hợp tiếng nói, chúng ta thường coi các dấu câu như các từ riêng biệt.
+
+Bộ dữ liệu Switchboard về các cuộc hội thoại tiếng Anh Mỹ qua điện thoại được thu thập vào đầu những năm 1990, nó chứa 2430 cuộc hội thoại với thời lượng trung bình khoảng 6 phút, gồm tất cả 240 giờ và 3 triệu từ (Godfrey et al., 1992).
