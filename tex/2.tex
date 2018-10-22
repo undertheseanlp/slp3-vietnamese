@@ -445,4 +445,10 @@ Trước khi chúng ta bàn đến vấn đề xử lý từ, chúng ta cần qu
 
 Câu này có 13 từ nếu chúng ta không coi những dấu câu là từ, 15 từ nếu tính cả các dấu câu. Việc quyết định có coi dấu chấm ("."), phẩy (","), hay các dấu khác có phải là từ không phụ thuộc vào bài toán. Các dấu thường rất hũu ích trong việc chia tách (dấu phẩy, dấu chấm, dấu hai chấm) và xác định ý định (dấu hỏi chấm, dấu chấm cảm, dấu ngoặc kép). Với một số bài toán, như gán nhãn từ loại, parsing hay tổng hợp tiếng nói, chúng ta thường coi các dấu câu như các từ riêng biệt.
 
-Bộ dữ liệu Switchboard về các cuộc hội thoại tiếng Anh Mỹ qua điện thoại được thu thập vào đầu những năm 1990, nó chứa 2430 cuộc hội thoại với thời lượng trung bình khoảng 6 phút, gồm tất cả 240 giờ và 3 triệu từ (Godfrey et al., 1992).
+Bộ dữ liệu Switchboard về các cuộc hội thoại tiếng Anh Mỹ qua điện thoại được thu thập vào đầu những năm 1990, nó chứa 2430 cuộc hội thoại với thời lượng trung bình khoảng 6 phút, gồm tất cả 240 giờ và 3 triệu từ (Godfrey et al., 1992). Những bộ dữ liệu về tiếng nói như vậy thường không có dấu nhưng sử dụng những cách khác để định nghĩa các từ. Hãy xem xét một câu nói trong bộ dữ liệu Switchboard; một câu nói:
+
+I do uh main- mainly business data processing
+
+Câu nói này có hai loại disfluencies. Từ broken-off main- được gọi là một fragment. Các từ như uh và um được gọi là các filler hay filled paused. Chúng ta coi những từ này là các từ? Một lần nữa, nó phụ thuộc vào loại ứng dụng. Nếu chung ta được xây hệ thống tự động ghi lời thoại, chúng ta có thể muốn bỏ đi các disfluencies.
+
+Nhưng có đôi khi chúng ta sẽ giữ lại các disfluencies. Disfluencies như uh hay um thường hữu ích trong các bài toán dự đoán từ kế tiếp, bởi vì chúng là dấu hiệu của việc người nói sẽ bắt đầu một mệnh đề hoặc đưa ra ý tưởng, nên trong bài toán nhận dạng tiếng nói chúng được gọi là những từ bình thường. Vì những nguowì sử dụng những loại disfluencies có thể là dấu hiệu để xác định người nói. Clark và Fox Tree (2002) chỉ ra rằng uh và um có nghĩa khác nhau. Bạn nghĩ đó là gì?
