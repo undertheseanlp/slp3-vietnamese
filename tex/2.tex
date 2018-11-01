@@ -456,3 +456,39 @@ Nhưng có đôi khi chúng ta sẽ giữ lại các disfluencies. Disfluencies 
 Liệu những tokens viết hoa như They và các token viết thường như they có cùng một từ? Chúng có chung nghĩa trong một số bài toán (nhận dạng giọng nói), trong khi đối với các bài toán xác định từ loại hay gán nhãn tên thực thể, viết hoa là một đặc trưng hữu ích và được giữ lại.
 
 Vậy còn dạng số nhiều như cats và cat? Hai từ đều có chung lemma là cat nhưng ở dạng khác nhau. Một lemma là một tập hợp các dạng từ có chung stem, cùng từ loại và nghĩa. Dạng từ là một dạng đầy đủ hoặc biến thể của từ. Trong các ngôn ngữ phức tạp như Ả Rập, chúng ta thường phải đối mặt với vấn đề lemmatization. Với nhiều bài toán trong tiếng Anh, wordforms rất hiệu quả.
+
+Có tất cả bao nhiêu từ trong tiếng Anh? Để trả lời câu này chúng ta cần phân biệt hai cách khi nói về các từ. Loại là số lượng các từ phân biệt trong corpus; nếu tập hợp các từ trong từ điển là V, số lượng loại trong từ điển là kích thước của |V|. Tokens là số lượng tất cả các từ N. Nếu trong ta bỏ qua các dấu câu, câu sau đây có 16 tokens và 14 types:
+
+They pickniecked by the pool, then lay back on the grass and looked at the stars.
+
+Khi chúng ta nói đến số lượng từ của một ngôn ngữ, chúng ta thường nói đến word types.
+
+\begin{figure}[h]
+	\begin{tabular}{ l l l }
+	 \hline
+	 Corpus & Tokens = N & Types = |V| \\
+	 \hline
+	 Shakespeare & 884 nghìn & 31 nghìn \\
+	 Brown corpus & 1 triệu & 38 nghìn \\
+	 Switchboard telephone conversations & 2.4 triệu & 20 nghìn \\
+	 COCA & 440 triệu & 2 triệu \\
+	 Google N-grams & 1 tỷ & 13 tỷ
+	 \hline
+	\end{tabular}
+ \caption{Số lượng types và tokén của một vài corpus tiếng Anh. Tập lớn nhất, Google N-grams, chứa 13 tỷ types, nhưng chỉ đếm những types xuất hiện trên 40 lần, số lượng thực tế còn nhiều hơn.}
+ \label{table:1}
+\end{figure}
+
+Hình 2.10 thể hiện số lượng types và tokens từ một vài corpora tiếng Anh phổ biến. Càng nhìn vào những corpora lớn, chúng ta càng tìm được nhiều types, thực tế mối liên hệ giữa types |V| và số lượng tokens N được gọi là định luật Herdan (Herdan, 1960) hay luật Heap (Heaps, 1978). Thể hiện ở biểu thức 2.1, khi $k$ và $\beta$ là hàng số $0 < \beta < 1$.
+
+\begin{equation} \label{}
+|V| = kN^{\beta}
+\end{equation}
+
+Giá trị của $\beta$ phụ thuộc vào loại và kích thước của corpus, nhưng với những corpora lớn nhứ hình 2.10, $\beta$ nằm trong khoảng .67 đến .75.  Chúng ta có thể nói rằng kích thước của từ điển tăng nhanh theo chiều dài của số lượng từ.
+
+Một cách tính số lượng từ của một ngôn ngữ là số lượng các lemma thay vì wordform types. Các từ điển có thể hữu ích trong việc đếm các lemma, số lượng entries từ điển hay boldface formss thường nhiều hơn số lượng lemmas (do mỗi lemmas có nhiều boldface forms). Từ điển tiếng Anh Oxford năm 1989 có khoảng 615000 entries.
+
+\section{Corpora}
+
+Các từ không tự nhiên xuất hiện. Mọi phần của text chúng ta nghiên cứu đều xuất phát từ một hoặc nhiều người nói hoặc viết,
